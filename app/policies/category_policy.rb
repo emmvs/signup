@@ -1,4 +1,4 @@
-class WordPolicy < ApplicationPolicy
+class CategoryPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
@@ -11,20 +11,20 @@ class WordPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    admin?
   end
 
   def update?
-    user_or_admin?
+    admin?
   end
 
   def destroy?
-    user_or_admin?
+    admin?
   end
 
   private
 
-  def user_or_admin?
-    record.user == user || user.role == "admin"
+  def admin?
+    user.role.admin?
   end
 end
