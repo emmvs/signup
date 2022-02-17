@@ -1,0 +1,6 @@
+class Word < ApplicationRecord
+  belongs_to :user
+  belongs_to :category
+  has_many :bookmarks, dependent: :destroy
+  validates :title, :language, presence: true
+end

@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_181346) do
+ActiveRecord::Schema.define(version: 2022_02_17_185355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.bigint "word_id", null: false
+    t.bigint "list_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["list_id"], name: "index_bookmarks_on_list_id"
+    t.index ["word_id"], name: "index_bookmarks_on_word_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_categories_on_user_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_lists_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +48,33 @@ ActiveRecord::Schema.define(version: 2022_02_17_181346) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
+    t.text "bio"
+    t.integer "role"
+    t.integer "language"
+    t.integer "target_language"
+    t.integer "reputation"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "words", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "language"
+    t.integer "status"
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_words_on_category_id"
+    t.index ["user_id"], name: "index_words_on_user_id"
+  end
+
+  add_foreign_key "bookmarks", "lists"
+  add_foreign_key "bookmarks", "words"
+  add_foreign_key "categories", "users"
+  add_foreign_key "lists", "users"
+  add_foreign_key "words", "categories"
+  add_foreign_key "words", "users"
 end
