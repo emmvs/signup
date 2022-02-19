@@ -1,6 +1,6 @@
-class CreateWords < ActiveRecord::Migration[6.1]
+class CreateSigns < ActiveRecord::Migration[6.1]
   def change
-    create_table :words do |t|
+    create_table :signs do |t|
       t.string :title
       t.text :description
       t.integer :language

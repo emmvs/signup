@@ -1,4 +1,4 @@
 class Bookmark < ApplicationRecord
-  belongs_to :word
+  belongs_to :sign
   belongs_to :list
 end
