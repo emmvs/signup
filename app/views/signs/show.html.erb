@@ -4,4 +4,4 @@
 
 <%= link_to "Update", edit_sign_path(@sign) %>
 <%= link_to "Delete", sign_path(@sign), method: :delete, data: { confirm: "Do you really want to say bye bye?" } %>
-<%= cl_video_tag(@sign.video.key, :controls => true, :width=>300, class:"video")%>
+<%= cl_video_tag(@sign.video.key, :controls=>false, :autoplay=>true, :loop=>true, :muted=>true, :width=>300, class:"video")%>
