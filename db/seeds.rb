@@ -8,10 +8,9 @@
 require "open-uri"
 
 puts "Cleaning Database! 🧹"
-
+Sign.destroy_all
 Category.destroy_all
 User.destroy_all
-Sign.destroy_all
 
 puts "Database is clean! 🧼"
 
