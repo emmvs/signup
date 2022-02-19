@@ -4,9 +4,9 @@ class SignsController < ApplicationController
   before_action :find_sign, only: [ :show, :edit, :update, :destroy ]
 
   # Why is this called article_params?
-  def article_params
-    params.require(:sign).permit(:title, :description, :sign)
-  end
+  # def article_params
+  #   params.require(:sign).permit(:title, :description, :sign)
+  # end
 
   # For the search function
   def index
@@ -55,7 +55,7 @@ class SignsController < ApplicationController
   private
 
   def find_sign
-    @sign = sign.find(params[:id])
+    @sign = Sign.find(params[:id])
     authorize @sign
   end
 
@@ -64,6 +64,6 @@ class SignsController < ApplicationController
   end
 
   def policy_scope_signs
-    @signs = policy_scope(sign)
+    @signs = policy_scope(Sign)
   end
 end
