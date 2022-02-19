@@ -51,7 +51,9 @@ e = 0
     bio: "Hello, I'm Emma and this is my amazing bio",
     email: "emma@test.com",
     password: "123456",
-    phone_number: "+90123456789",
+    language: 1,
+    target_language: 1,
+    # phone_number: "+90123456789",
   )
 
   User.create!(
@@ -59,7 +61,9 @@ e = 0
     bio: "Hello, I'm Dustin and this is my amazing bio",
     email: "dustin@test.com",
     password: "123456",
-    phone_number: "+90123456789",
+    language: 1,
+    target_language: 1,
+    # phone_number: "+90123456789",
   )
 
 10.times do
@@ -68,6 +72,7 @@ e = 0
     description: all_description.sample,
     user: User.first,
     category: all_category.sample,
+    language: 1
   )
   # sign = URI.open('https://source.unsplash.com/collection/9894242')
   # Sign.photo.attach(io: photo, filename: "Sign#{e}.png", content_type: 'image/png')
