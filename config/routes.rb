@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   resources :signs
   # resources :comments, only: [ :new, :create ] - should be nested inside :signs
   # resources :comments, only: [ :edit, :update, :destroy ]
-  resources :bookmarks, only: [ :index, :destroy ]
-  resources :categories, only: [ :index, :show ]
-  resources :lists do
-    resources :bookmarks, only: [ :new, :create ]
-  end
+  # resources :bookmarks, only: [ :index, :destroy ]
+  # resources :categories, only: [ :index, :show ]
+  # resources :lists do
+  #   resources :bookmarks, only: [ :new, :create ]
+  # end
   # get 'dashboard', to: 'pages#dashboard'
 end
