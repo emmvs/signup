@@ -24,7 +24,8 @@ all_title = [
   "The Tree",
   "The Tree house is beautiful!",
   "I love Trees",
-  "The Coding Class"
+  "The Coding Class",
+  "Amazing Tree"
 ]
 
 all_description = [

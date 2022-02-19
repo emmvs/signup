@@ -8,8 +8,11 @@ class Sign < ApplicationRecord
   include PgSearch::Model
   multisearchable against: [:title, :description]
 
-  pg_search_scope :global_search,
-    against: [:title, :description],
+  pg_search_scope :global_search, against: {
+    title: 'A',
+    description: 'B',
+  },
+    # against: [:title, :description],
     using: {
       tsearch: { prefix: true }
     }
