@@ -1,8 +1,7 @@
 <!-- app/views/articles/show.html.erb -->
-<h1>Show Page</h1>
+<h1><%= @sign.title %></h1>
+<p><%= @sign.description %></p>
 
-<%= simple_form_for(@sign) do |f| %>
-  <!-- [...] -->
-  <%= f.input :video, as: :file %>
-  <!-- [...] -->
-<% end %>
+<%= link_to "Update", edit_sign_path(@sign) %>
+<%= link_to "Delete", sign_path(@sign), method: :delete, data: { confirm: "Do you really want to say bye bye?" } %>
+<%= cl_video_tag(@sign.video.key, :controls => true, :width=>300, class:"video")%>
