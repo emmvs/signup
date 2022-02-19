@@ -2,8 +2,8 @@ class Sign < ApplicationRecord
   belongs_to :user
   belongs_to :category
   has_many :bookmarks, dependent: :destroy
-  validates :title, :language, presence: true
-  has_one_attached :sign
+  validates :title, presence: true
+  has_one_attached :video
 
   include PgSearch::Model
   multisearchable against: [:title, :description]
