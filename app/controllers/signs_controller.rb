@@ -11,7 +11,9 @@ class SignsController < ApplicationController
   # For the search function
   def index
     if params[:query].present?
-      @signs = Sign.search_by_keyword(params[:query])
+      # sql_query = "title ILIKE @@ :query OR description ILIKE @@ :query"
+      # @signs = Sign.joins(:category).where(sql_query, query: "%#{params[:query]}%")
+      @signs = Sign.global_search(params[:query])
     else
       @signs = Sign.all
     end

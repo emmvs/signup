@@ -1,1 +1,6 @@
 <h1>Index Page</h1>
+
+  <% @signs.each do |sign| %>
+    <h4><%= sign.title %></h4>
+    <p><%= sign.description %></p>
+  <% end %>
