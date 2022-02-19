@@ -44,12 +44,12 @@ ActiveRecord::Schema.define(version: 2022_02_17_201218) do
   end
 
   create_table "bookmarks", force: :cascade do |t|
-    t.bigint "word_id", null: false
+    t.bigint "sign_id", null: false
     t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["list_id"], name: "index_bookmarks_on_list_id"
-    t.index ["word_id"], name: "index_bookmarks_on_word_id"
+    t.index ["sign_id"], name: "index_bookmarks_on_sign_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -66,6 +66,19 @@ ActiveRecord::Schema.define(version: 2022_02_17_201218) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
+  create_table "signs", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "language"
+    t.integer "status"
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_signs_on_category_id"
+    t.index ["user_id"], name: "index_signs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,25 +99,12 @@ ActiveRecord::Schema.define(version: 2022_02_17_201218) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "words", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.integer "language"
-    t.integer "status"
-    t.bigint "user_id", null: false
-    t.bigint "category_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_words_on_category_id"
-    t.index ["user_id"], name: "index_words_on_user_id"
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookmarks", "lists"
-  add_foreign_key "bookmarks", "words"
+  add_foreign_key "bookmarks", "signs"
   add_foreign_key "categories", "users"
   add_foreign_key "lists", "users"
-  add_foreign_key "words", "categories"
-  add_foreign_key "words", "users"
+  add_foreign_key "signs", "categories"
+  add_foreign_key "signs", "users"
 end
