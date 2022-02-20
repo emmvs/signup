@@ -4,13 +4,13 @@
 <br>
 <h2>Look for an amazing sign</h2>
 
-<div class="container">
-    <%= form_tag signs_path, class: "searchbar", method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find an amazing sign"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-</div>
+<%= form_tag signs_path, class: "searchbar", method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an amazing sign"
+  %>
+  <button type="submit" class="search-button">
+        <img src="search.png">
+  </button>
+<% end %>
