@@ -3,12 +3,13 @@
 <div class="flex-container">
   <div class="signs-grid">
     <% @signs.each do |sign| %>
-      <%= link_to signs_path(sign), class: "" do %>
+      <%= link_to signs_path(sign), class: "sign-card-link" do %>
         <section class="sign-card">
-          <h1 class="sign-tittle">word</h1>
-          <span class="language-icon"></span>
+          <h1 class="sign-title">word</h1>
           <p class="sign-example">Some example sentences are here</p>
-          <p class="sign-descript"><%sign.description %></p>
+          <p class="sign-description"><%sign.description %></p>
+          <%# raise %>
+          <%# <p class="sign-video"><%= cl_video_tag(@sign.video.key, :controls=>false, :autoplay=>true, :loop=>true, :muted=>true, :width=>100)%>
         </section>
       <% end %>
     <% end %>

@@ -20,6 +20,7 @@ class SignsController < ApplicationController
   end
 
   def show
+    authorize @sign
   end
 
   def new

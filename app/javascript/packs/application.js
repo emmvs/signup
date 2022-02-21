@@ -28,3 +28,12 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+// For the live Sign Recordings
+import { initRecordVideo } from '../components/record_sign';
+
+document.addEventListener('turbolinks:load', () => {
+  if(document.querySelector("#live")) {
+    initRecordVideo();
+  }
+});
