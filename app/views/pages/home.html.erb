@@ -4,7 +4,8 @@
 <br>
 <p>Choose your first language</p>
 <div class="flag-container">
-  <img src="usa.png">
+  <%# <img src="usa.png"> %>
+  <%# <%= image_tag "usa.png", class: "" %> %>
 </div>
 
 <%= form_tag signs_path, class: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
@@ -25,7 +26,7 @@
       <div class="menu-card white-card">
         <div class="card-info">
           <h2>Categories</h2>
-          <%= "blablablablablablablablablablablablablablablablablablablablablablablabla" %>
+          <p class="text-wrap">blablablablablablablablablablablablablablablablablablablablablablablabla</p>
         </div>
       </div>
       <div class="menu-card pink-card">
