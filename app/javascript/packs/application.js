@@ -7,7 +7,6 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -24,16 +23,14 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+// // For the live Sign Recordings
+import { recordSign } from "../components/record_sign";
+
 document.addEventListener('turbolinks:load', () => {
+  // recordSign();
+    if(document.querySelector("#start")) {
+    recordSign();
+  }
   // Call your functions here, e.g:
   // initSelect2();
 });
-
-// // For the live Sign Recordings
-// import { initRecordVideo } from '../components/record_sign';
-
-// document.addEventListener('turbolinks:load', () => {
-//   if(document.querySelector("#live")) {
-//     initRecordVideo();
-//   }
-// });

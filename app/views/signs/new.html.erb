@@ -17,7 +17,7 @@
     <video id="playback" height="200" width="300" style="border: 1px solid black" controls></video>
   </div>
 
-<script charset="utf-8">
+<%# <script charset="utf-8">
   (async () => {
     const startBtn = document.querySelector('#start');
     const stopBtn = document.querySelector('#stop');
@@ -47,10 +47,11 @@
       setTimeout(() => {
         playbackVideo.src = window.URL.createObjectURL(chunks[0]);
         playbackVideo.play();
+        console.log(playbackVideo)
       }, 500);
     });
   })();
-</script>
+</script> %>
 
  <%= f.input :video, as: :file %>
  <%= f.submit "Create Sign" %>
