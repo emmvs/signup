@@ -1,5 +1,8 @@
 // Specific CSS for your home-page
-
+.title {
+  size: 20px;
+  text-align: center;
+}
 .flag-image {
   width: 40px;
   padding: 3px;
@@ -7,10 +10,17 @@
 }
 
 .flag-container {
-  margin: 2px;
-  padding: 2px;
+  margin: 5px;
+  padding: 5px;
   border-radius: 7px;
   box-shadow: 2px 2px 10px rgb(160, 160, 160);
+}
+
+.flag-container-clicked {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 7px;
+  box-shadow: inset 2px 2px 10px rgb(160, 160, 160);
 }
 
 .box-text {
