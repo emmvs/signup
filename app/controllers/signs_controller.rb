@@ -33,8 +33,10 @@ class SignsController < ApplicationController
     @sign.user = current_user
     authorize @sign
     if @sign.save
+    raise
       redirect_to @sign
     else
+    raise
       render :new
     end
   end

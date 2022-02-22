@@ -1,16 +1,16 @@
-<p>There are ... results for your search</p>
+<p>There are <%=@signs.count %> results for your search</p>
 
 <div class="flex-container">
   <div class="signs-grid">
     <% @signs.each do |sign| %>
-      <%= link_to signs_path(sign), class: "sign-card-link" do %>
-        <section class="sign-card">
-          <h1 class="sign-title">word</h1>
-          <p class="sign-example">Some example sentences are here</p>
-          <p class="sign-description"><%sign.description %></p>
-          <%# raise %>
-          <%# <p class="sign-video"><%= cl_video_tag(@sign.video.key, :controls=>false, :autoplay=>true, :loop=>true, :muted=>true, :width=>100)%>
-        </section>
+      <%= link_to sign_path(sign), class: "sign-card-link" do %>
+        <div class="sign-card">
+          <% if sign.video.attached? %>
+            <h1 class="sign-title"><%=sign.title %> </h1>
+              <p class="sign-description"><%=sign.description %></p>
+            <%= cl_video_tag(sign.video.key, :controls=>true, :autoplay=>true, :loop=>true, :muted=>true, :width=>300, class:"video")%>
+           <% end %>
+        </div>
       <% end %>
     <% end %>
   </div>

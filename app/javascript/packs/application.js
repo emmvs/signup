@@ -29,11 +29,11 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
-// For the live Sign Recordings
-import { initRecordVideo } from '../components/record_sign';
+// // For the live Sign Recordings
+// import { initRecordVideo } from '../components/record_sign';
 
-document.addEventListener('turbolinks:load', () => {
-  if(document.querySelector("#live")) {
-    initRecordVideo();
-  }
-});
+// document.addEventListener('turbolinks:load', () => {
+//   if(document.querySelector("#live")) {
+//     initRecordVideo();
+//   }
+// });
