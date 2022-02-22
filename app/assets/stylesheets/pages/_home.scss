@@ -7,8 +7,6 @@
 }
 
 .flag-container {
-  // display: flex;
-  // align-items: center;
   margin: 2px;
   padding: 2px;
   border-radius: 7px;
@@ -54,9 +52,7 @@
 
 .flex-container {
   display: flex;
-  // flex-direction: row;
   justify-content: space-evenly;
-  // grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .menu-grid {
@@ -69,31 +65,18 @@
 }
 
 .menu-card {
-  // display: flex;
-  // justify-content: space-evenly;
-  // align-items: left;
   max-width: 15rem;
   width: 100%;
-  // height: max-content;
-  // flex-direction: column;
   padding: 14px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  // margin: 1rem;
   border-radius: 15px;
   word-wrap: break-word;
-  // overflow: auto;
 }
 
 .card-info {
-  // align-self: flex-start;
-  // display: inline-block;
-  // flex-direction: column;
-  // margin: auto;
   padding: 1rem;
   text-align: left;
-  // align-items: baseline;
   line-height: 1.5;
-  // width: 100%,
 }
 
 .white-card {
