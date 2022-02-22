@@ -1,16 +1,22 @@
 // Specific CSS for your home-page
 
+.flag-image {
+  width: 40px;
+  padding: 3px;
+  border-radius: 7px;
+}
+
 .flag-container {
   display: flex;
   align-items: center;
   margin: 2px;
   padding: 2px;
-  border-radius: 10px;
+  border-radius: 7px;
   box-shadow: 2px 2px 10px rgb(160, 160, 160);
 }
 
-.text-wrap {
-  word-wrap: break-word;
+.box-text {
+  text-align: left;
 }
 
 .searchbar {

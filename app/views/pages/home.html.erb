@@ -4,8 +4,7 @@
 <br>
 <p>Choose your first language</p>
 <div class="flag-container">
-  <%# <img src="usa.png"> %>
-  <%# <%= image_tag "usa.png", class: "" %> %>
+  <%= image_tag "usa.png", class: "flag-image" %>
 </div>
 
 <%= form_tag signs_path, class: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
@@ -15,7 +14,7 @@
         placeholder: "Find an amazing sign"
       %>
       <button type="submit" class="search-button">
-            <img src="search.png">
+            <%= image_tag "search.png", class: "flag-image" %>
       </button>
     <% end %>
 
@@ -26,19 +25,19 @@
       <div class="menu-card white-card">
         <div class="card-info">
           <h2>Categories</h2>
-          <p class="text-wrap">blablablablablablablablablablablablablablablablablablablablablablablabla</p>
+          <p class="box-text">blablablablablablablablablablablablablablablablablablablablablablablabla</p>
         </div>
       </div>
       <div class="menu-card pink-card">
           <h2>Reviews</h2>
-          <%= "blablablablablabla" %>
+          <p class="box-text">blablablablablablablablablablablablablablablablablablablablablablablabla</p>
       </div>
       <div class="menu-card blue-card">
           <h2>Community</h2>
-          <%= "blablablablablabla" %>
+          <p class="box-text">blablablablablablablablablablablablablablablablablablablablablablablabla</p>
       </div>
           <div class="menu-card orange-card">
           <h2>Members</h2>
-          <%= "blablablablablabla" %>
+          <p class="box-text">blablablablablablablablablablablablablablablablablablablablablablablabla</p>
   </div>
 </div>
