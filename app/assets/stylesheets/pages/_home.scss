@@ -7,8 +7,8 @@
 }
 
 .flag-container {
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
   margin: 2px;
   padding: 2px;
   border-radius: 7px;
@@ -54,9 +54,9 @@
 
 .flex-container {
   display: flex;
-  flex-direction: row;
+  // flex-direction: row;
   justify-content: space-evenly;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .menu-grid {
@@ -65,34 +65,35 @@
   grid-gap: 1.5rem;
   margin-bottom: 1rem;
   padding: .6rem;
+  max-width: 100%;
 }
 
 .menu-card {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: left;
-  max-width: 25rem;
+  // display: flex;
+  // justify-content: space-evenly;
+  // align-items: left;
+  max-width: 20rem;
   width: 100%;
-  height: max-content;
-  flex-direction: column;
+  // height: max-content;
+  // flex-direction: column;
   padding: 14px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 1rem;
+  // margin: 1rem;
   border-radius: 15px;
   word-wrap: break-word;
   // overflow: auto;
 }
 
 .card-info {
-  align-self: flex-start;
-  display: inline-block;
-  flex-direction: column;
-  margin: auto;
+  // align-self: flex-start;
+  // display: inline-block;
+  // flex-direction: column;
+  // margin: auto;
   padding: 1rem;
   text-align: left;
-  align-items: baseline;
+  // align-items: baseline;
   line-height: 1.5;
-  width: 100%,
+  // width: 100%,
 }
 
 .white-card {

@@ -3,11 +3,9 @@
 <h1>🤟 Welcome Home 🤟</h1>
 <br>
 <p>Choose your first language</p>
-<div class="flag-container">
-  <%= image_tag "usa.png", class: "flag-image" %>
-</div>
-
-<%= form_tag signs_path, class: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
+<div class="d-flex">
+  <%= image_tag "usa.png", class: "flag-container flag-image" %>
+  <%= form_tag signs_path, class: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
@@ -17,11 +15,11 @@
             <%= image_tag "search.png", class: "flag-image" %>
       </button>
     <% end %>
-
+</div>
 <br>
 
 <div class="flex-container">
-  <div class="menu-grid">
+  <%# <div class="menu-grid"> %>
       <div class="menu-card white-card">
         <div class="card-info">
           <h2>Categories</h2>
@@ -37,7 +35,8 @@
           <p class="box-text">blablablablablablablablablablablablablablablablablablablablablablablabla</p>
       </div>
           <div class="menu-card orange-card">
-          <h2>Members</h2>
-          <p class="box-text">blablablablablablablablablablablablablablablablablablablablablablablabla</p>
-  </div>
+            <h2>Members</h2>
+            <p class="box-text">blablablablablablablablablablablablablablablablablablablablablablablabla</p>
+          </div>
+  <%# </div> %>
 </div>
