@@ -62,7 +62,7 @@ e = 0
     user: User.first
   )
 
-10.times do
+2.times do
   sign = Sign.create!(
     title: all_title.sample,
     description: all_description.sample,
@@ -70,16 +70,18 @@ e = 0
     category: Category.first,
     language: 1
   )
-  # sign = URI.open('https://source.unsplash.com/collection/9894242')
-  # Sign.photo.attach(io: photo, filename: "Sign#{e}.png", content_type: 'image/png')
-  # Sign.save!
-  # puts "Sign #{Sign.id} is created 🤟"
-  # e = e + 1
+  sign.video.attach(io: File.open("db/videos/gebaerdensprache.mp4"), filename: "gebaerdensprache.mp4", content_type: "video/mp4")
+  sign.save!
 end
 
-puts "🤟🏻🤟🏼🤟🏽🤟🏾🤟🏿 Amazing! We are done 🤟🏻🤟🏼🤟🏽🤟🏾🤟🏿"
-# List
-# Title
+  camel_sign = Sign.create!(
+    title: all_title.sample,
+    description: all_description.sample,
+    user: User.first,
+    category: Category.first,
+    language: 1
+  )
+  camel_sign.video.attach(io: File.open("db/videos/camel.mov"), filename: "camel.mov", content_type: "video/mov")
+  camel_sign.save!
 
-# Category
-# Title
+puts "🤟🏻🤟🏼🤟🏽🤟🏾🤟🏿 Amazing! We are done 🤟🏻🤟🏼🤟🏽🤟🏾🤟🏿"
