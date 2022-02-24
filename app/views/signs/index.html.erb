@@ -12,7 +12,9 @@
           <% if sign.video.attached? %>
             <h1 class="sign-title"><%=sign.title %> </h1>
               <p class="sign-description"><%=sign.description %></p>
-            <%= cl_video_tag(sign.video.key, :controls=>true, :autoplay=>true, :loop=>true, :muted=>true, :width=>300, class:"video")%>
+              <div class="video-sign-container">
+                <%= cl_video_tag(sign.video.key, :controls=>true, :autoplay=>true, :loop=>true, :muted=>true, :width=>400, :height=>200, class:"video")%>
+              </div>
            <% end %>
         </div>
       <% end %>
