@@ -62,7 +62,7 @@ e = 0
     user: User.first
   )
 
-10.times do
+2.times do
   sign = Sign.create!(
     title: all_title.sample,
     description: all_description.sample,
@@ -73,5 +73,15 @@ e = 0
   sign.video.attach(io: File.open("db/videos/gebaerdensprache.mp4"), filename: "gebaerdensprache.mp4", content_type: "video/mp4")
   sign.save!
 end
+
+  camel_sign = Sign.create!(
+    title: all_title.sample,
+    description: all_description.sample,
+    user: User.first,
+    category: Category.first,
+    language: 1
+  )
+  camel_sign.video.attach(io: File.open("db/videos/camel.mov"), filename: "camel.mov", content_type: "video/mov")
+  camel_sign.save!
 
 puts "🤟🏻🤟🏼🤟🏽🤟🏾🤟🏿 Amazing! We are done 🤟🏻🤟🏼🤟🏽🤟🏾🤟🏿"
