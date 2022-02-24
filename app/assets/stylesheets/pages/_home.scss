@@ -1,1 +1,106 @@
 // Specific CSS for your home-page
+.title {
+  size: 20px;
+  text-align: center;
+}
+.flag-image {
+  width: 40px;
+  padding: 3px;
+  border-radius: 7px;
+}
+
+.flag-container {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 7px;
+  box-shadow: 2px 2px 10px rgb(160, 160, 160);
+}
+
+.flag-container-clicked {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 7px;
+  box-shadow: inset 2px 2px 10px rgb(160, 160, 160);
+}
+
+.box-text {
+  text-align: left;
+}
+
+.searchbar {
+  width: 30%;
+  position: relative;
+  top: -2%;
+  left: 35%;
+  display: flex;
+  align-items: center;
+
+  p {
+    flex-grow:1;
+    margin:0;
+  }
+}
+
+.form-control {
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 10px rgb(160, 160, 160);
+}
+
+
+.search-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -33px;
+}
+
+.search-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1.5rem;
+  margin-bottom: 1rem;
+  padding: .6rem;
+  max-width: 100%;
+}
+
+.menu-card {
+  max-width: 15rem;
+  width: 100%;
+  padding: 14px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  word-wrap: break-word;
+}
+
+.card-info {
+  padding: 1rem;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.white-card {
+  background-color: white
+}
+
+.pink-card {
+  background-color: #FF70A6
+}
+
+.orange-card {
+  background-color: #FF9770
+}
+
+.blue-card {
+  background-color: #70D6FF
+}
