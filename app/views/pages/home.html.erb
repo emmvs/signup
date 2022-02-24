@@ -16,10 +16,26 @@
 </section>
 <br>
 <br>
-<div class="d-flex justify-content-center" data-controller="flags">
-  <p>Choose your first language</p>
-  <%= image_tag "usa.png", class: "flag-container flag-image", data: { action:"click->flags#disable", flags_target:"usa" }%>
-  <%= image_tag "deutschland.png", class: "flag-container flag-image", data: { action:"click->flags#disable", flags_target:"ger" } %>
+
+<div class="d-flex justify-content-center">
+  <div class="dropdown-box justify-content-center">
+    <select class="flag-container">
+      <option selected> 🗣 Language you speak </option>
+      <option class="dropdown-item"> <%= image_tag "deutschland.png", class: "flag-image" %> German </a></option>
+      <option class="dropdown-item"> <%= image_tag "usa.png", class: "flag-image" %> American English </a></option>
+      <option class="dropdown-item"> <%= image_tag "france.png", class: "flag-image" %> French </a></option>
+    </select>
+  </div>
+
+  <div class="dropdown-box justify-content-center">
+    <select class="flag-container">
+      <option selected> 🤟 Language you learn </option>
+      <option class="dropdown-item"> <%= image_tag "deutschland.png", class: "flag-image" %> German </a></option>
+      <option class="dropdown-item"> <%= image_tag "usa.png", class: "flag-image" %> American English </a></option>
+      <option class="dropdown-item"> <%= image_tag "france.png", class: "flag-image" %> French </a></option>
+    </select>
+  </div>
+
   <%= form_tag signs_path, class: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
       <%= text_field_tag :query,
         params[:query],
@@ -31,6 +47,23 @@
       </button>
     <% end %>
 </div>
+
+
+<%# <div class="d-flex justify-content-center" data-controller="flags">
+  <p>Choose your first language</p>
+  <%= image_tag "usa.png", class: "flag-container flag-image", data: { action:"click->flags#disable", flags_target:"usa" }%>
+  <%# <%= image_tag "deutschland.png", class: "flag-container flag-image", data: { action:"click->flags#disable", flags_target:"ger" } %>
+  <%# <%= form_tag signs_path, class: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
+      <%# <%= text_field_tag :query, %>
+        <%# params[:query], %>
+        <%# class: "form-control", %>
+        <%# placeholder: "Find an amazing sign" %>
+      <%# %>
+      <%# <button type="submit" class="search-button"> %>
+            <%# <%= image_tag "search.png", class: "flag-image" %>
+      <%# </button> %>
+    <%# <% end %>
+<%# </div> %>
 
 <br>
 <div class="flex-container">
