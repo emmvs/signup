@@ -70,16 +70,8 @@ e = 0
     category: Category.first,
     language: 1
   )
-  # sign = URI.open('https://source.unsplash.com/collection/9894242')
-  # Sign.photo.attach(io: photo, filename: "Sign#{e}.png", content_type: 'image/png')
-  # Sign.save!
-  # puts "Sign #{Sign.id} is created 🤟"
-  # e = e + 1
+  sign.video.attach(io: File.open("db/videos/gebaerdensprache.mp4"), filename: "gebaerdensprache.mp4", content_type: "video/mp4")
+  sign.save!
 end
 
 puts "🤟🏻🤟🏼🤟🏽🤟🏾🤟🏿 Amazing! We are done 🤟🏻🤟🏼🤟🏽🤟🏾🤟🏿"
-# List
-# Title
-
-# Category
-# Title
