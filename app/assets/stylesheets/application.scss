@@ -24,13 +24,14 @@
   color: $font-color;
   margin-top: .5rem;
   margin-bottom: 1.5rem;
+  width: fit-content;
   &:after {
-    position: absolute;
     content: '';
-    width: 1.5em;
-    height: .5em;
+    position: absolute;
+    width: 2em;
+    height: .6em;
     right: 0;
-    bottom: 2px;
+    bottom: 0;
     background: $primary-color;
     z-index: -1;
   }
@@ -46,13 +47,14 @@
   color: $font-color;
   margin-top: .5rem;
   margin-bottom: 1.2rem;
+  width: fit-content;
   &:after {
+    content: "";
     position: absolute;
-    content: '';
-    width: 1.5em;
-    height: .5em;
+    width: 2em;
+    height: .6em;
     right: 0;
-    bottom: 2px;
+    bottom: 0;
     background: $secondary-color--dark;
     z-index: -1;
   }
@@ -66,13 +68,14 @@
   color: $font-color;
   margin-top: .5rem;
   margin-bottom: 1rem;
+  width: fit-content;
   &:after {
     position: absolute;
     content: '';
-    width: 1.5em;
-    height: .5em;
+    width: 2em;
+    height: .6em;
     right: 0;
-    bottom: 2px;
+    bottom: 0;
     background: $sub-color;
     z-index: -1;
   }
@@ -86,13 +89,14 @@
   margin-top: .5rem;
   margin-bottom: .7rem;
   position: relative;
+  width: fit-content;
   &:after {
     position: absolute;
     content: '';
-    width: 1.5em;
-    height: .5em;
+    width: 2em;
+    height: .6em;
     right: 0;
-    bottom: 2px;
+    bottom: 0;
     background: $secondary-color;
     z-index: -1;
   }
