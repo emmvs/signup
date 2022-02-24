@@ -1,8 +1,4 @@
-<p>There are <%=@signs.count %> results for your search</p>
-<h1 class="font-alpha">Heading</h1>
-<h2 class="font-beta">Heading</h2>
-<h3 class="font-delta">Heading</h3>
-<h4 class="font-gamma">Heading</h3>
+<p class="font-gamma">There are <%=@signs.count %> results for your search</p>
 
 <div class="flex-container">
   <div class="signs-grid">
@@ -10,10 +6,10 @@
       <%= link_to sign_path(sign), class: "sign-card-link" do %>
         <div class="sign-card">
           <% if sign.video.attached? %>
-            <h1 class="sign-title"><%=sign.title %> </h1>
-              <p class="sign-description"><%=sign.description %></p>
+            <h1 class="sign-title font-beta"><%=sign.title %> </h1>
+              <p class="sign-description font-gamma"><%=sign.description %></p>
               <div class="video-sign-container">
-                <%= cl_video_tag(sign.video.key, :controls=>true, :autoplay=>true, :loop=>true, :muted=>true, :width=>400, :height=>200, class:"video")%>
+                <%= cl_video_tag(sign.video.key, :controls=>false, :autoplay=>true, :loop=>true, :muted=>true, :width=>400, :height=>200, class:"video")%>
               </div>
            <% end %>
         </div>
