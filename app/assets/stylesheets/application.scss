@@ -11,3 +11,114 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+
+//SIGNUP
+//Fonts Classes
+.font-alpha {
+  position: relative;
+  font-family: $primary-font;
+  font-size: $font-size-64;
+  font-weight: $font-weigh--extra;
+  text-transform: uppercase;
+  color: $font-color;
+  margin-top: .5rem;
+  margin-bottom: 1.5rem;
+  &:after {
+    position: absolute;
+    content: '';
+    width: 1.5em;
+    height: .5em;
+    right: 0;
+    bottom: 2px;
+    background: $primary-color;
+    z-index: -1;
+  }
+}
+
+
+.font-beta {
+  position: relative;
+  font-family: $primary-font;
+  font-size: $font-size-48;
+  font-weight: $font-weigh--extra;
+  text-transform: uppercase;
+  color: $font-color;
+  margin-top: .5rem;
+  margin-bottom: 1.2rem;
+  &:after {
+    position: absolute;
+    content: '';
+    width: 1.5em;
+    height: .5em;
+    right: 0;
+    bottom: 2px;
+    background: $secondary-color--dark;
+    z-index: -1;
+  }
+}
+
+.font-delta {
+  position: relative;
+  font-family: $primary-font;
+  font-size: $font-size-36;
+  font-weight: $font-weigh--bold;
+  color: $font-color;
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+  &:after {
+    position: absolute;
+    content: '';
+    width: 1.5em;
+    height: .5em;
+    right: 0;
+    bottom: 2px;
+    background: $sub-color;
+    z-index: -1;
+  }
+}
+
+.font-gamma {
+  font-family: $primary-font;
+  font-size: $font-size-24;
+  font-weight: $font-weigh--bold;
+  color: $font-color;
+  margin-top: .5rem;
+  margin-bottom: .7rem;
+  position: relative;
+  &:after {
+    position: absolute;
+    content: '';
+    width: 1.5em;
+    height: .5em;
+    right: 0;
+    bottom: 2px;
+    background: $secondary-color;
+    z-index: -1;
+  }
+}
+
+.text-para--light {
+  font-family: $secondary-font;
+  font-size: $font-size-16;
+  font-weight: $font-weigh--light;
+  color: $font-color;
+  line-height: 1.1;
+}
+
+.text-para--medium {
+  font-family: $secondary-font;
+  font-size: $font-size-16;
+  font-weight: $font-weigh--normal;
+  color: $font-color;
+  line-height: 1.1;
+}
+
+.text-navi {
+  font-family: $secondary-font;
+  font-size: $font-size-16;
+  font-weight: $font-weigh--normal;
+  color: $font-color;
+  text-transform: uppercase;
+}
