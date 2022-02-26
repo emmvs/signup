@@ -18,7 +18,6 @@ ActiveStorage.start()
 // ----------------------------------------------------
 
 // import "dropmic"; language flags dropdown
-import "../components/language_dropdown";
 
 // External imports
 import "bootstrap";
@@ -30,7 +29,6 @@ import Dropmic from "../components/dropmic";
 
 // // For the live Sign Recordings
 import { recordSign } from "../components/record_sign";
-import { dropdownInit } from "../components/language_dropdown";
 
 document.addEventListener('turbolinks:load', () => {
   // recordSign();
@@ -39,5 +37,4 @@ document.addEventListener('turbolinks:load', () => {
     recordSign();
 
   }
-  dropdownInit()
 });

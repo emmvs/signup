@@ -2,7 +2,7 @@
 </section>
 
 <div data-controller="dropdown">
-  <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns"     data-action="click->dropdown#toggleDropdown">
+  <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns"     >
     <button data-dropmic-btn class="flag-image" ><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="chosen_flag" width="25" height="25"></button>
     <div class="dropmic-menu" aria-hidden="true">
       <li class="dropmic-menu__listItem" role="menuitem">
@@ -13,7 +13,7 @@
     </div>
   </span>
 
-  <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns" data-action="click->dropdown#toggleDropdown">
+  <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns" >
     <button data-dropmic-btn class="flag-image" ><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="tl-chosen_flag" width="25" height="25"></button>
     <div class="dropmic-menu" aria-hidden="true">
       <li class="dropmic-menu__listItem" role="menuitem">
@@ -64,8 +64,9 @@
 <footer class="footer">
   <p class="footer__text text-para--medium">Made with ❤️</p>
 </footer>
+
+  <%# // language dropdown – click flag => flag changes %>
 <script>
-  // language dropdown – click flag => flag changes
     const updateLangFlag = (flag) => {
       var chosenLangButton = document.getElementById("chosen_flag");
       let chosenLangImage = document.getElementById(flag+"-img");
