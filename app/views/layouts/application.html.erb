@@ -13,13 +13,17 @@
     <script>
     function updateFocus(newButton) {
         // enlever style focus sur tous les boutons
-        let myButtons = document.querySelectorAll(".nav-link")
+        let myButtons = document.querySelectorAll(".btn-link")
         myButtons.forEach(button => {
           button.classList.remove('focus-tab')
         });
         // mettre focus sur le bouton clicked
         newButton.classList.add('focus-tab')
     console.log(myButtons)
+        // get route
+        console.log(document.URL)
+        // enlever focus
+        // mettre focus sur le bon bouton qui correspond à la route
     }
 
     </script>

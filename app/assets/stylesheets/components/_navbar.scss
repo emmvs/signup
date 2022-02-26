@@ -20,16 +20,29 @@
   align-items: center;
 }
 
-.nav-item {
-  border: transparent;
+.btn-link {
+  text-decoration: none !important;
+  background-color: transparent;
+  border: none;
+  padding: 2px 15px !important;
+  margin: 10px;
+  font-family: $secondary-font;
+  font-size: $font-size-16;
+  font-weight: $font-weigh--light;
+  color: $font-color;
+  line-height: 1.1;
+  &:hover {
+    color: $font-color;
+  }
 }
+
 
 .focus-tab {
   border-radius: 25px;
   box-shadow: inset 2px 2px 10px rgb(160, 160, 160);
   margin: 10px;
-  padding: 2px 10px;
-  background-color: rgb(236, 236, 236);
+  padding: 9px 15px !important;
+  background-color: rgb(255, 255, 255);
 }
 
 #searchbar {

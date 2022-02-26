@@ -9,19 +9,27 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto text-para--light">
+    <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item">
-          <button link_to="home", class="nav-link", id="home-tab", onclick="updateFocus(this)">HOME</button>
+        <li>
+          <%= link_to root_path do %>
+            <button class="btn-link focus-tab", id="home-tab", onclick="updateFocus(this)">HOME</button>
+          <% end %>
         </li>
-        <li class="nav-item">
-          <button link_to="dashboard", class="nav-link", id="dashboard-tab", onclick="updateFocus(this)">DASHBOARD</button>
+        <li>
+          <%= link_to root_path do %>
+            <button class="btn-link", id="dashboard-tab", onclick="updateFocus(this)">DASHBOARD</button>
+          <% end %>
         </li>
-        <li class="nav-item">
-          <button link_to="lists", class="nav-link", id="lists-tab", onclick="updateFocus(this)">MY LISTS</button>
+        <li>
+          <%= link_to root_path do %>
+            <button class="btn-link", id="lists-tab", onclick="updateFocus(this)">MY LISTS</button>
+          <% end %>
         </li>
-        <li class="nav-item">
-          <button link_to="favorites", class="nav-link", id="favorites-tab", onclick="updateFocus(this)">MY FAVORITES</button>
+        <li>
+          <%= link_to root_path do %>
+            <button class="btn-link", id="favorites-tab", onclick="updateFocus(this)">MY FAVORITES</button>
+          <% end %>
         </li>
         <li>
           <%= form_tag signs_path, class: "searchbar", id: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
