@@ -3,15 +3,15 @@
 <div class="flex-container">
   <div class="signs-grid">
     <% @signs.each do |sign| %>
-      <%= link_to sign_path(sign), class: "sign-card-link" do %>
+      <% if sign.video.attached? %>
         <div class="sign-card">
-          <% if sign.video.attached? %>
-            <h1 class="sign-title font-beta"><%=sign.title %> </h1>
-              <p class="sign-description font-gamma"><%=sign.description %></p>
-              <div class="video-sign-container">
-                <%= cl_video_tag(sign.video.key, :controls=>false, :autoplay=>true, :loop=>true, :muted=>true, :width=>400, :height=>200, class:"video")%>
-              </div>
-           <% end %>
+          <%= link_to sign_path(sign), class: "sign-card-link" do %>
+          <h1 class="sign-title font-beta"><%=sign.title %> </h1>
+          <p class="sign-description font-gamma"><%=sign.description %></p>
+          <div class="video-sign-container">
+            <%= cl_video_tag(sign.video.key, :controls=>false, :autoplay=>false, :loop=>true, :muted=>true, :width=>400, :height=>200, class:"video")%>
+          </div>
+          <% end %>
         </div>
       <% end %>
     <% end %>
