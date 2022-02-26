@@ -2,25 +2,27 @@
   <%# <h1 class="title font-alpha">🤟 Welcome Home 🤟</h1> %>
 </section>
 
-<div class="d-flex justify-content-center">
-  <div class="dropdown-box justify-content-center">
-    <select class="flag-container">
-      <option selected> 🗣 Language you speak </option>
-      <option class="dropdown-item"> 🗣 🇩🇪 German </a></option>
-      <option class="dropdown-item"> 🗣 🇺🇸 American English </a></option>
-      <option class="dropdown-item"> 🗣 🇫🇷 French </a></option>
-    </select>
+<span class="dropmic" data-dropmic="1" role="navigation">
+<button data-dropmic-btn class="flag-image"><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="chosen_flag" width="25" height="25"></button>
+<div class="dropmic-menu" aria-hidden="true">
+        <li class="dropmic-menu__listItem" role="menuitem">
+            <button class="dropmic-menu__listContent" value="ua" onclick="updateLangFlag(this.value)" tabindex="-1"><img id="ua-img" src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" width="25" height="25"> American English</button>
+            <button class="dropmic-menu__listContent" value="ge" onclick="updateLangFlag(this.value)" tabindex="-1"><img id="ge-img" src="https://cdn-icons-png.flaticon.com/512/321/321233.png" width="25" height="25"> German</button>
+            <button class="dropmic-menu__listContent" value="fr" onclick="updateLangFlag(this.value)" tabindex="-1"><img id="fr-img" src="https://cdn-icons-png.flaticon.com/512/330/330490.png" width="25" height="25"> French</button>
+        </li>
   </div>
+</span>
 
-
-  <div class="dropdown-box justify-content-center">
-    <select class="flag-container">
-      <option selected> 🤟 Language you learn </option>
-      <option class="dropdown-item"> 🤟 🇩🇪 German </a></option>
-      <option class="dropdown-item"> 🤟 🇺🇸 American English </a></option>
-      <option class="dropdown-item"> 🤟 🇫🇷 French </a></option>
-    </select>
+<span class="dropmic" data-dropmic="1" role="navigation">
+<button data-dropmic-btn class="flag-image"><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="tl-chosen_flag" width="25" height="25"></button>
+<div class="dropmic-menu" aria-hidden="true">
+        <li class="dropmic-menu__listItem" role="menuitem">
+            <button class="dropmic-menu__listContent" value="tl-ua" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="tl-ua-img" src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" width="25" height="25"> American English</button>
+            <button class="dropmic-menu__listContent" value="tl-ge" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="tl-ge-img" src="https://cdn-icons-png.flaticon.com/512/321/321233.png" width="25" height="25"> German</button>
+            <button class="dropmic-menu__listContent" value="tl-fr" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="tl-fr-img" src="https://cdn-icons-png.flaticon.com/512/330/330490.png" width="25" height="25"> French</button>
+        </li>
   </div>
+</span>
 
   <%= form_tag signs_path, class: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
       <%= text_field_tag :query,

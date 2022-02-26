@@ -13,6 +13,8 @@
 @import "pages/index";
 @import "signs/show_sign";
 @import "signs/index_signs";
+@import "pages/show";
+@import "components/dropmic";
 
 //SIGNUP
 //Fonts Classes
@@ -37,7 +39,6 @@
     z-index: -1;
   }
 }
-
 
 .font-beta {
   position: relative;
@@ -147,4 +148,28 @@
   font-weight: $font-weigh--normal;
   color: $font-color;
   text-transform: uppercase;
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
 }

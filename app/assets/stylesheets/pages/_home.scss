@@ -7,10 +7,14 @@ body {
   size: 20px;
   text-align: center;
 }
+
 .flag-image {
   width: 40px;
   padding: 3px;
   border-radius: 7px;
+  &:focus {
+    box-shadow: inset 4px 4px 12px #D0D3CE;
+  }
 }
 
 .banner {
@@ -47,6 +51,14 @@ select, option {
   max-width: 25rem;
   width: 100%;
   padding: .5rem;
+}
+
+// .dropdown-item {
+//   border: 1px solid red !important;
+// }
+
+.dropmic-menu {
+  border-radius: 15px !important;
 }
 
 .box-text {
