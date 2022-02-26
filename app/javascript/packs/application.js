@@ -18,8 +18,6 @@ ActiveStorage.start()
 // ----------------------------------------------------
 
 // import "dropmic"; language flags dropdown
-import "../components/language_dropdown";
-import { updateLangFlag, updateTargetLangFlag } from "../components/language_dropdown";
 
 // External imports
 import "bootstrap";
@@ -34,12 +32,11 @@ import { recordSign } from "../components/record_sign";
 
 document.addEventListener('turbolinks:load', () => {
   // recordSign();
+
     if(document.querySelector("#start")) {
     recordSign();
+
   }
-// dropmic.close();
-  // Call your functions here, e.g:
-  // initSelect2();
 });
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
