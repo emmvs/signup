@@ -183,6 +183,17 @@ select, option {
 //     text-transform: uppercase;
 // }
 
+// .ticker-box {
+//   // overflow-x: hidden;
+
+// }
+
+.ticker {
+  position: relative;
+  overflow: hidden;
+  height: 50px;
+}
+
 .marquee {
   margin-left: auto;
   margin-right: auto;
