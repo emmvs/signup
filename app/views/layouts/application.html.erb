@@ -10,23 +10,6 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-
-    <script>
-      // language dropdown – click flag => flag changes
-        function updateLangFlag(flag) {
-          var chosenLangButton = document.getElementById("chosen_flag");
-          let chosenLangImage = document.getElementById(flag+"-img");
-          var getChosenFlagLink = chosenLangImage.src;
-          chosenLangButton.src = getChosenFlagLink;
-        }
-
-        function updateTargetLangFlag(flag) {
-          var chosenLangButton = document.getElementById("tl-chosen_flag");
-          let chosenLangImage = document.getElementById("tl-"+flag+"-img");
-          var getChosenFlagLink = chosenLangImage.src;
-          chosenLangButton.src = getChosenFlagLink;
-        }
-    </script>
   </head>
 
   <body>

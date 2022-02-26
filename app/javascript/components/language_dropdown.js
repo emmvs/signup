@@ -1,9 +1,16 @@
+// dropmic (for the language dropdown)
 import Dropmic from "./dropmic";
 
-var dropmic = new Dropmic(document.querySelector('[data-dropmic="1"]'));
 
-// dropmic.addLink('American English', 'https://cssscript.com')
-// dropmic.setCustomContent("Custom content");
-// // dropmic.close();
+const dropdownInit = () => {
 
-// export { updateLangFlag, updateTargetLangFlag };
+  const dropdowns = document.querySelectorAll('[data-dropmic="1"]')
+  if(dropdowns) {
+    dropdowns.forEach((dropdown) => {
+      console.log(dropdown)
+       new Dropmic(dropdown);
+    })
+  }
+}
+
+export { dropdownInit };
