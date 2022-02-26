@@ -10,6 +10,19 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <script>
+    function updateFocus(newButton) {
+        // enlever style focus sur tous les boutons
+        let myButtons = document.querySelectorAll(".nav-link")
+        myButtons.forEach(button => {
+          button.classList.remove('focus-tab')
+        });
+        // mettre focus sur le bouton clicked
+        newButton.classList.add('focus-tab')
+    console.log(myButtons)
+    }
+
+    </script>
   </head>
 
   <body>

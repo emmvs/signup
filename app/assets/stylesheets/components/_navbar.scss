@@ -20,6 +20,19 @@
   align-items: center;
 }
 
+.nav-item {
+  border: transparent;
+}
+
+.focus-tab {
+  border-radius: 25px;
+  box-shadow: inset 2px 2px 10px rgb(160, 160, 160);
+  margin: 10px;
+  padding: 2px 10px;
+  background-color: rgb(236, 236, 236);
+}
+
 #searchbar {
+  border-radius: 20px;
   width: fit-content;
 }
