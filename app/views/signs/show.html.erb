@@ -1,19 +1,23 @@
 <!-- app/views/articles/show.html.erb -->
 
 <div class="container-show">
-  <h1><%= @sign.title %></h1>
-  <p><%= @sign.description %></p>
-    <div class="sign-video">
-    <% if @sign.video.attached? %>
-      <%= cl_video_tag(@sign.video.key, :controls=>true, :autoplay=>true, :loop=>true, :muted=>true, :width=>300, class:"video")%>
-    <% end %>
-    </div>
-    <div class="sign-button">
-      <% if policy(@sign).edit? %>
-        <%= link_to "Update", edit_sign_path(@sign), class:"btn btn-primary" %>
+  <div class="sign-card">
+    <h1 class="font-beta"><%= @sign.title %></h1>
+    <p class="font-gamma"><%= @sign.description %></p>
+
+    <%= image_tag "heart.png", class: "flag-container flag-image", data: { action:"click->flags#disable", flags_target:"usa" }%>
+    <%= image_tag "deutschland.png", class: "flag-container flag-image", data: { action:"click->flags#disable", flags_target:"ger" }%>
+
+      <% if @sign.video.attached? %>
+        <%= cl_video_tag(@sign.video.key, :controls=>true, :autoplay=>true, :loop=>true, :muted=>true, :width=>300, class:"video")%>
       <% end %>
-      <% if policy(@sign).destroy? %>
-        <%= link_to "Delete", sign_path(@sign), class:"btn btn-secondary", method: :delete, data: { confirm: "Do you really want to say bye bye?" } %>
-      <% end %>
-    </div>
+      <div class="sign-button">
+        <% if policy(@sign).edit? %>
+          <%= link_to "Update", edit_sign_path(@sign), class:"btn btn-primary" %>
+        <% end %>
+        <% if policy(@sign).destroy? %>
+          <%= link_to "Delete", sign_path(@sign), class:"btn btn-secondary", method: :delete, data: { confirm: "Do you really want to say bye bye?" } %>
+        <% end %>
+      </div>
+  </div>
 </div>
