@@ -3,10 +3,14 @@
   size: 20px;
   text-align: center;
 }
+
 .flag-image {
   width: 40px;
   padding: 3px;
   border-radius: 7px;
+  &:focus {
+    box-shadow: inset 4px 4px 12px #D0D3CE;
+  }
 }
 
 .flag-container {
@@ -29,6 +33,10 @@
 select, option {
     width: 250px;
 }
+
+// .dropdown-item {
+//   border: 1px solid red !important;
+// }
 
 .box-text {
   text-align: left;
