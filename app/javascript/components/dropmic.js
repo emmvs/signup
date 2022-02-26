@@ -1,5 +1,4 @@
 export default class Dropmic {
-
     constructor(target, options) {
         this.target = target;
         this.btn = target.querySelector('[data-dropmic-btn]');
