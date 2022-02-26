@@ -145,6 +145,8 @@ select, option {
   padding: 1.5rem;
   border-top: 1rem solid $sub-color;
   text-align: center;
+  z-index: 1;
+  background-color: $bg-light;
 }
 
 .ticker {
