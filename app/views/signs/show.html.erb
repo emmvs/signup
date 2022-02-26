@@ -5,10 +5,6 @@
       <p class="font-gamma"><%= @sign.description %></p>
       <%= image_tag "heart.png", class: "flag-container flag-image", data: { action:"click->flags#disable", flags_target:"usa" }%>
       <%= image_tag "deutschland.png", class: "flag-container flag-image", data: { action:"click->flags#disable", flags_target:"ger" }%>
-<div class="container-show">
-  <div class="video-card">
-    <h1 class="font-beta"><%= @sign.title %></h1>
-    <p class="font-gamma"><%= @sign.description %></p>
         <% if @sign.video.attached? %>
           <%= cl_video_tag(@sign.video.key, :controls=>false, :autoplay=>true, :loop=>true, :muted=>true, :width=>300, class:"video")%>
         <% end %>
