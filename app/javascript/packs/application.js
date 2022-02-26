@@ -17,8 +17,9 @@ ActiveStorage.start()
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
-// import "dropmic";
+// import "dropmic"; language flags dropdown
 import "../components/language_dropdown";
+import { updateLangFlag, updateTargetLangFlag } from "../components/language_dropdown";
 
 // External imports
 import "bootstrap";
