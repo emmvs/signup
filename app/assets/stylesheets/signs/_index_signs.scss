@@ -1,5 +1,24 @@
 // app/assets/stylesheets/signs/_index_signs_scss
 
+.container-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backdrop-index-img {
+  width: 100%;
+  max-height: 100vh;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.search__text {
+  margin-top: 2rem;
+}
+
 .signs-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -11,32 +30,33 @@
 .sign-card {
   display: flex;
   align-items: center;
-  max-width: 25rem;
+  max-width: fit-content;
   width: 100%;
   height: max-content;
   flex-direction: column;
-  padding: 0;
+  padding: 1.2rem;
   background-color: $bg-light;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 1rem;
-  border-radius: 20px;
+  border-radius: $border-soft;
   overflow: hidden;
   font-family: $secondary-font;
   box-shadow: $card-normal-shade;
+  &:hover{
+    box-shadow: $card-active-shade;
+  }
 }
 
-.sign-title {
-
+.sign-card-link:hover {
+  text-decoration: none;
 }
 
-// .video-sign-container {
-//   width: 400px;
-//   // overflow: hidden;
-//   // display: block;
-//   height: 200px;
-//   margin: 0 auto;
-// }
+.sign-count {
+  color: $secondary-color--dark;
+  font-size: larger;
+  text-decoration: underline;
+}
 
 .video {
   background-color: black;
+  border-radius: $border-soft;
 }
