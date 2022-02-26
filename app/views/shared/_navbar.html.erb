@@ -15,10 +15,16 @@
           <%= link_to "Home", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+          <%= link_to "Dashboard", "/dashboard", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My lists", "/list", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My favorites", "#", class: "nav-link" %>
         </li>
         <li>
-          <%= form_tag signs_path, class: "searchbar nav-link", method: :get, html: { data: {search_signs_target: 'form'}} do %>
+          <%= form_tag signs_path, class: "searchbar nav-link", id: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
