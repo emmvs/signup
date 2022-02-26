@@ -2,7 +2,7 @@
   <%# <h1 class="title font-alpha">🤟 Welcome Home 🤟</h1> %>
 </section>
 
-<div class="d-flex justify-content-center">
+<%# <div class="d-flex justify-content-center">
   <div class="dropdown-box justify-content-center">
     <select class="flag-container">
       <option selected> 🗣 Language you speak </option>
@@ -12,15 +12,35 @@
     </select>
   </div>
 
-
   <div class="dropdown-box justify-content-center">
     <select class="flag-container">
-      <option selected> 🤟 Language you learn </option>
-      <option class="dropdown-item"> 🤟 🇩🇪 German </a></option>
+    <%# flagcontainer should have border %>
+      <%# <option selected> 🤟 Language you learn </option>
+      <%# image tag instead of the flags %>
+      <%# dropdown-item has border only at the bottom, hover css property should be light gray (background-color) %>
+      <%# <option class="dropdown-item"> 🤟 🇩🇪 German </a></option>
       <option class="dropdown-item"> 🤟 🇺🇸 American English </a></option>
       <option class="dropdown-item"> 🤟 🇫🇷 French </a></option>
     </select>
-  </div>
+  </div> %>
+
+  <span class="dropmic" data-dropmic="1" role="navigation">
+  <button data-dropmic-btn class="flag-image"><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" width="25" height="25"></button>
+  <div class="dropmic-menu" aria-hidden="true">
+    <%# <div class="dropmic-menu__custom">Custom content</div>
+      <ul class="dropmic-menu__list" role="menu">
+          <li class="dropmic-menu__listItem" role="menuitem">
+              <a class="dropmic-menu__listContent" tabindex="-1" href="(http://example.com)">label link</a>
+          </li> %>
+          <li class="dropmic-menu__listItem" role="menuitem">
+              <button class="dropmic-menu__listContent" tabindex="-1"><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" width="25" height="25"> American English</button>
+              <button class="dropmic-menu__listContent" tabindex="-1"><img src="https://cdn-icons.flaticon.com/png/512/5304/premium/5304024.png?token=exp=1645884549~hmac=c5ae77bb9f8dd74b9f56abc86fb95e30" width="25" height="25"> German</button>
+              <button class="dropmic-menu__listContent" tabindex="-1"><img src="https://cdn-icons-png.flaticon.com/512/330/330490.png" width="25" height="25"> French</button>
+          </li>
+      <%# </ul> %>
+    </div>
+  </span>
+
 
   <%= form_tag signs_path, class: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
       <%= text_field_tag :query,
