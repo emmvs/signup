@@ -1,0 +1,20 @@
+<div class="container py-5 form-adjust">
+  <div class="row form-bg">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-4 shadow">
+        <h3 class="font-delta">What should your new Sign be like?</h3>
+        <%= simple_form_for(@sign) do |f| %>
+          <%= f.input :title, placeholder: 'Your Sign - Camel' %>
+          <%= f.input :description, placeholder: 'What is your Sign all about?' %>
+          <%= f.input :video, label: "Choose the sassy video for your sign"  %>
+          <% if f.object.new_record? %>
+            <%= f.submit "Create Sign", class: "btn btn-secondary" %>
+          <% else %>
+            <%= f.submit "Edit Sign", class: "btn btn-secondary" %>
+          <% end %>
+          <%= link_to "Cancel", :back, {:class=>"form--link"} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
