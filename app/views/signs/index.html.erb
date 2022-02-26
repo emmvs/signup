@@ -1,19 +1,23 @@
-<p class="font-gamma">There are <%=@signs.count %> results for your search</p>
-
-<div class="flex-container">
-  <div class="signs-grid">
-    <% @signs.each do |sign| %>
-      <%= link_to sign_path(sign), class: "sign-card-link" do %>
-        <div class="sign-card">
-          <% if sign.video.attached? %>
-            <h1 class="sign-title font-beta"><%=sign.title %> </h1>
-              <p class="sign-description font-gamma"><%=sign.description %></p>
-              <div class="video-sign-container">
-                <%= cl_video_tag(sign.video.key, :controls=>false, :autoplay=>true, :loop=>true, :muted=>true, :width=>400, :height=>200, class:"video")%>
-              </div>
-           <% end %>
-        </div>
-      <% end %>
-    <% end %>
+<section class="container-index">
+  <div class="backdrop-index">
+    <img src="https://images.unsplash.com/photo-1530569673472-307dc017a82d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" class="backdrop-index-img" alt="BG">
   </div>
-</div>
+  <p class="search__text text-para--medium">There are <span class="sign-count"><%=@signs.count %></span> results for your search</p>
+  <div class="signs-container">
+    <div class="signs-grid">
+      <% @signs.each do |sign| %>
+        <% if sign.video.attached? %>
+          <div class="sign-card">
+            <%= link_to sign_path(sign), class: "sign-card-link" do %>
+            <h1 class="sign-title font-zeta"><%=sign.title %> </h1>
+            <p class="sign-description text-para--light"><%=sign.description %></p>
+            <div class="video-sign-container">
+              <%= cl_video_tag(sign.video.key, :controls=>false, :autoplay=>false, :loop=>true, :muted=>true, :width=>220, :height=>150, class:"video")%>
+            </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>

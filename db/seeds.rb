@@ -70,8 +70,6 @@ e = 0
     category: Category.first,
     language: 1
   )
-  sign.video.attach(io: File.open("db/videos/gebaerdensprache.mp4"), filename: "gebaerdensprache.mp4", content_type: "video/mp4")
-  sign.save!
 end
 
   camel_sign = Sign.create!(

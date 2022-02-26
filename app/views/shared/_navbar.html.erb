@@ -48,7 +48,8 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%# <a class="dropdown-item" data-method="delete" href="/users/sign_out" rel="nofollow">Log out</a> %>
           </div>
         </li>
       <% else %>

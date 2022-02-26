@@ -1,41 +1,29 @@
-<section class="home-banner" style="background-image: url('https://akm-img-a-in.tosshub.com/indiatoday/images/story/202109/photo-1517568730816-501aae259c_1200x768.jpeg?A__z_doe3SL_tHpBheV8N6L32h2XylgH&amp;size=770:433" src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202109/photo-1517568730816-501aae259c_1200x768.jpeg?A__z_doe3SL_tHpBheV8N6L32h2XylgH&amp;size=770:433')" >
-<br>
-<h1 class="title">🤟 Welcome Home 🤟</h1>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-</section>
-<br>
-<br>
-
-<div class="d-flex justify-content-center">
-  <div class="dropdown-box justify-content-center">
-    <select class="flag-container">
-      <option selected> 🗣 Language you speak </option>
-      <option class="dropdown-item"> 🗣 🇩🇪 German </a></option>
-      <option class="dropdown-item"> 🗣 🇺🇸 American English </a></option>
-      <option class="dropdown-item"> 🗣 🇫🇷 French </a></option>
-    </select>
-  </div>
-
-
-  <div class="dropdown-box justify-content-center">
-    <select class="flag-container">
-      <option selected> 🤟 Language you learn </option>
-      <option class="dropdown-item"> 🤟 🇩🇪 German </a></option>
-      <option class="dropdown-item"> 🤟 🇺🇸 American English </a></option>
-      <option class="dropdown-item"> 🤟 🇫🇷 French </a></option>
-    </select>
-  </div>
+<div class="container-home">
+  <section class="banner" style="background-image: url('https://akm-img-a-in.tosshub.com/indiatoday/images/story/202109/photo-1517568730816-501aae259c_1200x768.jpeg?A__z_doe3SL_tHpBheV8N6L32h2XylgH&amp;size=770:433" src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202109/photo-1517568730816-501aae259c_1200x768.jpeg?A__z_doe3SL_tHpBheV8N6L32h2XylgH&amp;size=770:433')" >
+    <h1 class="title">🤟 Welcome Home 🤟</h1>
+  </section>
+  
+  <span class="dropmic" data-dropmic="1" role="navigation">
+    <button data-dropmic-btn class="flag-image"><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="chosen_flag" width="25" height="25"></button>
+    <div class="dropmic-menu" aria-hidden="true">
+            <li class="dropmic-menu__listItem" role="menuitem">
+                <button class="dropmic-menu__listContent" value="ua" onclick="updateLangFlag(this.value)" tabindex="-1"><img id="ua-img" src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" width="25" height="25"> American English</button>
+                <button class="dropmic-menu__listContent" value="ge" onclick="updateLangFlag(this.value)" tabindex="-1"><img id="ge-img" src="https://cdn-icons-png.flaticon.com/512/321/321233.png" width="25" height="25"> German</button>
+                <button class="dropmic-menu__listContent" value="fr" onclick="updateLangFlag(this.value)" tabindex="-1"><img id="fr-img" src="https://cdn-icons-png.flaticon.com/512/330/330490.png" width="25" height="25"> French</button>
+            </li>
+    </div>
+   </span>
+  
+  <span class="dropmic" data-dropmic="1" role="navigation">
+    <button data-dropmic-btn class="flag-image"><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="tl-chosen_flag" width="25" height="25"></button>
+    <div class="dropmic-menu" aria-hidden="true">
+      <li class="dropmic-menu__listItem" role="menuitem">
+          <button class="dropmic-menu__listContent" value="tl-ua" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="tl-ua-img" src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" width="25" height="25"> American English</button>
+          <button class="dropmic-menu__listContent" value="tl-ge" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="tl-ge-img" src="https://cdn-icons-png.flaticon.com/512/321/321233.png" width="25" height="25"> German</button>
+          <button class="dropmic-menu__listContent" value="tl-fr" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="tl-fr-img" src="https://cdn-icons-png.flaticon.com/512/330/330490.png" width="25" height="25"> French</button>
+      </li>
+    </div>
+  </span>
 
   <%= form_tag signs_path, class: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
       <%= text_field_tag :query,
@@ -46,9 +34,7 @@
       <button type="submit" class="search-button">
             <%= image_tag "search.png", class: "flag-image" %>
       </button>
-    <% end %>
-</div>
-
+  <% end %>
 
 <%# <div class="d-flex justify-content-center" data-controller="flags">
   <p>Choose your first language</p>
@@ -66,32 +52,46 @@
     <%# <% end %>
 <%# </div> %>
 
-<br>
-<div class="flex-container">
-  <%# <div class="menu-grid"> %>
-      <div class="menu-card white-card">
-        <div class="card-info">
-          <h2>Categories</h2>
-          <p class="box-text">blablablablablablablablablablablablablablablablablablablablablablablabla</p>
+  <div class="flex-container">
+    <%# <div class="menu-grid"> %>
+    <div class="menu-card white-card">
+      <div class="text-cards">
+        <div class="text-card text-card--white">
+          <div class="card-info">
+            <h2 class="font-gamma">Categories</h2>
+            <p class="box-text text-para--light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          </div>
+        </div>
+        <div class="text-card text-card--pink">
+          <div class="card-info">
+            <h2 class="font-gamma">Reviews</h2>
+            <p class="box-text text-para--light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          </div>
+        </div>
+        <div class="text-card text-card--blue">
+          <div class="card-info">
+            <h2 class="font-gamma">Community</h2>
+            <p class="box-text text-para--light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          </div>
+        </div>
+        <div class="text-card text-card--orange">
+          <div class="card-info">
+              <h2 class="font-gamma">Members</h2>
+              <p class="box-text text-para--light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          </div>
         </div>
       </div>
-      <div class="menu-card pink-card">
-        <div class="card-info">
-          <h2>Reviews</h2>
-          <p class="box-text">blablablablablablablablablablablablablablablablablablablablablablablabla</p>
-        </div>
-      </div>
-      <div class="menu-card blue-card">
-        <div class="card-info">
-          <h2>Community</h2>
-          <p class="box-text">blablablablablablablablablablablablablablablablablablablablablablablabla</p>
-        </div>
-      </div>
-      <div class="menu-card orange-card">
-        <div class="card-info">
-            <h2>Members</h2>
-            <p class="box-text">blablablablablablablablablablablablablablablablablablablablablablablabla</p>
-        </div>
-      </div>
-  <%# </div> %>
+    </div>
+  </div>
+</div>
+
+<div class="ticker-box">
+  <div class="ticker">
+    <p class="marquee">
+      <span>SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘&nbsp;</span>
+    </p>
+    <p class="marquee marquee2">
+      <span>SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘&nbsp;</span>
+    </p>
+  </div>
 </div>

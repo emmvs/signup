@@ -17,9 +17,14 @@ ActiveStorage.start()
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
+// import "dropmic"; language flags dropdown
+import "../components/language_dropdown";
+import { updateLangFlag, updateTargetLangFlag } from "../components/language_dropdown";
+
 // External imports
 import "bootstrap";
-import "controllers"
+import "controllers";
+import Dropmic from "../components/dropmic";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -32,6 +37,7 @@ document.addEventListener('turbolinks:load', () => {
     if(document.querySelector("#start")) {
     recordSign();
   }
+// dropmic.close();
   // Call your functions here, e.g:
   // initSelect2();
 });
