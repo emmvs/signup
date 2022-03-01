@@ -47,7 +47,8 @@ const recordSign = () => {
 
   const uploadToCloudinary  = (video) => {
     const formData = new FormData(form);
-    formData.append('sign[video]', video, 'my_video.mp4');
+    let date = new Date().getTime
+    formData.append('sign[video]', video, '${date}_my_video.mp4');
     console.log(formData, video)
 
     Rails.ajax({
