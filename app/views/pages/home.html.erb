@@ -11,7 +11,7 @@
       </li>
     </div>
   </span>
-  <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns" >
+  <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns"     >
     <button data-dropmic-btn class="flag-image" ><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="tl-chosen_flag" width="25" height="25"></button>
     <div class="dropmic-menu" aria-hidden="true">
       <li class="dropmic-menu__listItem" role="menuitem">
@@ -21,6 +21,7 @@
       </li>
     </div>
   </span>
+</div>
 </div>
 <%= form_tag signs_path, class: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
   <%= text_field_tag :query,
@@ -75,20 +76,3 @@
     </p>
   </div>
 </div>
-<%# // language dropdown – click flag => flag changes %>
-<script>
-  const updateLangFlag = (flag) => {
-    var chosenLangButton = document.getElementById("chosen_flag");
-    let chosenLangImage = document.getElementById(flag+"-img");
-    var getChosenFlagLink = chosenLangImage.src;
-    chosenLangButton.src = getChosenFlagLink;
-  }
-
-    function updateTargetLangFlag(flag) {
-      console.log(flag)
-      var chosenLangButton = document.getElementById("tl-chosen_flag");
-      let chosenLangImage = document.getElementById(flag+"-img");
-      var getChosenFlagLink = chosenLangImage.src;
-      chosenLangButton.src = getChosenFlagLink;
-    }
-</script>
