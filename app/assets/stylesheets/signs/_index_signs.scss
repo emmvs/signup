@@ -60,3 +60,39 @@
   background-color: black;
   border-radius: $border-soft;
 }
+
+.animated {
+	position: relative;
+	max-width: 200px;
+	overflow: hidden;
+	height: 50px;
+	text-align: center;
+}
+
+.animated__text {
+  position: absolute;
+  animation: 32s bounce ease-in-out infinite paused;
+  white-space: nowrap;
+  top: 0;
+  // padding: 0 0.5rem;
+}
+
+.animated:hover {
+  animation-play-state: paused;
+}
+
+.animated:not(.animated--on-hover) .animated__text,
+.animated.animated--on-hover:hover .animated__text {
+  animation-play-state: running;
+}
+
+@keyframes bounce {
+	0%, 5%, 95%, 100% {
+		left: 0%;
+		transform: translate(0, 0);
+	}
+	45%, 55% {
+		left: 100%;
+		transform: translate(-100%, 0);
+	}
+}

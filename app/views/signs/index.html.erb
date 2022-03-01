@@ -9,7 +9,9 @@
         <% if sign.video.attached? %>
           <div class="sign-card">
             <%= link_to sign_path(sign), class: "sign-card-link" do %>
-            <h1 class="sign-title font-zeta"><%=sign.title %> </h1>
+            <h1 class="animated">
+              <span class="animated__text"><%=sign.title %></span>
+            </h1>
             <p class="sign-description text-para--light"><%=sign.description %></p>
             <div class="video-sign-container">
               <%= cl_video_tag(sign.video.key, :controls=>false, :autoplay=>false, :loop=>true, :muted=>true, :width=>220, :height=>150, class:"video")%>
@@ -21,3 +23,6 @@
     </div>
   </div>
 </section>
+
+
+<%# sign-title font-zeta %>

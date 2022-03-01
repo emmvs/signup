@@ -138,17 +138,17 @@ select, option {
   background-color: $sub-color;
 }
 
-.footer {
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height: max-content;
-  padding: 1.5rem;
-  border-top: 1rem solid $sub-color;
-  text-align: center;
-  z-index: 1;
-  background-color: $bg-light;
-}
+// .footer {
+//   position:absolute;
+//   bottom:0;
+//   width:100%;
+//   height: max-content;
+//   padding: 1.5rem;
+//   border-top: 1rem solid $sub-color;
+//   text-align: center;
+//   z-index: 1;
+//   background-color: $bg-light;
+// }
 
 .ticker {
   position: relative;
