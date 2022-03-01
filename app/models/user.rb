@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :categories
   has_many :lists, dependent: :destroy
   has_many :bookmarks, through: :signs
-  validates :username, :email, :language, :target_language, presence: true
+  validates :email, presence: true
 end
