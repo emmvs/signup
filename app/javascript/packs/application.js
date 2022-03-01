@@ -22,7 +22,6 @@ ActiveStorage.start()
 // External imports
 import "bootstrap";
 import "controllers";
-import Dropmic from "../components/dropmic";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
