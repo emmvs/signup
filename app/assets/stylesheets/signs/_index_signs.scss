@@ -27,27 +27,70 @@
   padding: .6rem;
 }
 
-.sign-card {
-  display: flex;
+.sign-card--index {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   align-items: center;
-  max-width: fit-content;
+  max-width: 16rem;
   width: 100%;
-  height: max-content;
-  flex-direction: column;
-  padding: 1.2rem;
+  height: 30rem;
+  padding: 1rem;
   background-color: $bg-light;
   margin: 1rem;
   border-radius: $border-soft;
   overflow: hidden;
   font-family: $secondary-font;
   box-shadow: $card-normal-shade;
+  position: relative;
   &:hover{
     box-shadow: $card-active-shade;
   }
 }
 
+.sign__header {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  height: 8rem;
+  margin-block-end: 1rem;
+}
+
+.sign__infos {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  height: 5rem;
+}
+
+.sign-liked {
+  grid-column: 2;
+  grid-row: 1;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 1.2rem;
+  border-radius: .2rem;
+  box-shadow: $button-flat-shade;
+  top: .5rem;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: contain;
+    background-image: url('https://wintergoosepublishing.com/wp-content/uploads/2015/03/Heart-Icon-1.png');
+  }
+}
+
+.video-sign-container {
+  grid-column: 1 / span 2;
+  grid-row: 4;
+}
+
 .sign-card-link:hover {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .sign-count {
