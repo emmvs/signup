@@ -7,14 +7,20 @@
     <div class="signs-grid">
       <% @signs.each do |sign| %>
         <% if sign.video.attached? %>
-          <div class="sign-card">
+          <div class="sign-card--index">
             <%= link_to sign_path(sign), class: "sign-card-link" do %>
-            <h1 class="sign-title font-zeta"><%=sign.title %> </h1>
-            <p class="sign-description text-para--light"><%=sign.description %></p>
-            <div class="video-sign-container">
-              <%= cl_video_tag(sign.video.key, :controls=>false, :autoplay=>false, :loop=>true, :muted=>true, :width=>220, :height=>150, class:"video")%>
-            </div>
+              <div class="sign__header">
+                <h1 class="sign-title font-zeta"><%=sign.title %> </h1>
+              </div>
             <% end %>
+              <div class="sign-liked">
+              </div>
+              <div class="sign__infos">
+                <p class="sign-description text-para--light"><%=sign.description %></p>
+              </div>
+              <div class="video-sign-container">
+                <%= cl_video_tag(sign.video.key, :controls=>false, :autoplay=>false, :loop=>true, :muted=>true, :width=>220, :height=>150, class:"video")%>
+              </div>
           </div>
         <% end %>
       <% end %>

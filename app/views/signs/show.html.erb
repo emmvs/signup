@@ -1,20 +1,31 @@
 <!-- app/views/articles/show.html.erb -->
 <section class="container-show">
-    <div class="sign-card">
-      <h1 class="font-beta"><%= @sign.title %></h1>
-      <p class="font-gamma"><%= @sign.description %></p>
-      <%= image_tag "heart.png", class: "flag-container flag-image", data: { action:"click->flags#disable", flags_target:"usa" }%>
-      <%= image_tag "deutschland.png", class: "flag-container flag-image", data: { action:"click->flags#disable", flags_target:"ger" }%>
+    <h1 class="font-alpha show__title "><%= @sign.title %></h1>
+       <%= image_tag "deutschland.png", class: "flag-container flag-image", data: { action:"click->flags#disable", flags_target:"ger" }%>
+    <div class="sign-card--show">
+      <div class="tag tag--video">
         <% if @sign.video.attached? %>
-          <%= cl_video_tag(@sign.video.key, :controls=>false, :autoplay=>true, :loop=>true, :muted=>true, :width=>300, class:"video")%>
+          <%= cl_video_tag(@sign.video.key, :controls=>false, :autoplay=>true, :loop=>true, :muted=>true, :width=>480, :height=> 300,class:"video video--show")%>
         <% end %>
-        <div class="sign-button">
-          <% if policy(@sign).edit? %>
-            <%= link_to "Update", edit_sign_path(@sign), class:"btn btn-primary" %>
-          <% end %>
-          <% if policy(@sign).destroy? %>
-            <%= link_to "Delete", sign_path(@sign), class:"btn btn-secondary", method: :delete, data: { confirm: "Do you really want to say bye bye?" } %>
-          <% end %>
+      </div>
+      <div class="tag tag--description">
+        <div class="sign__texts">
+          <p class="font-gamma"><%= @sign.description %></p>
+          <%= image_tag "heart.png", class: "flag-container flag-image heart-like", data: { action:"click->flags#disable", flags_target:"usa" }%>
+
         </div>
+      </div>
+      <div class="tag tag--controllers">
+        <div class="sign__extras">
+          <div class="sign-buttons">
+            <% if policy(@sign).edit? %>
+              <%= link_to "Update", edit_sign_path(@sign), class:"btn btn--normal text-para--medium" %>
+            <% end %>
+            <% if policy(@sign).destroy? %>
+              <%= link_to "Delete", sign_path(@sign), class:"btn link--normal text-para--medium", method: :delete, data: { confirm: "Do you really want to say bye bye?" } %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
 </section>
