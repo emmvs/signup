@@ -38,7 +38,7 @@
 
         function updateTargetLangFlag(flag) {
           var chosenLangButton = document.getElementById("tl-chosen_flag");
-          let chosenLangImage = document.getElementById("tl-"+flag+"-img");
+          let chosenLangImage = document.getElementById(flag+"-img");
           var getChosenFlagLink = chosenLangImage.src;
           chosenLangButton.src = getChosenFlagLink;
         }
