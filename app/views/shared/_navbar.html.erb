@@ -32,7 +32,6 @@
           <% end %>
         </li>
         <%# <li>
-        <button>
           <div data-controller="dropdown">
             <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns"     >
             <button data-dropmic-btn class="flag-image" ><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="chosen_flag" width="25" height="25"></button>
@@ -45,7 +44,6 @@
               </div>
             </span>
           </div>
-        </button>
         </li> %>
         <li>
           <%= form_tag signs_path, class: "searchbar", id: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
