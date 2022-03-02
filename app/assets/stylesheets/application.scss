@@ -28,6 +28,7 @@
   margin-top: .5rem;
   margin-bottom: 1.5rem;
   width: fit-content;
+  z-index: 2;
   &:after {
     content: '';
     position: absolute;
@@ -50,6 +51,7 @@
   margin-top: .5rem;
   margin-bottom: 1.2rem;
   width: fit-content;
+  z-index: 2;
   &:after {
     content: "";
     position: absolute;
@@ -71,6 +73,7 @@
   margin-top: .5rem;
   margin-bottom: 1rem;
   width: fit-content;
+  z-index: 2;
   &:after {
     position: absolute;
     content: '';
@@ -92,6 +95,7 @@
   margin-bottom: .7rem;
   position: relative;
   width: fit-content;
+  z-index: 2;
   &:after {
     position: absolute;
     content: '';
@@ -114,6 +118,7 @@
   margin-bottom: 1.2rem;
   width: fit-content;
   text-transform: lowercase;
+  z-index: 2;
   &:after {
     content: "";
     position: absolute;
@@ -177,3 +182,24 @@ button {
 // body {
 //   overflow-x: hidden;
 // }
+
+.btn--normal {
+  border-radius: $border-soft;
+  background-color: $bg-light;
+  box-shadow: $button-flat-shade;
+  padding: .5rem 1rem;
+  margin-right: 1.5rem;
+  &:hover {
+    box-shadow: $button-click-shade;
+  }
+}
+
+.link--normal {
+  border-radius: $border-soft;
+  padding: .5rem 1rem;
+  text-decoration: underline;
+  &:hover {
+    background-color: $secondary-color;
+    box-shadow: $link-click-shade;
+  }
+}

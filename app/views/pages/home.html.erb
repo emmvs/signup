@@ -1,64 +1,69 @@
-<section class="banner" style="background-image: url('https://akm-img-a-in.tosshub.com/indiatoday/images/story/202109/photo-1517568730816-501aae259c_1200x768.jpeg?A__z_doe3SL_tHpBheV8N6L32h2XylgH&amp;size=770:433" src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202109/photo-1517568730816-501aae259c_1200x768.jpeg?A__z_doe3SL_tHpBheV8N6L32h2XylgH&amp;size=770:433')" >
+<section class="banner" style="background-image: url('https://4kwallpapers.com/images/wallpapers/dubrovnik-hills-foggy-landscape-blue-cold-croatia-5k-5120x2880-1313.jpg&amp;size=770:433" src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202109/photo-1517568730816-501aae259c_1200x768.jpeg?A__z_doe3SL_tHpBheV8N6L32h2XylgH&amp;size=770:433')" >
 </section>
-<div data-controller="dropdown">
-  <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns"     >
-    <button data-dropmic-btn class="flag-image" ><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="chosen_flag" width="25" height="25"></button>
-    <div class="dropmic-menu" aria-hidden="true">
-      <li class="dropmic-menu__listItem" role="menuitem">
-        <button class="dropmic-menu__listContent" value="ua" onclick="updateLangFlag(this.value)" tabindex="-1"><img id="ua-img" src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" width="25" height="25"> American English</button>
-        <button class="dropmic-menu__listContent" value="ge" onclick="updateLangFlag(this.value)" tabindex="-1"><img id="ge-img" src="https://cdn-icons-png.flaticon.com/512/321/321233.png" width="25" height="25"> German</button>
-        <button class="dropmic-menu__listContent" value="fr" onclick="updateLangFlag(this.value)" tabindex="-1"><img id="fr-img" src="https://cdn-icons-png.flaticon.com/512/330/330490.png" width="25" height="25"> French</button>
-      </li>
+
+<div class="language-bar">
+  <div data-controller="dropdown">
+    <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns"     >
+      <button data-dropmic-btn class="flag-image" ><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="chosen_flag" width="25" height="25"></button>
+      <div class="dropmic-menu" aria-hidden="true">
+        <li class="dropmic-menu__listItem" role="menuitem">
+          <button class="dropmic-menu__listContent" value="ua" onclick="updateLangFlag(this.value)" tabindex="-1"><img id="ua-img" src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" width="25" height="25"> American English</button>
+          <button class="dropmic-menu__listContent" value="ge" onclick="updateLangFlag(this.value)" tabindex="-1"><img id="ge-img" src="https://cdn-icons-png.flaticon.com/512/321/321233.png" width="25" height="25"> German</button>
+          <button class="dropmic-menu__listContent" value="fr" onclick="updateLangFlag(this.value)" tabindex="-1"><img id="fr-img" src="https://cdn-icons-png.flaticon.com/512/330/330490.png" width="25" height="25"> French</button>
+        </li>
+      </div>
+    </span>
+    <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns"     >
+      <button data-dropmic-btn class="flag-image" ><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="tl-chosen_flag" width="25" height="25"></button>
+      <div class="dropmic-menu" aria-hidden="true">
+        <li class="dropmic-menu__listItem" role="menuitem">
+          <button class="dropmic-menu__listContent" value="tl-ua" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="tl-ua-img" src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" width="25" height="25"> American English</button>
+          <button class="dropmic-menu__listContent" value="tl-ge" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="tl-ge-img" src="https://cdn-icons-png.flaticon.com/512/321/321233.png" width="25" height="25"> German</button>
+          <button class="dropmic-menu__listContent" value="tl-fr" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="tl-fr-img" src="https://cdn-icons-png.flaticon.com/512/330/330490.png" width="25" height="25"> French</button>
+        </li>
+      </div>
+    </span>
+  </div>
+    <div class="sign-searchbar">
+      <%= form_tag signs_path, class: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find an amazing sign"
+            %>
+        <button type="submit" class="search-button">
+          <%= image_tag "search.png", class: "flag-image" %>
+        </button>
+      <% end %>
     </div>
-  </span>
-  <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns" >
-    <button data-dropmic-btn class="flag-image" ><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="tl-chosen_flag" width="25" height="25"></button>
-    <div class="dropmic-menu" aria-hidden="true">
-      <li class="dropmic-menu__listItem" role="menuitem">
-        <button class="dropmic-menu__listContent" value="tl-ua" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="tl-ua-img" src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" width="25" height="25"> American English</button>
-        <button class="dropmic-menu__listContent" value="tl-ge" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="tl-ge-img" src="https://cdn-icons-png.flaticon.com/512/321/321233.png" width="25" height="25"> German</button>
-        <button class="dropmic-menu__listContent" value="tl-fr" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="tl-fr-img" src="https://cdn-icons-png.flaticon.com/512/330/330490.png" width="25" height="25"> French</button>
-      </li>
-    </div>
-  </span>
 </div>
-<%= form_tag signs_path, class: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
-  <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find an amazing sign"
-      %>
-  <button type="submit" class="search-button">
-    <%= image_tag "search.png", class: "flag-image" %>
-  </button>
-<% end %>
-</div>
+
 <div class="flex-container">
   <%# <div class="menu-grid"> %>
   <div class="menu-card white-card">
     <div class="text-cards">
       <div class="text-card text-card--white">
         <div class="card-info">
-          <h2 class="font-gamma">Categories</h2>
-          <p class="box-text text-para--light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          <h2 class="font-gamma">Sentences</h2>
+          <p class="box-text text-para--light">Find out how to sign entire sentences instead of only focusing on your words.</p>
         </div>
       </div>
       <div class="text-card text-card--pink">
         <div class="card-info">
-          <h2 class="font-gamma">Reviews</h2>
-          <p class="box-text text-para--light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          <h2 class="font-gamma">Categories</h2>
+          <p class="box-text text-para--light">Want to learn specifically about Animals or Food? Find them in our Catogory's section!</p>
         </div>
       </div>
       <div class="text-card text-card--blue">
         <div class="card-info">
-          <h2 class="font-gamma">Community</h2>
-          <p class="box-text text-para--light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          <h2 class="font-gamma">Fingerspelling</h2>
+          <p class="box-text text-para--light">Just use the search box above and type the Alphabet you would like to search for.</p>
         </div>
       </div>
       <div class="text-card text-card--orange">
         <div class="card-info">
-          <h2 class="font-gamma">Members</h2>
-          <p class="box-text text-para--light">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          <h2 class="font-gamma">Community</h2>
+          <p class="box-text text-para--light">At SignUp, we have gathered suggestions of signs from different sign languages worldwide.</p>
         </div>
       </div>
     </div>
@@ -68,27 +73,10 @@
 <div class="ticker-box">
   <div class="ticker">
     <p class="marquee">
-      <span>SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘&nbsp;</span>
+      <span>SignUp 🤟🏿 SignUp 🤟🏾 SignUp 🤟🏽 SignUp 🤟🏼 SignUp 🤟🏻 SignUp 🤘 SignUp 🤟🏻 SignUp 🤟🏼 SignUp 🤟🏽 SignUp 🤟🏾 SignUp 🤟🏿 SignUp 🤟🏾 SignUp 🤟🏽&nbsp;</span>
     </p>
     <p class="marquee marquee2">
-      <span>SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘 SignUp 🤘&nbsp;</span>
+      <span>SignUp 🤟🏿 SignUp 🤟🏾 SignUp 🤟🏽 SignUp 🤟🏼 SignUp 🤟🏻 SignUp 🤘 SignUp 🤟🏻 SignUp 🤟🏼 SignUp 🤟🏽 SignUp 🤟🏾 SignUp 🤟🏿 SignUp 🤟🏾 SignUp 🤟🏽&nbsp;</span>
     </p>
   </div>
 </div>
-<%# // language dropdown – click flag => flag changes %>
-<script>
-  const updateLangFlag = (flag) => {
-    var chosenLangButton = document.getElementById("chosen_flag");
-    let chosenLangImage = document.getElementById(flag+"-img");
-    var getChosenFlagLink = chosenLangImage.src;
-    chosenLangButton.src = getChosenFlagLink;
-  }
-
-    function updateTargetLangFlag(flag) {
-      console.log(flag)
-      var chosenLangButton = document.getElementById("tl-chosen_flag");
-      let chosenLangImage = document.getElementById(flag+"-img");
-      var getChosenFlagLink = chosenLangImage.src;
-      chosenLangButton.src = getChosenFlagLink;
-    }
-</script>

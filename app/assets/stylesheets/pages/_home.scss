@@ -65,6 +65,14 @@ select, option {
   text-align: left;
 }
 
+.language-bar {
+  text-align: center;
+}
+
+.sign-searchbar {
+  text-align: center;
+}
+
 .searchbar {
   width: 30%;
   position: relative;
@@ -74,6 +82,7 @@ select, option {
   align-items: center;
   background-color: transparent;
   // background-color: $bg-light;
+  text-align: center;
   margin: 10px;
   p {
     flex-grow:1;

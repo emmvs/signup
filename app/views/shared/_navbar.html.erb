@@ -1,5 +1,5 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
-  <%= link_to "#", class: "navbar-brand" do %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top sticky">
+  <%= link_to "/", class: "navbar-brand" do %>
     <%= image_tag "signup_logo.png" %>
   <% end %>
 
@@ -31,12 +31,28 @@
             <button class="btn-link", id="favorites-tab", onclick="updateFocus(this)">MY FAVORITES</button>
           <% end %>
         </li>
+        <%# <li>
+        <button>
+          <div data-controller="dropdown">
+            <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns"     >
+            <button data-dropmic-btn class="flag-image" ><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="chosen_flag" width="25" height="25"></button>
+              <div class="dropmic-menu" aria-hidden="true">
+                <li class="dropmic-menu__listItem" role="menuitem">
+                  <button class="dropmic-menu__listContent" value="ua" onclick="updateLangFlag(this.value)" tabindex="-1"><img id="ua-img" src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" width="25" height="25"> American English</button>
+                  <button class="dropmic-menu__listContent" value="ge" onclick="updateLangFlag(this.value)" tabindex="-1"><img id="ge-img" src="https://cdn-icons-png.flaticon.com/512/321/321233.png" width="25" height="25"> German</button>
+                  <button class="dropmic-menu__listContent" value="fr" onclick="updateLangFlag(this.value)" tabindex="-1"><img id="fr-img" src="https://cdn-icons-png.flaticon.com/512/330/330490.png" width="25" height="25"> French</button>
+                </li>
+              </div>
+            </span>
+          </div>
+        </button>
+        </li> %>
         <li>
           <%= form_tag signs_path, class: "searchbar", id: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Find an amazing sign"
+            placeholder: "Search"
           %>
           <button type="submit" class="search-button">
                 <%= image_tag "search.png", class: "flag-image" %>
@@ -44,7 +60,7 @@
     <% end %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://icons-for-free.com/iconfiles/png/512/human+person+user+icon-1320196276306824343.png", class: "avatar-bordered dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "user-icon-normal.png", class: "avatar-bordered dropdown-toggle user-avatar ", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>

@@ -1,6 +1,12 @@
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: transparent;
+  background: $bg-light;
   transition: 0.5s background-color ease;
 }
 
@@ -24,30 +30,40 @@
 
 .btn-link {
   text-decoration: none !important;
-  background-color: transparent;
+  background-color: $bg-light;
+  border-radius: 2rem;
   border: none;
-  padding: 2px 15px !important;
-  margin: 10px;
+  margin: 1rem;
+  padding: .6rem 1rem !important;
   font-family: $secondary-font;
   font-size: $font-size-16;
-  font-weight: $font-weigh--light;
+  font-weight: $font-weigh--normal;
   color: $font-color;
   line-height: 1.1;
   &:hover {
     color: $font-color;
+    box-shadow: inset 4px 4px 20px #C2C2BD,
+                inset -4px -4px 20px #C2C2BD;;
   }
 }
 
 
 .focus-tab {
-  border-radius: 25px;
-  box-shadow: inset 2px 2px 10px rgb(160, 160, 160);
-  margin: 10px;
-  padding: 9px 15px !important;
-  background-color: rgb(255, 255, 255);
+  border-radius: 2rem;
+  box-shadow: inset 4px 4px 20px #C2C2BD,
+              inset -4px -4px 20px #C2C2BD;
+  margin: 1rem;
+  padding: .6rem 1rem !important;
+  background-color: $bg-light;
 }
 
 #searchbar {
   border-radius: 20px;
   width: fit-content;
+}
+
+.user-avatar {
+  border-radius: .3rem;
+  box-shadow: $button-flat-shade;
+  border: none;
 }
