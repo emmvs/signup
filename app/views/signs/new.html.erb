@@ -1,4 +1,5 @@
 <%# signup/views/signs/new.html.erb %>
+
 <section class="new-sign">
   <h1 class="font-beta">Upload a new Sign</h1>
 
@@ -13,45 +14,11 @@
       <div>
         <video id="live" height="200" width="300" style="border: 1px solid black" autoplay muted></video>
       </div>
-      <div>
-        <video id="playback" height="200" width="300" style="border: 1px solid black" controls></video>
-      </div>
+  <%# <div>
+    <video id="playback" height="200" width="300" style="border: 1px solid black" controls></video>
+  </div> %>
 
-    <%# <script charset="utf-8">
-      (async () => {
-        const startBtn = document.querySelector('#start');
-        const stopBtn = document.querySelector('#stop');
-        const liveVideo = document.querySelector('#live');
-        const playbackVideo = document.querySelector('#playback');
-
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
-        liveVideo.srcObject = stream;
-
-        const recorder = new MediaRecorder(stream);
-        const chunks = [];
-        recorder.ondataavailable = (e) => {
-          chunks.push(e.data);
-        }
-
-        startBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          // Start recording
-          recorder.start();
-        });
-
-        stopBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          // Stop recording
-          recorder.stop();
-
-          setTimeout(() => {
-            playbackVideo.src = window.URL.createObjectURL(chunks[0]);
-            playbackVideo.play();
-            console.log(playbackVideo)
-          }, 500);
-        });
-      })();
-    </script> %>
+ 
 
     <%= f.input :video, as: :file %>
     <%= f.submit "Create Sign" %>

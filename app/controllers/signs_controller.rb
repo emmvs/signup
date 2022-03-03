@@ -32,8 +32,9 @@ class SignsController < ApplicationController
     @sign = Sign.new(sign_params)
     @sign.user = current_user
     authorize @sign
-    if @sign.save
-      redirect_to @sign
+    if @sign.save!
+      # raise
+      redirect_to sign_path(@sign)
     else
       render :new
     end
