@@ -16,10 +16,6 @@
               <%=sign.title %>
             <% end %>
             </h1>
-            <p class="sign-description text-para--light"><%=sign.description %></p>
-            <div class="video-sign-container">
-              <%= cl_video_tag(sign.video.key, :controls=>false, :autoplay=>false, :loop=>true, :muted=>true, :width=>220, :height=>150, class:"video")%>
-            </div>
               <%# <div class="sign__header">
               <%# <h1 class="sign-title font-zeta"><%=sign.title >
               <%# </div> %>

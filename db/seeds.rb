@@ -58,7 +58,7 @@ e = 0
   )
 
   Category.create!(
-    title: ["Food", "Love", "Garden", "Animals", "Inroduction", "Traveling", "The 100 most important Signs", "Other"].sample,
+    title: ["Food", "Love", "Garden", "Animals", "Introduction", "Traveling", "The 100 most important Signs", "Other"].sample,
     user: User.first
   )
 
@@ -67,7 +67,7 @@ e = 0
     title: all_title.sample,
     description: all_description.sample,
     user: User.first,
-    category: Category.first,
+    # category: Category.last.title,
     language: 1
   )
 end
