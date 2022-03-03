@@ -26,6 +26,7 @@ class SignsController < ApplicationController
   def new
     @sign = Sign.new
     authorize @sign
+    @categories = Category.all
   end
 
   def create
@@ -33,7 +34,6 @@ class SignsController < ApplicationController
     @sign.user = current_user
     authorize @sign
     if @sign.save!
-      # raise
       redirect_to sign_path(@sign)
     else
       render :new

@@ -67,7 +67,7 @@ e = 0
     title: all_title.sample,
     description: all_description.sample,
     user: User.first,
-    # category: Category.last.title,
+    category: Category.last,
     language: 1
   )
 end

@@ -6,8 +6,8 @@
   <%= simple_form_for(@sign) do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
-    <label for="category">Your word's category:&nbsp;&nbsp;&nbsp;</label>
-    <%= f.select :category, ["Food", "Love", "Garden", "Animals", "Introduction", "Traveling", "The 100 most important Signs", "Other"] %>
+    <%# <label for="category">Your word's category:&nbsp;&nbsp;&nbsp;</label> %>
+    <%= f.association :category %>
       <h2 class="font-gamma">Record your own Sign</h2>
         <button id="start">Start</button>
         <button id="stop">Stop and save</button>
@@ -17,8 +17,6 @@
   <%# <div>
     <video id="playback" height="200" width="300" style="border: 1px solid black" controls></video>
   </div> %>
-
- 
 
     <%= f.input :video, as: :file %>
     <%= f.submit "Create Sign" %>
