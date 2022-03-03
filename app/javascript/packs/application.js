@@ -18,11 +18,11 @@ ActiveStorage.start()
 // ----------------------------------------------------
 
 // import "dropmic"; language flags dropdown
+import dropdown_controller from '../controllers/dropdown_controller';
 
 // External imports
 import "bootstrap";
 import "controllers";
-import Dropmic from "../components/dropmic";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
