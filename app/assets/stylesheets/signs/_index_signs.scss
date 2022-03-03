@@ -114,18 +114,18 @@
 
 .animated__text {
   position: absolute;
-  animation: 32s bounce ease-in-out infinite paused;
+  animation: 30s bounce ease-in-out infinite paused;
   white-space: nowrap;
   top: 0;
   // padding: 0 0.5rem;
 }
 
-.animated:hover {
-  animation-play-state: paused;
+span.animated__text:hover {
+    animation-play-state: paused !important;
 }
 
 .animated:not(.animated--on-hover) .animated__text,
-.animated.animated--on-hover:hover .animated__text {
+.animated__text {
   animation-play-state: running;
 }
 
