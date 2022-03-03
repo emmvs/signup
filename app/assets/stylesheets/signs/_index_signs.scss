@@ -77,12 +77,12 @@
   // padding: 0 0.5rem;
 }
 
-.animated:hover {
-  animation-play-state: paused;
+span.animated__text:hover {
+    animation-play-state: paused !important;
 }
 
 .animated:not(.animated--on-hover) .animated__text,
-.animated.animated--on-hover:hover .animated__text {
+.animated__text {
   animation-play-state: running;
 }
 

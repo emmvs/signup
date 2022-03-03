@@ -10,7 +10,11 @@
           <div class="sign-card">
             <%= link_to sign_path(sign), class: "sign-card-link" do %>
             <h1 class="animated">
+            <% if sign.title.length > 9 %>
               <span class="animated__text"><%=sign.title %></span>
+            <% else %>
+              <%=sign.title %>
+            <% end %>
             </h1>
             <p class="sign-description text-para--light"><%=sign.description %></p>
             <div class="video-sign-container">
