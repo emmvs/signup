@@ -12,6 +12,10 @@ body {
   width: 40px;
   padding: 3px;
   border-radius: 7px;
+  box-shadow: 4px 4px 12px #D0D3CE;
+  &:hover {
+    box-shadow: inset 4px 4px 12px #D0D3CE;
+  }
   &:focus {
     box-shadow: inset 4px 4px 12px #D0D3CE;
   }
@@ -20,14 +24,12 @@ body {
 .banner {
   max-width: 100vw;
   width: 100%;
-  height: 20rem;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  height: 15rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .flag-container {
@@ -35,7 +37,6 @@ body {
   padding: .5rem;
   border-radius: 10px;
   box-shadow: 2px 2px 10px rgb(160, 160, 160);
-  // text-align: center;
   border-style: none;
   background-color: $bg-light;
 }
@@ -53,10 +54,6 @@ select, option {
   padding: .5rem;
 }
 
-// .dropdown-item {
-//   border: 1px solid red !important;
-// }
-
 .dropmic-menu {
   border-radius: 15px !important;
 }
@@ -67,6 +64,19 @@ select, option {
 
 .language-bar {
   text-align: center;
+  display: flex;
+  max-width: 80rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.search-bar-infos {
+  align-self: center;
+  margin: 0;
+  margin-right: 1rem;
+  padding: 0;
 }
 
 .sign-searchbar {
@@ -76,8 +86,6 @@ select, option {
 .searchbar {
   width: 30%;
   position: relative;
-  // top: -2%;
-  // left: 5%;
   display: flex;
   align-items: center;
   background-color: transparent;
@@ -94,6 +102,7 @@ select, option {
   border-radius: 10px;
   box-shadow: inset 2px 2px 10px rgb(160, 160, 160);
   background-color: $bg-light;
+  width: max-content;
 }
 
 
@@ -113,7 +122,8 @@ select, option {
 .text-cards {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 5rem;
+  margin-top: 6rem;
+  padding-top: 2rem;
 }
 
 .text-card {
@@ -147,20 +157,9 @@ select, option {
   background-color: $sub-color;
 }
 
-// .footer {
-//   position:absolute;
-//   bottom:0;
-//   width:100%;
-//   height: max-content;
-//   padding: 1.5rem;
-//   border-top: 1rem solid $sub-color;
-//   text-align: center;
-//   z-index: 1;
-//   background-color: $bg-light;
-// }
-
 .ticker {
   position: relative;
+  margin-top: 4rem;
   overflow: hidden;
   height: 50px;
 }
