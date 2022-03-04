@@ -3,7 +3,7 @@
 <section class="new-sign">
   <h1 class="font-beta">Upload a new Sign</h1>
 
-  <%= simple_form_for(@sign) do |f| %>
+  <%= simple_form_for(@sign, html: { class: "video_form"}) do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
     <%# <label for="category">Your word's category:&nbsp;&nbsp;&nbsp;</label> %>

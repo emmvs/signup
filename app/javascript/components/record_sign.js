@@ -8,7 +8,7 @@ const recordSign = () => {
   if(start) {
   const stop = document.getElementById("stop");
   const live = document.getElementById("live");
-  const form = document.querySelector("form");
+  const form = document.querySelector('.video_form');
   const stopVideo = () => {
     live.srcObject.getTracks().forEach(track => track.stop());
   }
