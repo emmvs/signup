@@ -49,6 +49,15 @@ User.create!(
 )
 
 categories = ["Food", "Love", "Garden", "Animals", "Introduction", "Traveling", "The 100 most important Signs", "Other"]
+  User.create!(
+    username: Faker::FunnyName.name,
+    bio: "Hello, I'm Dustin and this is my amazing bio",
+    email: "dustin@test.com",
+    password: "123456",
+    language: 1,
+    target_language: 1
+    # phone_number: "+90123456789",
+  )
 
 categories.each do |category|
   Category.create!(

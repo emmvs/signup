@@ -8,7 +8,7 @@ const recordSign = () => {
   if(start) {
   const stop = document.getElementById("stop");
   const live = document.getElementById("live");
-  const form = document.querySelector("form");
+  const form = document.querySelector('.video_form');
   const stopVideo = () => {
     live.srcObject.getTracks().forEach(track => track.stop());
   }
@@ -46,9 +46,9 @@ const recordSign = () => {
   }
 
   const uploadToCloudinary  = (video) => {
-    const formData = new FormData(form);
+    const formData = new FormData(document.querySelector('.video_form'));
     let date = new Date().getTime
-    formData.append('sign[video]', video, "${date}_my_video.mp4");
+    formData.append('sign[video]', video, `${date}_my_video.mp4`);
     console.log(formData, video)
 
     Rails.ajax({
@@ -72,7 +72,7 @@ const recordSign = () => {
     .then(() => startRecording(live.captureStream()))
     .then (recordedChunks => {
 
-      const recordedBlob = new Blob(recordedChunks, { type: "video/mp4" });
+      const recordedBlob = new Blob(recordedChunks, { type: "video/webm" });
       uploadToCloudinary(recordedBlob);
     })
   });
