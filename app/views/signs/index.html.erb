@@ -20,8 +20,13 @@
               <%# <h1 class="sign-title font-zeta"><%=sign.title >
               <%# </div> %>
             <% end %>
-              <div class="sign-liked">
-              </div>
+
+              <%# <div class="sign-liked"> %>
+                <%= simple_form_for (@bookmark) do |f| %>
+                  <%= f.submit 'add to favorites', class: "sign-liked"%>
+                <% end %>
+              <%# </div> %>
+
               <div class="sign__infos">
                 <p class="sign-description text-para--light"><%=sign.description %></p>
               </div>
