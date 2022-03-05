@@ -3,6 +3,7 @@
   <h1 class="font-beta">Upload a new Sign</h1>
   <div class="d-flex">
     <%= simple_form_for(@sign, html: { class: "video_form"}) do |f| %>
+      <%= f.input :language, collection: ["german", "english", "french", "albanian", "bulgarian"]  %>
       <%= f.input :title %>
       <%= f.input :description %>
       <%= f.association :category %>

@@ -41,6 +41,8 @@
           let chosenLangImage = document.getElementById(flag+"-img");
           var getChosenFlagLink = chosenLangImage.src;
           chosenLangButton.src = getChosenFlagLink;
+          var hiddenField = document.getElementById("language_hidden_field")
+          hiddenField.value = flag
         }
     </script>
   </head>
