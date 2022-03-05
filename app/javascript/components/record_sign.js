@@ -1,4 +1,4 @@
-// // signup/app/javascript/components/record_sign.js
+// signup/app/javascript/components/record_sign.js
 
 import Rails from "@rails/ujs";
 
@@ -14,7 +14,6 @@ const recordSign = () => {
   }
 
   // stop.addEventListener("click", stopVideo);
-
   const stopRecording = () => {
     return new Promise(resolve => stop.addEventListener("click", resolve));
   }
