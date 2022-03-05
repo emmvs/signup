@@ -2,9 +2,9 @@ class CategoriesController < ApplicationController
 
   def index
     if params[:query].present?
-      @categories = Categorie.global_search(params[:query])
+      @categories = Category.global_search(params[:query])
     else
-      @categories = Categorie.all
+      @categories = Category.all
     end
   end
 

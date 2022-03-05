@@ -8,14 +8,10 @@ class Sign < ApplicationRecord
   enum language: { german: 0, english: 1, french: 2 , albanian: 3, bulgarian: 4 }
 
   include PgSearch::Model
-  multisearchable against: [:title, :description]
-
-  pg_search_scope :global_search, against: {
-    title: 'A',
-    description: 'B',
-  },
-    # against: [:title, :description],
-    using: {
-      tsearch: { prefix: true }
-    }
+  # multisearchable against: [:title, :description, :language]
+  scope :sorted, ->{ order(title: :asc) }
+  pg_search_scope :global_search,
+                  # against: {title: 'A', description: 'B', language: 'C'},
+                  against: [:title, :description, :language],
+                  using: { tsearch: { prefix: true }}
 end

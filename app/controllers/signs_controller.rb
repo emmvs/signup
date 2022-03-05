@@ -3,17 +3,12 @@ class SignsController < ApplicationController
   before_action :policy_scope_signs, only: [ :index, :show, :new, :edit, :update, :destroy ]
   before_action :find_sign, only: [ :show, :edit, :update, :destroy ]
 
-  # Why is this called article_params?
-  # def article_params
-  #   params.require(:sign).permit(:title, :description, :sign)
-  # end
-
   # For the search function
   def index
-    if params[:query].present?
+    if params[:language].present?
       # sql_query = "title ILIKE @@ :query OR description ILIKE @@ :query"
       # @signs = Sign.joins(:category).where(sql_query, query: "%#{params[:query]}%")
-      @signs = Sign.global_search(params[:query])
+      @signs = Sign.global_search(params[:language])
     else
       @signs = Sign.all
     end
@@ -53,7 +48,7 @@ class SignsController < ApplicationController
 
   def destroy
     @sign.destroy
-    redirect_to signs_path, notice: "Oh no! bye bye to the amazing sign"
+    redirect_to signs_path, notice: "Oh no! Bye bye to the amazing Sign 👋"
   end
 
   private
@@ -64,7 +59,7 @@ class SignsController < ApplicationController
   end
 
   def sign_params
-    params.require(:sign).permit(:language,:title, :description, :video, :category_id)
+    params.require(:sign).permit(:language, :title, :description, :video, :category_id)
   end
 
   def policy_scope_signs
