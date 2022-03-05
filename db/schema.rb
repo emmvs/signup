@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_19_160420) do
+ActiveRecord::Schema.define(version: 2022_03_05_111920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,11 +81,11 @@ ActiveRecord::Schema.define(version: 2022_02_19_160420) do
     t.string "title"
     t.text "description"
     t.integer "language"
-    t.integer "status"
     t.bigint "user_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "status", default: 0
     t.index ["category_id"], name: "index_signs_on_category_id"
     t.index ["user_id"], name: "index_signs_on_user_id"
   end
@@ -100,10 +100,10 @@ ActiveRecord::Schema.define(version: 2022_02_19_160420) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
     t.text "bio"
-    t.integer "role"
     t.integer "language"
     t.integer "target_language"
-    t.integer "reputation"
+    t.integer "reputation", default: 0
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

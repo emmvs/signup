@@ -53,7 +53,7 @@ e = 0
     email: "dustin@test.com",
     password: "123456",
     language: 1,
-    target_language: 1,
+    target_language: 1
     # phone_number: "+90123456789",
   )
 
