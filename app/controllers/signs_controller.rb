@@ -31,8 +31,6 @@ class SignsController < ApplicationController
 
   def create
     @sign = Sign.new(sign_params)
-    category = Category.find(sign_params[:category])
-    @sign.category = category
     @sign.user = current_user
     authorize @sign
     if @sign.save!
@@ -66,7 +64,7 @@ class SignsController < ApplicationController
   end
 
   def sign_params
-    params.require(:sign).permit(:title, :description, :video, :category)
+    params.require(:sign).permit(:title, :description, :video, :category_id)
   end
 
   def policy_scope_signs
