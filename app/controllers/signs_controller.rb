@@ -64,7 +64,7 @@ class SignsController < ApplicationController
   end
 
   def sign_params
-    params.require(:sign).permit(:title, :description, :video, :category_id)
+    params.require(:sign).permit(:language,:title, :description, :video, :category_id)
   end
 
   def policy_scope_signs
