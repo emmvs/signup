@@ -111,24 +111,25 @@
 	position: relative;
 	max-width: 200px;
 	overflow: hidden;
+  line-height: 60px;
 	height: 50px;
 	text-align: left;
 }
 
 .animated__text {
   position: absolute;
-  animation: 30s bounce linear infinite paused;
+  animation: 60s bounce linear infinite paused;
   white-space: nowrap;
   top: 0;
   // padding: 0 0.5rem;
 }
 
 span.animated__text:hover {
-    animation-play-state: paused !important;
+  animation-play-state: paused !important;
 }
 
 .animated:not(.animated--on-hover) .animated__text,
-.animated__text {
+.animated.animated--on-hover:hover .animated__text {
   animation-play-state: running;
 }
 
