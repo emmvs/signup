@@ -61,7 +61,7 @@
           <%= image_tag "user-icon-normal.png", class: "avatar-bordered dropdown-toggle user-avatar ", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "New Sign", "signs/new", class: "dropdown-item" %>
+            <%= link_to "New Sign", new_sign_path, class: "dropdown-item" %>
             <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             <%# <a class="dropdown-item" data-method="delete" href="/users/sign_out" rel="nofollow">Log out</a> %>
           </div>

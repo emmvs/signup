@@ -1,24 +1,24 @@
 <%# signup/views/signs/new.html.erb %>
-
 <section class="new-sign">
   <h1 class="font-beta">Upload a new Sign</h1>
-
-  <%= simple_form_for(@sign) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%# <label for="category">Your word's category:&nbsp;&nbsp;&nbsp;</label> %>
-    <%= f.association :category %>
+  <div class="d-flex">
+    <%= simple_form_for(@sign, html: { class: "video_form"}) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.association :category %>
+      <%= f.input :video, as: :file %>
+      <%= f.submit "Create Sign" %>
+    <% end %>
+    <div>
       <h2 class="font-gamma">Record your own Sign</h2>
-        <button id="start">Start</button>
-        <button id="stop">Stop and save</button>
+      <button id="start">Start</button>
+      <button id="stop">Stop and save</button>
       <div>
         <video id="live" height="200" width="300" style="border: 1px solid black" autoplay muted></video>
       </div>
-  <%# <div>
-    <video id="playback" height="200" width="300" style="border: 1px solid black" controls></video>
-  </div> %>
-
-    <%= f.input :video, as: :file %>
-    <%= f.submit "Create Sign" %>
-  <% end %>
+      <%# <div>
+        <video id="playback" height="200" width="300" style="border: 1px solid black" controls></video>
+      </div> %>
+    </div>
+  </div>
 </section>
