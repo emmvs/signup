@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
 puts "Cleaning Database! 🧹"
@@ -35,51 +28,53 @@ all_description = [
   "Signs have always been my favorite thing. Now I finally got the chance to have one on my Birthday Party and it was amazing!"
 ]
 
-e = 0
+User.create!(
+  username: Faker::FunnyName.name,
+  bio: "Hello, I'm Emma and this is my amazing bio",
+  email: "emma@test.com",
+  password: "123456",
+  language: 1,
+  target_language: 1,
+  # phone_number: "+90123456789",
+)
 
-  User.create!(
-    username: Faker::FunnyName.name,
-    bio: "Hello, I'm Emma and this is my amazing bio",
-    email: "emma@test.com",
-    password: "123456",
-    language: 1,
-    target_language: 1,
-    # phone_number: "+90123456789",
-  )
+User.create!(
+  username: Faker::FunnyName.name,
+  bio: "Hello, I'm Dustin and this is my amazing bio",
+  email: "dustin@test.com",
+  password: "123456",
+  language: 1,
+  target_language: 1,
+  # phone_number: "+90123456789",
+)
 
-  User.create!(
-    username: Faker::FunnyName.name,
-    bio: "Hello, I'm Dustin and this is my amazing bio",
-    email: "dustin@test.com",
-    password: "123456",
-    language: 1,
-    target_language: 1,
-    # phone_number: "+90123456789",
-  )
+categories = ["Food", "Love", "Garden", "Animals", "Introduction", "Traveling", "The 100 most important Signs", "Other"]
 
+categories.each do |category|
   Category.create!(
-    title: ["Food", "Love", "Garden", "Animals", "Introduction", "Traveling", "The 100 most important Signs", "Other"].sample,
+    title: category,
     user: User.first
   )
+end
 
 2.times do
-  sign = Sign.create!(
+  Sign.create!(
     title: all_title.sample,
     description: all_description.sample,
     user: User.first,
-    category: Category.last,
+    category: Category.all.sample,
     language: 1
   )
 end
 
-  camel_sign = Sign.create!(
-    title: all_title.sample,
-    description: all_description.sample,
-    user: User.first,
-    category: Category.first,
-    language: 1
-  )
-  camel_sign.video.attach(io: File.open("db/videos/camel.mov"), filename: "camel.mov", content_type: "video/mov")
-  camel_sign.save!
+camel_sign = Sign.create!(
+  title: all_title.sample,
+  description: all_description.sample,
+  user: User.first,
+  category: Category.all.sample,
+  language: 1
+)
+camel_sign.video.attach(io: File.open("db/videos/camel.mov"), filename: "camel.mov", content_type: "video/mov")
+camel_sign.save!
 
 puts "🤟🏻🤟🏼🤟🏽🤟🏾🤟🏿 Amazing! We are done 🤟🏻🤟🏼🤟🏽🤟🏾🤟🏿"
