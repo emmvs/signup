@@ -34,7 +34,7 @@
   align-items: center;
   max-width: 16rem;
   width: 100%;
-  height: 30rem;
+  height: 25rem;
   padding: 1rem;
   background-color: $bg-light;
   margin: 1rem;
@@ -51,7 +51,7 @@
 .sign__header {
   grid-column: 1 / span 2;
   grid-row: 1;
-  height: 8rem;
+  height: 6rem;
   margin-block-end: 1rem;
 }
 
@@ -70,7 +70,7 @@
   right: 1.2rem;
   border-radius: .2rem;
   box-shadow: $button-flat-shade;
-  top: .5rem;
+  top: 40%;
   &:before {
     content: "";
     position: absolute;
@@ -88,9 +88,12 @@
   grid-row: 4;
 }
 
-.sign-card-link:hover {
+.sign-card-link {
+  grid-column: 1 / span 2;
+  &:hover {
   text-decoration: none;
   cursor: pointer;
+}
 }
 
 .sign-count {
@@ -110,7 +113,7 @@
 	overflow: hidden;
   line-height: 60px;
 	height: 50px;
-	text-align: center;
+	text-align: left;
 }
 
 .animated__text {

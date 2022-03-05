@@ -2,7 +2,7 @@
   <div class="backdrop-index">
     <img src="https://images.unsplash.com/photo-1530569673472-307dc017a82d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" class="backdrop-index-img" alt="BG">
   </div>
-  <p class="search__text text-para--medium">There are <span class="sign-count"><%=@signs.count %></span> results for your search</p>
+  <p class="search__text text-para--medium">There are <span class="sign-count"><%=@signs.count unless @signs.nil? %></span> results for your search</p>
   <div class="signs-container">
     <div class="signs-grid">
       <% @signs.each do |sign| %>
@@ -16,10 +16,6 @@
               <%=sign.title %>
             <% end %>
             </h1>
-            <p class="sign-description text-para--light"><%=sign.description %></p>
-            <div class="video-sign-container">
-              <%= cl_video_tag(sign.video.key, :controls=>false, :autoplay=>false, :loop=>true, :muted=>true, :width=>220, :height=>150, class:"video")%>
-            </div>
               <%# <div class="sign__header">
               <%# <h1 class="sign-title font-zeta"><%=sign.title >
               <%# </div> %>
