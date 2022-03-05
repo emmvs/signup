@@ -17,6 +17,7 @@ class SignsController < ApplicationController
     else
       @signs = Sign.all
     end
+    @bookmark = Bookmark.new
   end
 
   def show

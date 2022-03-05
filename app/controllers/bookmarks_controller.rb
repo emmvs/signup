@@ -1,7 +1,13 @@
 class BookmarksController < ApplicationController
+  # skip_before_action :authenticate_user!, only: [ :index, :show ]
+  before_action :policy_scope_bookmarks, only: [ :index, :show, :new, :edit, :update, :destroy ]
 
   def index
-    @bookmark = Bookmark.all
+    @bookmarks = policy_scope(Bookmark)
+  end
+
+  def show
+    authorize @bookmark
   end
 
   def new
@@ -10,13 +16,15 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    @bookmark = Bookmark.new(bookmark_params)
+    @bookmark = Bookmark.new
     @bookmark.user = current_user
     authorize @bookmark
-    if @bookmark.save!
-      redirect_to bookmark_path(@bookmark)
-    else
-      render :new
-    end
   end
+
+  private
+
+  def policy_scope_bookmarks
+    @bookmarks = policy_scope(Bookmark)
+  end
+
 end

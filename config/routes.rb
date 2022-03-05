@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :signs
+  resources :bookmarks
   # resources :comments, only: [ :new, :create ] - should be nested inside :signs
   # resources :comments, only: [ :edit, :update, :destroy ]
   # resources :bookmarks, only: [ :index, :destroy ]

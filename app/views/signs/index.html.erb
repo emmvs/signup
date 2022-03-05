@@ -23,7 +23,9 @@
 
               <%# <div class="sign-liked"> %>
                 <%= simple_form_for (@bookmark) do |f| %>
-                  <%= f.submit 'add to favorites', class: "sign-liked"%>
+                  <%= f.hidden_field :user_id, value: current_user.id %>
+                  <%= f.hidden_field :sign_id, value: sign.id %>
+                  <%= f.submit '<3', class: "sign-liked"%>
                 <% end %>
               <%# </div> %>
 
