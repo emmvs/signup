@@ -22,11 +22,15 @@
             <% end %>
 
               <%# <div class="sign-liked"> %>
-                <%= simple_form_for (@bookmark) do |f| %>
+              <% if sign.bookmarks.nil? %>
+                <%= simple_form_for(@bookmark) do |f| %>
                   <%= f.hidden_field :user_id, value: current_user.id %>
                   <%= f.hidden_field :sign_id, value: sign.id %>
-                  <%= f.submit '<3', class: "sign-liked"%>
+                  <%= f.submit '', :type => :image, :src => "assets/button-heart.png", class: "sign-liked"%>
                 <% end %>
+                <% else %>
+                <%= image_tag "empty_heart.png", class: "sign-liked" %>
+              <% end %>
               <%# </div> %>
 
               <div class="sign__infos">
