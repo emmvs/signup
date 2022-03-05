@@ -59,6 +59,12 @@ class SignsController < ApplicationController
     redirect_to signs_path, notice: "Oh no! Bye bye to the amazing Sign 👋"
   end
 
+  def requests
+    authorize Sign
+    # find_requests
+    @inquiries = current_user.signs
+  end
+
   private
 
   def find_sign
@@ -74,3 +80,12 @@ class SignsController < ApplicationController
     @signs = policy_scope(Sign)
   end
 end
+
+# def find_requests
+#   @signs = Sign.all
+#   @inquiries = []
+#   @signs.each do |sign|
+#     @inquiries << sign if sign.user == current_user
+#   end
+#   @inquiries
+# end
