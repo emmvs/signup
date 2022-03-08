@@ -51,7 +51,7 @@ class BookmarksController < ApplicationController
   end
 
   def get_signs
-    @sign = Sign.all
+    @signs = Sign.all
   end
 
   def bookmark_params

@@ -21,21 +21,14 @@
             </h1>
             <% end %>
 
-              <%# <div class="sign-liked"> %>
-
-                <%# <%= link_to bookmark_path(bookmark), method: :delete do %>
-                  <%# <%= image_tag "button-heart.png" %>
-                <%# <% end %>
-              <%# </div> %>
-
-              <% if sign.bookmarks.nil? %>
+              <% if @signs.nil? %>
                 <%= simple_form_for(@bookmark) do |f| %>
                   <%= f.hidden_field :user_id, value: current_user.id %>
                   <%= f.hidden_field :sign_id, value: sign.id %>
-                  <%= f.submit '', :type => :image, :src => "assets/button-heart.png", class: "sign-liked"%>
+                  <%= f.submit '', :type => :image, :src => "assets/empty_heart.png", class: "sign-liked"%>
                 <% end %>
                 <% else %>
-                <%= image_tag "empty_heart.png", class: "sign-liked" %>
+                <%= image_tag "button-heart.png", class: "sign-liked" %>
               <% end %>
 
               <div class="sign__infos">

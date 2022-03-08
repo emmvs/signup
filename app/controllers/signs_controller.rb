@@ -52,11 +52,6 @@ class SignsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @sign.destroy
-  #   redirect_to signs_path, notice: "Oh no! bye bye to the amazing sign"
-  # end
-
   def destroy
     @sign = Sign.find(params[:id])
     authorize @sign
