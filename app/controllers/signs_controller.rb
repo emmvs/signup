@@ -77,12 +77,3 @@ class SignsController < ApplicationController
     @signs = policy_scope(Sign)
   end
 end
-
-# def find_requests
-#   @signs = Sign.all
-#   @inquiries = []
-#   @signs.each do |sign|
-#     @inquiries << sign if sign.user == current_user
-#   end
-#   @inquiries
-# end

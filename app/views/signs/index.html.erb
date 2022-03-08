@@ -1,3 +1,4 @@
+<!-- app/views/signs/index.html.erb -->
 <section class="container-index">
   <div class="backdrop-index">
     <img src="https://images.unsplash.com/photo-1530569673472-307dc017a82d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" class="backdrop-index-img" alt="BG">
@@ -16,13 +17,11 @@
               <%=sign.title %>
             <% end %>
             </h1>
-              <%# <div class="sign__header">
-              <%# <h1 class="sign-title font-zeta"><%=sign.title >
-              <%# </div> %>
             <% end %>
               <div class="sign-liked">
               </div>
               <div class="sign__infos">
+                <p class="sign-category text-para--light"><%=sign.category %></p>
                 <p class="sign-description text-para--light"><%=sign.description %></p>
               </div>
               <div class="video-sign-container">
