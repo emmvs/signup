@@ -11,7 +11,7 @@
       <% @bookmarks.each do |bookmark| %>
         <% if bookmark.sign.video.attached? %>
           <div class="sign-card--index">
-            <%= link_to sign_path(bookmark.sign), class: "sign-card-link" do %>
+            <%# <%= link_to sign_path(bookmark.sign), class: "sign-card-link" do %>
             <h1 class="animated">
             <% if bookmark.sign.title.length > 9 %>
               <span class="animated__text"><%=bookmark.sign.title %></span>
@@ -19,17 +19,20 @@
               <%=bookmark.sign.title %>
             <% end %>
             </h1>
-            <% end %>
 
-              <% if @signs.nil? %>
-                <%= simple_form_for(@bookmark) do |f| %>
-                  <%= f.hidden_field :user_id, value: current_user.id %>
-                  <%= f.hidden_field :sign_id, value: sign.id %>
-                  <%= f.submit '', :type => :image, :src => "assets/empty_heart.png", class: "sign-liked"%>
+              <div class="form-bookmark">
+                <% if !@signs.empty? %>
+                  <%= simple_form_for(bookmark, :action => 'destroy') do |f| %>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+                    <%= f.hidden_field :sign_id, value: bookmark.sign.id %>
+                    <%# <%= f.submit '', :src => "assets/heart.png", class: "sign-liked"%>
+                    <%= image_submit_tag("heart.png", class: 'sign-liked', alt: 'submit') %>
+                  <% end %>
+                  <% else %>
+                  <%= image_tag "empty_heart.png", class: "sign-liked" %>
                 <% end %>
-                <% else %>
-                <%= image_tag "button-heart.png", class: "sign-liked" %>
-              <% end %>
+              </div>
+
 
               <div class="sign__infos">
                 <p class="sign-description text-para--light"><%=bookmark.sign.description %></p>
