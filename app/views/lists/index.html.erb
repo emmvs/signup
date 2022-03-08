@@ -1,0 +1,17 @@
+<%# app/views/lists/index.html.erb %>
+<h2 class="h2">Sign Lists</h2>
+
+<h3>List Names </h3>
+
+<%# flex-box container %>
+  <div class="container">
+    <%# display lists %>
+
+      <% @lists.each do |list| %>
+      <div>
+        <div class="list-name"><%= list.name %></div>
+        <div class="item-btn"><%= link_to 'Show list', list_path(list) %></div>
+      </div>
+      <% end %>
+  </div>
+    <div class="item-btn"><%= link_to 'Add new list', new_list_path(@list) %></div>

@@ -12,10 +12,7 @@ class SignsController < ApplicationController
       end
       if params[:query]
         @items += Sign.where(title: params[:query]).or(Sign.where(description: params[:query]))
-        # sql_query = "title ILIKE @@ :query OR description ILIKE @@ :query"
-        # @items += Sign.joins(:category).where(sql_query, query: "%#{params[:query]}%")
       end
-      # @signs = Sign.global_search(params[:language])
       @signs = @items.uniq
     else
       @signs = Sign.all
