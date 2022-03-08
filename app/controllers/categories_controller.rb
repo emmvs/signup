@@ -9,8 +9,17 @@ before_action :policy_scope_categories, only: [ :index, :show, :new, :edit, :upd
     end
   end
 
+  def show
+    @category = Category.find(params[:id])
+  end
+
   private
+
   def policy_scope_categories
     @categories = policy_scope(Category)
+  end
+
+  def category_params
+    params.require(:category).permit(:title)
   end
 end

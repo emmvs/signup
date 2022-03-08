@@ -26,7 +26,6 @@ class SignsController < ApplicationController
   def new
     @sign = Sign.new
     authorize @sign
-    authorize @category
     @categories = Category.all
   end
 
