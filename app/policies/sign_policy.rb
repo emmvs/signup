@@ -26,6 +26,10 @@ class SignPolicy < ApplicationPolicy
     true
   end
 
+  def overview?
+    user_or_admin?
+  end
+
   private
 
   def user_or_admin?

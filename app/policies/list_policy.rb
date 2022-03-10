@@ -22,6 +22,10 @@ class ListPolicy < ApplicationPolicy
     user_or_admin?
   end
 
+  def overview?
+   user_or_admin?
+  end
+
   private
 
   def user_or_admin?
