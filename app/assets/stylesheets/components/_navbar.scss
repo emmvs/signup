@@ -71,3 +71,12 @@
   box-shadow: $button-flat-shade;
   border: none;
 }
+
+.navbar-lewagon .navbar-brand img {
+    width: 200px;
+}
+
+img:hover #hand-icon {
+			-webkit-animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+			animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}

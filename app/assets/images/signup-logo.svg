@@ -17,6 +17,7 @@
 			fill: #092550;
 		}
 
+    svg:hover #hand-icon,
 		#signup-group:hover #hand-icon {
 			-webkit-animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 			animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
