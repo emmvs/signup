@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   # resources :lists do
   #   resources :bookmarks, only: [ :new, :create ]
   # end
-  # get 'dashboard', to: 'pages#dashboard'
+  get 'dashboard', to: 'pages#dashboard'
 
 end

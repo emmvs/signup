@@ -2,6 +2,9 @@
 <%# ****** Banner ****** %>
 <section class="banner" style="background-image: url(<%= image_path "sky.jpg" %>)">
   <div class="language-bar">
+    <div class="home__logo">
+        <%= render 'pages/components/logohand-white'  %>
+    </div>
     <%# ****** Sign Search ****** %>
     <div class="sign-searchbar">
       <%= form_tag signs_path, class: "searchbar", id:"home_searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
@@ -71,7 +74,7 @@
 <div class="ticker-box">
   <div class="ticker">
     <p class="marquee">
-      <span> AMERICAN SIGN LANGUAGE 🤟🏿 GERMAN SIGN LANGUAGE 🤟🏾 FRENCH SIGN LANGUAGE 🤟🏽 ARABIC SIGN LANGUAGE 🤟🏼 ALBANIAN SIGN LANGUAGE 🤟🏻 BULGARIAN SIGN LANGUAGE 🤘 KOREAN SIGN LANGUAGE 🤟🏻 JANAPENSE LANGUAGE 🤟🏼 UKRIANIAN SIGN LANGUAGE 🤟🏽 ISRAELI SIGN LANGUAGE 🤟🏾 PALESTIANIAN SIGN LANGUAGE 🤟🏿 MOROCCON SIGN LANGUAGE 🤟🏾 SWEDISH SIGN LAGNUAGE 🤟🏽&nbsp;</span>
+      <span> AMERICAN SIGN LANGUAGE 🤟🏿 GERMAN SIGN LANGUAGE 🤟🏾 FRENCH SIGN LANGUAGE 🤟🏽 ARABIC SIGN LANGUAGE 🤟🏼 ALBANIAN SIGN LANGUAGE 🤟🏻 BULGARIAN SIGN LANGUAGE 🤘 KOREAN SIGN LANGUAGE 🤟🏻 JAPANESE LANGUAGE 🤟🏼 UKRIANIAN SIGN LANGUAGE 🤟🏽 ISRAELI SIGN LANGUAGE 🤟🏾 PALESTIANIAN SIGN LANGUAGE 🤟🏿 MOROCCON SIGN LANGUAGE 🤟🏾 SWEDISH SIGN LANGUAGE 🤟🏽&nbsp;</span>
     </p>
     <%# <p class="marquee marquee2">
       <span> AMERICAN SIGN LANGUAGE 🤟🏿 GERMAN SIGN LANGUAGE 🤟🏾 FRENCH SIGN LANGUAGE 🤟🏽 ARABIC SIGN LANGUAGE 🤟🏼 ALBANIAN SIGN LANGUAGE 🤟🏻 BULGARIAN SIGN LANGUAGE 🤘 KOREAN SIGN LANGUAGE 🤟🏻 JANAPENSE LANGUAGE 🤟🏼 UKRIANIAN SIGN LANGUAGE 🤟🏽 ISRAELI SIGN LANGUAGE 🤟🏾 PALESTIANIAN SIGN LANGUAGE 🤟🏿 MOROCCON SIGN LANGUAGE 🤟🏾 SWEDISH SIGN LAGNUAGE 🤟🏽&nbsp;</span>

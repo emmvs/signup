@@ -14,7 +14,6 @@
 @import "signs/show_sign";
 @import "signs/index_signs";
 @import "signs/new_signs";
-@import "pages/show";
 @import "components/dropmic";
 @import "components/footer";
 @import "categories/index_categories";
@@ -207,3 +206,135 @@ button {
     box-shadow: $link-click-shade;
   }
 }
+
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+
+
+/*SVG*/
+.light-blue {
+			clip-path: url(#SVGID_00000062176169490866212350000000187874967539270048_);
+			fill: #70D6FF;
+}
+
+.dark-blue {
+			clip-path: url(#SVGID_00000062176169490866212350000000187874967539270048_);
+			fill: #092550;
+}
+
+.dark-blue {
+			fill: #092550;
+}
+
+.orange {
+  clip-path:url(#SVGID_00000108310980686759689380000008115202460380925881_);
+  fill:#FF9770;
+}
+
+.dark-blue {
+  clip-path:url(#SVGID_00000108310980686759689380000008115202460380925881_);
+  fill:#092550;
+}
+
+.white {
+  fill:#FFFFFF;
+}
+
+
+#signup-group:hover #hand-icon {
+			-webkit-animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+			animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+		}
+
+		/**
+ * ----------------------------------------
+ * animation shake-lr
+ * ----------------------------------------
+ */
+		@-webkit-keyframes shake-lr {
+
+			0%,
+			100% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+				-webkit-transform-origin: 50% 50%;
+				transform-origin: 50% 50%;
+			}
+
+			10% {
+				-webkit-transform: rotate(8deg);
+				transform: rotate(8deg);
+			}
+
+			20%,
+			40%,
+			60% {
+				-webkit-transform: rotate(-10deg);
+				transform: rotate(-10deg);
+			}
+
+			30%,
+			50%,
+			70% {
+				-webkit-transform: rotate(10deg);
+				transform: rotate(10deg);
+			}
+
+			80% {
+				-webkit-transform: rotate(-8deg);
+				transform: rotate(-8deg);
+			}
+
+			90% {
+				-webkit-transform: rotate(8deg);
+				transform: rotate(8deg);
+			}
+		}
+
+		@keyframes shake-lr {
+
+			0%,
+			100% {
+				-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+				-webkit-transform-origin: 50% 50%;
+				transform-origin: 50% 50%;
+			}
+
+			10% {
+				-webkit-transform: rotate(8deg);
+				transform: rotate(8deg);
+			}
+
+			20%,
+			40%,
+			60% {
+				-webkit-transform: rotate(-10deg);
+				transform: rotate(-10deg);
+			}
+
+			30%,
+			50%,
+			70% {
+				-webkit-transform: rotate(10deg);
+				transform: rotate(10deg);
+			}
+
+			80% {
+				-webkit-transform: rotate(-8deg);
+				transform: rotate(-8deg);
+			}
+
+			90% {
+				-webkit-transform: rotate(8deg);
+				transform: rotate(8deg);
+			}
+		}

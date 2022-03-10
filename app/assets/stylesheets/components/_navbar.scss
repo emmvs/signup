@@ -18,10 +18,12 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  margin-right: 4.5rem;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 100px;
+  width: 200px;
+  margin-left: 4rem;
 }
 
 .navbar-nav {
@@ -70,4 +72,10 @@
   border-radius: .3rem;
   box-shadow: $button-flat-shade;
   border: none;
+  margin-left: 1rem;
+}
+
+img:hover #hand-icon {
+			-webkit-animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+			animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }

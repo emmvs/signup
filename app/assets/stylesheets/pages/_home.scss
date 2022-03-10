@@ -220,11 +220,7 @@ select, option {
   // font-weight: 600;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-100%, 0);
-  }
+.home__logo svg {
+  width: 500px;
+  height: auto;
 }
