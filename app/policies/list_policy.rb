@@ -23,7 +23,7 @@ class ListPolicy < ApplicationPolicy
   end
 
   def overview?
-    true
+   true
   end
 
   private
