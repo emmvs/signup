@@ -22,7 +22,7 @@
 
               <div class="form-bookmark">
                 <% if !@signs.empty? %>
-                  <%= simple_form_for(bookmark, :action => 'destroy') do |f| %>
+                  <%= simple_form_for(bookmark, url: bookmark_path(bookmark), method: :delete) do |f| %>
                     <%= f.hidden_field :user_id, value: current_user.id %>
                     <%= f.hidden_field :sign_id, value: bookmark.sign.id %>
                     <%# <%= f.submit '', :src => "assets/heart.png", class: "sign-liked"%>

@@ -18,16 +18,9 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
-    # if Bookmark.where(sign_id: bookmark_params[:sign_id])
-    #   @bookmark.destroy
-    # else
-      @bookmark.save!
-      flash[:message] = "bookmark created"
-    # end
-    # @bookmark.sign = sign
-    # @bookmark.user = current_user
+    @bookmark.save!
+    flash[:message] = "bookmark created"
     authorize @bookmark
-    # redirect_to root_path, notice: "bookmark created"
     redirect_to signs_path
   end
 
