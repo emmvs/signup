@@ -2,8 +2,9 @@
 -------------------------------------------------------------- */
 
 .dropmic {
-  position: absolute;
+  position: relative;
   display: inline-flex;
+  margin-top: 1rem;
 }
 
 .dropmic * {
