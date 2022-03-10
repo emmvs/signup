@@ -2,7 +2,7 @@
 -------------------------------------------------------------- */
 
 .dropmic {
-  position: relative;
+  position: absolute;
   display: inline-flex;
 }
 
@@ -15,7 +15,7 @@
 
 .dropmic-menu {
   position: absolute;
-  z-index: 1;
+  z-index: 1000;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   min-width: 10vw;
@@ -237,7 +237,7 @@
 /* When list come after custom content */
 
 .dropmic-menu__listContent:nth-child(n) {
-  border-top: 1px solid #f2f2f2;
+  // border-top: 1px solid #f2f2f2;
 }
 
 /* When list come first */
@@ -245,6 +245,8 @@
 .dropmic-menu__list:first-child .dropmic-menu__listContent {
   border-top: none;
   border-bottom: 1px solid #f2f2f2;
+  // border-top-left-radius: 20px;
+  // border-top-right-radius: 20px;
 }
 
 /* When the are only list items¨*/
@@ -258,4 +260,5 @@
 .dropmic-menu__listContent:active {
   background-color: #f2f2f2;
   color: #000;
+  border-radius: 20px;
 }

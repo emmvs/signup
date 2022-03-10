@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :lists, dependent: :destroy
   has_many :bookmarks
   validates :email, presence: true
+  enum reputation: { unflagged: 0, flagged: 1 }
 end

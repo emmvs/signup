@@ -1,0 +1,11 @@
+<!-- app/views/signs/requests.html.erb -->
+<% @inquiries.each do |inquiry| %>
+  <%= inquiry.title %>
+  <%= inquiry.description %>
+  <%= inquiry.status %>
+   <% if inquiry.video.attached? %>
+    <div class="video-sign-container">
+      <%= cl_video_tag(inquiry.video.key, :controls=>false, :autoplay=>false, :loop=>true, :muted=>true, :width=>220, :height=>150, class:"video")%>
+    </div>
+  <% end %>
+<% end %>
