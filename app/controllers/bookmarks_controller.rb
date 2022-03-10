@@ -28,7 +28,7 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     authorize @bookmark
     if @bookmark.update(bookmark_params)
-      redirect_to bookmarks_path, notice: "Your amazing sign is not a favorite anymore"
+      redirect_to bookmarks_path
     else
       redirect_to bookmarks_path
     end
