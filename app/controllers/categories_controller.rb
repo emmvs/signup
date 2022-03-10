@@ -1,11 +1,25 @@
 class CategoriesController < ApplicationController
+before_action :policy_scope_categories, only: [ :index, :show, :new, :edit, :update, :destroy ]
 
   def index
     if params[:query].present?
-      @categories = Categorie.global_search(params[:query])
+      @categories = Category.global_search(params[:query])
     else
-      @categories = Categorie.all
+      @categories = Category.all
     end
   end
 
+  def show
+    @category = Category.find(params[:id])
+  end
+
+  private
+
+  def policy_scope_categories
+    @categories = policy_scope(Category)
+  end
+
+  def category_params
+    params.require(:category).permit(:title)
+  end
 end

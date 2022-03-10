@@ -1,0 +1,28 @@
+<%# app/views/categories/index.html.erb %>
+<section class="container-index">
+  <div class="backdrop-index">
+    <img src="https://images.unsplash.com/photo-1530569673472-307dc017a82d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" class="backdrop-index-img" alt="BG">
+  </div>
+  <div class="categories-container">
+    <div class="categories-grid">
+      <% @categories.each do |category| %>
+          <div class="category-card--index">
+            <%= link_to category_path(category), class: "category-card-link" do %>
+            <h1 class="animated">
+              <% if category.title.length > 9 %>
+                <span class="animated__text"><%=category.title %></span>
+              <% else %>
+                <%=category.title %>
+              <% end %>
+            </h1>
+            <% end %>
+            <div class="category-liked">
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+        <%# <% if category.nil? %>
+          <%# <%= button_to "New Sign", new_sign_path %>
