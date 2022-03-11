@@ -14,6 +14,7 @@
           <p class="text-para--medium"><%= @sign.description %></p>
           <%= image_tag "heart.png", class: "flag-container flag-image heart-like", data: { action:"click->flags#disable", flags_target:"usa" }%>
           <%= @sign.language %>
+          <%= @sign.category.title %>
         </div>
       </div>
       <div class="tag tag--controllers">
