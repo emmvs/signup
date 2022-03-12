@@ -1,7 +1,6 @@
 function updateFocus() {
-  // enlever style focus sur tous les boutons
+  // take out style on the buttons
   let myButtons = document.querySelectorAll(".nav-link")
-  // mettre focus sur le bouton clicked
 }
 
 export {updateFocus}

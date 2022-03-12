@@ -12,7 +12,20 @@
         <div class="sign__texts">
           <h3 class="sign__example font-gamma">Description</h3>
           <p class="text-para--medium"><%= @sign.description %></p>
-          <%= image_tag "heart.png", class: "flag-container flag-image heart-like", data: { action:"click->flags#disable", flags_target:"usa" } %>
+
+              <div class="form-bookmark">
+                <% if @signs.empty? %>
+                  <%= simple_form_for(@bookmark) do |f| %>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+                    <%= f.hidden_field :sign_id, value: sign.id %>
+                    <%= image_submit_tag("empty_heart.png", class: 'sign-liked heart-like', alt: 'submit') %>
+                  <% end %>
+                  <% else %>
+                  <%= image_tag "heart.png", class: "sign-liked" %>
+                <% end %>
+              </div>
+
+          <%# <%= image_tag "heart.png", class: "flag-container flag-image heart-like", data: { action:"click->flags#disable", flags_target:"usa" } %>
           <%= @sign.language %>
           <%= @sign.category.title %>
         </div>

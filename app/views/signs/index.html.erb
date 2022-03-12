@@ -24,7 +24,6 @@
                   <%= simple_form_for(@bookmark) do |f| %>
                     <%= f.hidden_field :user_id, value: current_user.id %>
                     <%= f.hidden_field :sign_id, value: sign.id %>
-                    <%# <%= f.submit '', :src => "assets/empty_heart.png", class: "sign-liked"%>
                     <%= image_submit_tag("empty_heart.png", class: 'sign-liked', alt: 'submit') %>
                   <% end %>
                   <% else %>
