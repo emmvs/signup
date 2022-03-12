@@ -11,6 +11,26 @@ const initUpdateNavbarOnScroll = () => {
   }
 }
 
+const updateFocusOnLoad = () => {
+  let myButtons = document.querySelectorAll(".btn-link")
+  myButtons.forEach(button => {
+    button.classList.remove('focus-tab')
+  });
+  var pathname = window.location.pathname;
+  switch (pathname) {
+    case "/":
+      document.getElementById('homeButton').classList.add('focus-tab');
+      break;
+    case "/dashboard":
+      document.getElementById('dashboardButton').classList.add('focus-tab');
+      break;
+    case "/bookmarks":
+      document.getElementById('bookmarksButton').classList.add('focus-tab');
+      break;
+      case "/categories":
+      document.getElementById('categoriesButton').classList.add('focus-tab');
+      break;
+  }
+}
 
-
-export { initUpdateNavbarOnScroll };
+export { initUpdateNavbarOnScroll, updateFocusOnLoad };

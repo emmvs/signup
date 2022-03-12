@@ -39,11 +39,13 @@ document.addEventListener('turbolinks:load', () => {
   }
 });
 
-import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { initUpdateNavbarOnScroll, updateFocusOnLoad } from '../components/navbar';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
+  updateFocusOnLoad();
 });
+
 
 import {updateFocus} from '../components/navbar_button'

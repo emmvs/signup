@@ -13,22 +13,22 @@
       <% if user_signed_in? %>
         <li>
           <%= link_to root_path do %>
-            <button class="btn-link focus-tab", id="home-tab", onclick="updateFocus(this)">HOME</button>
+            <button class="btn-link", id="homeButton">HOME</button>
           <% end %>
         </li>
         <li>
           <%= link_to overview_path do %>
-            <button class="btn-link", id="dashboard-tab", onclick="updateFocus(this)">DASHBOARD</button>
+            <button class="btn-link", id="dashboardButton">DASHBOARD</button>
           <% end %>
         </li>
         <li>
           <%= link_to bookmarks_path do %>
-            <button class="btn-link", id="favorites-tab", onclick="updateFocus(this)">FAVORITES</button>
+            <button class="btn-link", id="bookmarksButton">FAVORITES</button>
           <% end %>
         </li>
         <li>
           <%= link_to categories_path do %>
-            <button class="btn-link", id="categories-tab", onclick="updateFocus(this)">CATEGORIES</button>
+            <button class="btn-link", id="categoriesButton">CATEGORIES</button>
           <% end %>
         </li>
 
