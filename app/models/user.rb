@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :signs
   has_many :categories
-  has_many :lists, dependent: :destroy
+  # has_many :lists, dependent: :destroy
+  # has_many :bookmarks, through: :signs
   has_many :bookmarks
   validates :email, presence: true
   validates :username, presence: true

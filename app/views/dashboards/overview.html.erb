@@ -1,28 +1,31 @@
 <section class="container-dashboard">
-    <h1 class="font-alpha dashboard__title ">Hi,&nbsp;<%= @current_user.username %>!</h1>
-    <div class="sign-card--dashboard">
-      <div class="tag2 tag--video">
-        <h2 class="dashboard__video font-gamma">Your lastest sign</h2>
-        <%# <%= @current_user.signs.each do |sign| %>
-            <%# <p class="sign-name"><%= sign.title %>
-            <%# </p> %>
-        <%# <% end %>
-      </div>
-      <div class="tag2 tag--description">
-        <div class="dashboard__texts">
-          <h3 class="sign__display font-gamma">Your lists</h3>
-          <%# <% @lists.each do |list| %>
-            <%# <ul>
-              <%# <li class="list-name"><%= list.name %></li>
-            <%# </ul>
-          <% end %>
+  <h1 class="font-alpha dashboard__title ">Hi,&nbsp;<%= @current_user.username %>!</h1>
+  <div class="sign-card--dashboard">
+    <div class="tag2 tag--video">
+      <h2 class="dashboard__video font-gamma">Your lastest sign</h2>
+      <p class="sign-name">
+        <%= current_user.signs.last.title %>
+        <div class="video-sign-container">
+          <%= cl_video_tag(current_user.signs.last.video.key, :controls=>false, :autoplay=>false, :loop=>true, :muted=>true, :width=>220, :height=>150, class:"video")%>
         </div>
-      </div>
-      <div class="tag2 tag--controllers">
-      <h3></h3>
-        <div class="sign-buttons">
-          <%= link_to "New Sign", new_sign_path, class: "dashboard-button btn--normal" %>
-        </div>
+      </p>
+    </div>
+    <div class="tag2 tag--description">
+      <div class="dashboard__texts">
+        <h3 class="sign__display font-gamma">Your 5 favorite signs</h3>
+        <% current_user.bookmarks.last(5).each do |bookmark| %>
+          <ul>
+            <%# <li class="bookmark-name"><%= bookmark.sign.title %></li> %>
+            <%= link_to "#{bookmark.sign.title}", sign_path(bookmark.sign), class: "dashboard-button btn--normal" %>
+          </ul>
+        <% end %>
       </div>
     </div>
+    <div class="tag2 tag--controllers">
+    <h3></h3>
+      <div class="sign-buttons">
+        <%= link_to "New Sign", new_sign_path, class: "dashboard-button btn--normal" %>
+      </div>
+    </div>
+  </div>
 </section>
