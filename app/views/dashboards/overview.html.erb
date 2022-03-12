@@ -3,19 +3,22 @@
   <div class="sign-card--dashboard">
     <div class="tag2 tag--video">
       <h2 class="dashboard__video font-gamma">Your lastest sign</h2>
-      <p class="sign-name">
+      <% if current_user.signs != [] && current_user.signs.last.video.attached? %>
+        <p class="sign-name"></p>
         <%= current_user.signs.last.title %>
         <div class="video-sign-container">
           <%= cl_video_tag(current_user.signs.last.video.key, :controls=>false, :autoplay=>false, :loop=>true, :muted=>true, :width=>220, :height=>150, class:"video")%>
         </div>
-      </p>
+      <% else %>
+       <p class="sign-name">No signs yet</p>
+       <% end %>
     </div>
     <div class="tag2 tag--description">
       <div class="dashboard__texts">
         <h3 class="sign__display font-gamma">Your 5 favorite signs</h3>
         <% current_user.bookmarks.last(5).each do |bookmark| %>
           <ul>
-            <%# <li class="bookmark-name"><%= bookmark.sign.title %></li> %>
+            <%# <li class="bookmark-name"><%= bookmark.sign.title %></li>
             <%= link_to "#{bookmark.sign.title}", sign_path(bookmark.sign), class: "dashboard-button btn--normal" %>
           </ul>
         <% end %>

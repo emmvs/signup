@@ -4,5 +4,4 @@ class DashboardsController < ApplicationController
     authorize Sign
     # raise
   end
-
 end

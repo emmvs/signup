@@ -11,25 +11,27 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li>
-          <%= link_to root_path do %>
-            <button class="btn-link focus-tab", id="home-tab", onclick="updateFocus(this)">HOME</button>
-          <% end %>
+        <li class="<%= is_active?(root_path)%>">
+          <%= link_to "Home", root_path  %>
+            <%# <button class="btn-link focus-tab", id="home-tab", onclick="updateFocus(this)">HOME</button> %>
         </li>
-        <li>
-          <%= link_to "dashboard" do %>
-            <button class="btn-link", id="dashboard-tab", onclick="updateFocus(this)">DASHBOARD</button>
-          <% end %>
+        <li class="<%= is_active?(overview_path)%>">
+         <%= link_to "Dashboard", overview_path  %>
+          <%# <%= link_to "dashboard" do %>
+            <%# <button class="btn-link", id="dashboard-tab", onclick="updateFocus(this)">DASHBOARD</button> %>
+          <%# <% end %>
         </li>
-        <li>
-          <%= link_to root_path do %>
-            <button class="btn-link", id="lists-tab", onclick="updateFocus(this)">MY LISTS</button>
-          <% end %>
+        <li class="<%= is_active?(bookmarks_path)%>">
+         <%= link_to "Favorites", bookmarks_path  %>
+          <%# <%= link_to root_path do %>
+            <%# <button class="btn-link", id="lists-tab", onclick="updateFocus(this)">MY LISTS</button> %>
+          <%# <% end %>
         </li>
-        <li>
-          <%= link_to root_path do %>
-            <button class="btn-link", id="favorites-tab", onclick="updateFocus(this)">MY FAVORITES</button>
-          <% end %>
+        <li class="<%= is_active?(new_sign_path)%>">
+        <%= link_to "Create", new_sign_path  %>
+          <%# <%= link_to root_path do %>
+            <%# <button class="btn-link", id="favorites-tab", onclick="updateFocus(this)">MY FAVORITES</button> %>
+          <%# <% end %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "user-icon-normal.png", class: "avatar-bordered dropdown-toggle user-avatar ", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
