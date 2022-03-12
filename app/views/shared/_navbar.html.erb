@@ -11,33 +11,54 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li>
-          <%= link_to root_path do %>
-            <button class="btn-link focus-tab", id="home-tab", onclick="updateFocus(this)">HOME</button>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to overview_path do %>
-            <button class="btn-link", id="dashboard-tab", onclick="updateFocus(this)">DASHBOARD</button>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to root_path do %>
-            <button class="btn-link", id="lists-tab", onclick="updateFocus(this)">LISTS</button>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to bookmarks_path do %>
-            <button class="btn-link", id="favorites-tab", onclick="updateFocus(this)">FAVORITES</button>
+        <%# <li>
+          <%# <%= link_to root_path do %>
+            <%# <button class="btn-link focus-tab", id="home-tab", onclick="updateFocus(this)">HOME</button> %>
+          <%# <% end %>
+        <%# </li>
+        <li> %>
+          <%# <%= link_to overview_path do %>
+            <%# <button class="btn-link", id="dashboard-tab", onclick="updateFocus(this)">DASHBOARD</button> %>
+          <%# <% end %>
+        <%# </li>
+        <li> %>
+          <%# <%= link_to root_path do %>
+            <%# <button class="btn-link", id="lists-tab", onclick="updateFocus(this)">LISTS</button> %>
+          <%# <% end %>
+        <%# </li>
+        <li> %>
+          <%# <%= link_to bookmarks_path do %>
+            <%# <button class="btn-link", id="favorites-tab", onclick="updateFocus(this)">FAVORITES</button> %>
 
-          <% end %>
+          <%# <% end %>
+        <%# </li>
+        <li> %>
+          <%# <%= link_to categories_path do %>
+            <%# <button class="btn-link", id="categories-tab", onclick="updateFocus(this)">CATEGORIES</button> %>
+          <%# <% end %>
+        <%# </li> %>
+        <li class="<%= is_active?(root_path)%>">
+          <%= link_to "Home", root_path, class: "btn-link"  %>
+            <%# <button class="btn-link focus-tab", id="home-tab", onclick="updateFocus(this)">HOME</button> %>
         </li>
-        <li>
-          <%= link_to categories_path do %>
-            <button class="btn-link", id="categories-tab", onclick="updateFocus(this)">CATEGORIES</button>
-          <% end %>
+        <li class="<%= is_active?(overview_path)%>">
+         <%= link_to "Dashboard", overview_path, class: "btn-link"  %>
+          <%# <%= link_to "dashboard" do %>
+            <%# <button class="btn-link", id="dashboard-tab", onclick="updateFocus(this)">DASHBOARD</button> %>
+          <%# <% end %>
         </li>
-
+        <li class="<%= is_active?(bookmarks_path)%>">
+         <%= link_to "Favorites", bookmarks_path, class: "btn-link"  %>
+          <%# <%= link_to root_path do %>
+            <%# <button class="btn-link", id="lists-tab", onclick="updateFocus(this)">MY LISTS</button> %>
+          <%# <% end %>
+        </li>
+        <li class="<%= is_active?(new_sign_path)%>">
+        <%= link_to "Create", new_sign_path, class: "btn-link"  %>
+          <%# <%= link_to root_path do %>
+            <%# <button class="btn-link", id="favorites-tab", onclick="updateFocus(this)">MY FAVORITES</button> %>
+          <%# <% end %>
+        </li>
   <%# Hide Searchbar on Homepage %>
   <% unless controller_name == "pages" && action_name = "home" %>
     <li>
