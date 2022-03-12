@@ -4,6 +4,7 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+
   /* .rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
@@ -51,6 +52,50 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   } */
+  .rails-default-error-page {
+    background-color: #F9F8F1;
+  }
+  .dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .error.headline-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  .error-headline {
+    font-size: 104px;
+    color: #0A2550;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+
+  .error-paragraph {
+    margin-top: 0px;
+    color: #FF9770;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .error-paragraph-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  .panda-gif-box {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 24px;
+  }
+
+  .panda-gif {
+   border-radius: 10px;
+  }
+
   </style>
 </head>
 
@@ -58,8 +103,15 @@
   <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
-      <h1>404</h1>
-      <p>Page not found</p>
+      <div class="error-headline-box">
+        <h1 class="error-headline">404</h1>
+      </div>
+      <div class="error-paragraph-box">
+        <p class="error-paragraph">Page not found</p>
+      </div>
+      <div class="panda-gif-box">
+        <img src="images/giphy9.GIF" alt="Panda" width="300" height="300" class="panda-gif">
+      </div>
     </div>
   </div>
 </body>
