@@ -18,8 +18,21 @@
             <% end %>
             </h1>
             <% end %>
-              <div class="sign-liked">
+
+              <div class="form-bookmark">
+                <% if sign.bookmarks.empty? %>
+                  <%= simple_form_for(@bookmark) do |f| %>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+                    <%= f.hidden_field :sign_id, value: sign.id %>
+                    <%# <%= f.submit '', :src => "assets/empty_heart.png", class: "sign-liked"%>
+                    <%= image_submit_tag("empty_heart.png", class: 'sign-liked', alt: 'submit') %>
+                  <% end %>
+                  <% else %>
+                  <%= image_tag "heart.png", class: "sign-liked" %>
+                <% end %>
               </div>
+
+
               <div class="sign__infos">
                 <p class="sign-category text-para--light"><%sign.category.title %></p>
                 <p class="sign-description text-para--light"><%=sign.description %></p>

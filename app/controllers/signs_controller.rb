@@ -17,6 +17,7 @@ class SignsController < ApplicationController
     else
       @signs = Sign.all
     end
+    @bookmark = Bookmark.new
   end
 
   def show
@@ -52,6 +53,8 @@ class SignsController < ApplicationController
   end
 
   def destroy
+    @sign = Sign.find(params[:id])
+    authorize @sign
     @sign.destroy
     redirect_to signs_path, notice: "Oh no! Bye bye to the amazing Sign 👋"
   end

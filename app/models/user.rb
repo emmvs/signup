@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :signs
   has_many :categories
   has_many :lists, dependent: :destroy
-  has_many :bookmarks, through: :signs
+  has_many :bookmarks
   validates :email, presence: true
   validates :username, presence: true
   enum reputation: { unflagged: 0, flagged: 1 }

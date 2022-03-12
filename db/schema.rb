@@ -45,11 +45,11 @@ ActiveRecord::Schema.define(version: 2022_03_05_111920) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.bigint "sign_id", null: false
-    t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["list_id"], name: "index_bookmarks_on_list_id"
+    t.bigint "user_id"
     t.index ["sign_id"], name: "index_bookmarks_on_sign_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -110,7 +110,6 @@ ActiveRecord::Schema.define(version: 2022_03_05_111920) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookmarks", "lists"
   add_foreign_key "bookmarks", "signs"
   add_foreign_key "categories", "users"
   add_foreign_key "lists", "users"
