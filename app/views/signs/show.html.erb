@@ -12,7 +12,7 @@
         <div class="sign__texts">
           <h3 class="sign__example font-gamma">Description</h3>
           <p class="text-para--medium"><%= @sign.description %></p>
-          <%= image_tag "heart.png", class: "flag-container flag-image heart-like", data: { action:"click->flags#disable", flags_target:"usa" }%>
+          <%= image_tag "heart.png", class: "flag-container flag-image heart-like", data: { action:"click->flags#disable", flags_target:"usa" } %>
           <%= @sign.language %>
           <%= @sign.category.title %>
         </div>
