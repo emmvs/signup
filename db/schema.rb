@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_05_111920) do
+ActiveRecord::Schema.define(version: 2022_03_12_092752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,10 +45,8 @@ ActiveRecord::Schema.define(version: 2022_03_05_111920) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.bigint "sign_id", null: false
-    t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["list_id"], name: "index_bookmarks_on_list_id"
     t.index ["sign_id"], name: "index_bookmarks_on_sign_id"
   end
 
@@ -110,7 +108,6 @@ ActiveRecord::Schema.define(version: 2022_03_05_111920) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookmarks", "lists"
   add_foreign_key "bookmarks", "signs"
   add_foreign_key "categories", "users"
   add_foreign_key "lists", "users"
