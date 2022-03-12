@@ -15,11 +15,11 @@ class BookmarkPolicy < ApplicationPolicy
   end
 
   def update?
-    user_or_admin?
+    true
   end
 
   def destroy?
-    user_or_admin?
+    true
   end
 
   private
