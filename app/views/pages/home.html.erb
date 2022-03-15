@@ -24,7 +24,9 @@
       <p class="search-bar-infos text-para--medium">Choose your language</p>
       <div data-controller="dropdown">
         <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns"     >
-          <button data-dropmic-btn class="flag-image" ><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="tl-chosen_flag" width="25" height="25"></button>
+          <%# ********** TODO: Change the flags to local files %>
+          <%# <button data-dropmic-btn class="flag-image" ><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="tl-chosen_flag" width="25" height="25"></button> %>
+          <button data-dropmic-btn class="flag-image" ><img src="/assets/deutschland-6e2d449caedc4bace22a4cce51e2844ce8ffe10c864beaa8b1f12ad955540a2e.png" id="tl-chosen_flag" width="25" height="25"></button>
           <div class="dropmic-menu" aria-hidden="true">
             <li class="dropmic-menu__listItem" role="menuitem">
               <button class="dropmic-menu__listContent" value="english" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="english-img" src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" width="25" height="25"> American English</button>
