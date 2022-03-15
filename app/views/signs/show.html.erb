@@ -14,7 +14,7 @@
           <p class="text-para--medium"><%= @sign.description %></p>
 
               <div class="form-bookmark">
-                <% if @signs.empty? %>
+                <% if sign.bookmarks.empty? %>
                   <%= simple_form_for(@bookmark) do |f| %>
                     <%= f.hidden_field :user_id, value: current_user.id %>
                     <%= f.hidden_field :sign_id, value: sign.id %>
