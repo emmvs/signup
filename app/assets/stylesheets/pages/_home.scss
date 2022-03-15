@@ -1,3 +1,7 @@
+// * {
+//   outline: 1px solid tomato;
+// }
+
 // Specific CSS for your home-page
 body {
   background-color: $bg-light;
@@ -68,7 +72,7 @@ select, option {
   flex-direction: column;
   max-width: 80rem;
   width: 100%;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   margin: 0 auto;
 }
@@ -97,10 +101,6 @@ select, option {
     flex-grow:1;
     margin:0;
   }
-}
-
-.sign-searchbar{
-  width:40%;
 }
 
 #home_searchbar{
@@ -176,12 +176,14 @@ select, option {
 }
 
 .ticker-box {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
+  width: auto;
 }
 
 .ticker {
   position: fixed;
   bottom: 0;
+  width: auto;
   z-index: 100;
   overflow: hidden;
   height: 50px;
@@ -201,7 +203,7 @@ select, option {
 
 .marquee span {
   display: inline-block;
-  padding-left: 100%;
+  // padding-left: 100%;
   animation: marquee 60s linear infinite;
   animation-direction: reverse;
 }
