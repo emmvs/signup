@@ -38,7 +38,7 @@ User.create!(
   # phone_number: "+90123456789",
 )
 
-categories = ["Food", "Love", "Garden", "Animals", "Introduction", "Traveling", "The 100 most important Signs", "Other"]
+categories = ["Food", "Love", "Garden", "Animals", "Intro", "Traveling", "100 Signs", "Other"]
   User.create!(
     username: Faker::FunnyName.name,
     bio: "Hello, I'm Dustin and this is my amazing bio",

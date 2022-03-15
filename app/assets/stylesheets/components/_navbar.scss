@@ -8,6 +8,7 @@
   justify-content: space-between;
   background: $bg-light;
   transition: 0.5s background-color ease;
+  padding: 0.2rem 0.5rem;
 }
 
 .navbar-lewagon-white {
@@ -22,8 +23,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 200px;
-  margin-left: 4rem;
+  width: 150px;
 }
 
 .navbar-nav {
@@ -32,7 +32,7 @@
 
 .btn-link {
   text-decoration: none !important;
-  background-color: $bg-light;
+  // background-color: $bg-light;
   border-radius: 2rem;
   border: none;
   margin: 1rem;
@@ -44,8 +44,8 @@
   line-height: 1.1;
   &:hover {
     color: $font-color;
-    box-shadow: inset 4px 4px 20px #C2C2BD,
-                inset -4px -4px 20px #C2C2BD;;
+    // box-shadow: inset 4px 4px 20px #C2C2BD,
+    //             inset -4px -4px 20px #C2C2BD;
   }
 }
 
@@ -53,13 +53,19 @@
 //   display: none !important;
 // }
 
+.navbar-nav li {
+  // width: 150px;
+  text-align: center;
+}
+
 
 .focus-tab {
   border-radius: 2rem;
   box-shadow: inset 4px 4px 20px #C2C2BD,
               inset -4px -4px 20px #C2C2BD;
-  margin: 1rem;
-  padding: .6rem 1rem !important;
+  // margin: 1rem;
+  // padding: .6rem 1rem !important;
+  padding: 10px 0px;
   background-color: $bg-light;
 }
 
@@ -79,3 +85,17 @@ img:hover #hand-icon {
 			-webkit-animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 			animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
+
+// @media (min-width: 576px) {
+//   .navbar-expand-sm {
+//     flex-flow: none;
+//     justify-content: initial;
+//   }
+// }
+
+// @media (min-width: 790px) {
+//   .navbar-expand-sm {
+//     flex-flow: row nowrap;
+//     justify-content: flex-start;
+//   }
+// }
