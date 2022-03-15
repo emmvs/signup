@@ -85,6 +85,33 @@
   }
 }
 
+.sign-unliked {
+  cursor: pointer;
+  grid-column: 2;
+  grid-row: 1;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  right: 1.2rem;
+  border-radius: .2rem;
+  top: 40%;
+  padding: 0.5rem;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: contain;
+    background-image: url('https://wintergoosepublishing.com/wp-content/uploads/2015/03/Heart-Icon-1.png');
+  }
+}
+
+.sign-unliked:hover {
+  box-shadow: $button-flat-shade inset;
+}
+
 .video-sign-container {
   grid-column: 1 / span 2;
   grid-row: 4;
