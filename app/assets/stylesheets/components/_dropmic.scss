@@ -13,6 +13,9 @@
 
 /* Dropdown menu
 -------------------------------------------------------------- */
+[data-controller="dropdown"] {
+  position: absolute;
+}
 
 .dropmic-menu {
   position: absolute;
@@ -229,6 +232,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  z-index: 1000;
 }
 
 .dropmic-menu__listContent {
