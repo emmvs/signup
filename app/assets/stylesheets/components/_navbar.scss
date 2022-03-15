@@ -8,6 +8,7 @@
   justify-content: space-between;
   background: $bg-light;
   transition: 0.5s background-color ease;
+  padding: 0.2rem 0.5rem;
 }
 
 .navbar-lewagon-white {
@@ -22,8 +23,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 200px;
-  // margin-left: 4rem;
+  width: 150px;
 }
 
 .navbar-nav {
