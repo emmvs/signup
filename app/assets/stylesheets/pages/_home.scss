@@ -2,6 +2,11 @@
 //   outline: 1px solid tomato;
 // }
 
+// img {
+//   display: block;
+//   max-width: 100%;
+// }
+
 // Specific CSS for your home-page
 body {
   background-color: $bg-light;
@@ -70,8 +75,8 @@ select, option {
   text-align: center;
   display: flex;
   flex-direction: column;
-  max-width: 80rem;
   width: 100%;
+  max-width: 80rem;
   // justify-content: center;
   align-items: center;
   margin: 0 auto;
@@ -101,6 +106,10 @@ select, option {
     flex-grow:1;
     margin:0;
   }
+}
+
+.lang-search-wrap {
+  display: flex;
 }
 
 #home_searchbar{
