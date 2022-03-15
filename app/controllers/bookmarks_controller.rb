@@ -21,24 +21,24 @@ class BookmarksController < ApplicationController
     @bookmark.save!
     flash[:message] = "bookmark created"
     authorize @bookmark
-    redirect_to signs_path
+    redirect_back fallback_location: bookmarks_path
   end
 
   def update
-    @bookmark = Bookmark.find(params[:id])
-    authorize @bookmark
-    if @bookmark.update(bookmark_params)
-      redirect_to bookmarks_path
-    else
-      redirect_to bookmarks_path
-    end
+    # @bookmark = Bookmark.find(params[:id])
+    # authorize @bookmark
+    # if @bookmark.update(bookmark_params)
+    #   # redirect_to bookmarks_path
+    # else
+    #   # redirect_to bookmarks_path
+    # end
   end
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
     authorize @bookmark
     @bookmark.destroy
-    redirect_to bookmarks_path, notice: "Oh no! bye bye to your favorite amazing sign"
+    redirect_back fallback_location: bookmarks_path, notice: "Oh no! bye bye to your favorite amazing sign"
   end
 
   private

@@ -22,6 +22,8 @@ class SignsController < ApplicationController
 
   def show
     authorize @sign
+    @bookmark = Bookmark.new
+    authorize @bookmark
   end
 
   def new

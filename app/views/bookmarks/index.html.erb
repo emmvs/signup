@@ -27,8 +27,6 @@
                     <%= f.hidden_field :sign_id, value: bookmark.sign.id %>
                     <%= image_submit_tag("heart.png", class: 'sign-liked', alt: 'submit') %>
                   <% end %>
-                  <% else %>
-                  <%= image_tag "empty_heart.png", class: "sign-liked" %>
                 <% end %>
               </div>
 
