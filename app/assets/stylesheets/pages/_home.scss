@@ -23,7 +23,7 @@ body {
 
 .banner {
   width: 100vw;
-  height: 55vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -140,7 +140,7 @@ select, option {
   display: flex;
   justify-content: space-evenly;
   margin-top: 20px;
-  padding-top: 0;
+  padding-bottom: 80px;
   flex-wrap: wrap;
 }
 
@@ -180,10 +180,12 @@ select, option {
 }
 
 .ticker {
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
   overflow: hidden;
   height: 50px;
-  background-color: $sub-color;
+  background-color: darkorchid;
 }
 
 .marquee {
@@ -191,10 +193,9 @@ select, option {
   margin-right: auto;
   white-space: nowrap;
   overflow: hidden;
-  position: absolute;
   font-size: 30px;
   font-weight: 600;
-  color: white;
+  color: black;
 }
 
 
