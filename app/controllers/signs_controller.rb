@@ -5,19 +5,21 @@ class SignsController < ApplicationController
 
   # For the search function
   def index
-    if params.present?
+    if params.present? && ((params[:language].present?) || (params[:query].present?))
       @items = []
-      if params[:language]
+      if params[:language].present?
         @items += Sign.where(language: params[:language])
       end
-      if params[:query]
-        @items += Sign.where(title: params[:query]).or(Sign.where(description: params[:query]))
+      if params[:query].present?
+        # @items += Sign.where(title: params[:query]).or(Sign.where(description: params[:query]))
+        @items += Sign.where("title ILIKE ?", "%#{params[:query]}%").or(Sign.where("description ILIKE ?", "%#{params[:query]}%"))
       end
-      @signs = @items.uniq
+      @signs = find_results(@items.uniq)
     else
-      @signs = Sign.all
+      @signs = find_results(Sign.all)
     end
     @bookmark = Bookmark.new
+
   end
 
   def show
@@ -80,5 +82,15 @@ class SignsController < ApplicationController
 
   def policy_scope_signs
     @signs = policy_scope(Sign)
+  end
+
+  def find_results(signs)
+    results = []
+    signs.each do |sign|
+      if sign.video.attached?
+        results << sign
+      end
+    end
+    results
   end
 end
