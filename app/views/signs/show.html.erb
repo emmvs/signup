@@ -14,7 +14,7 @@
           <h2 class="sign__example font-gamma">Category</h2>
           <%= @sign.category.title %>
           <br>
-          <p class="sign-name"><%= @sign.language %></p>
+          <%# <p class="sign-name"><%= @sign.language %></p> 
           <div class="sign-buttons">
             <% if policy(@sign).edit? %>
               <%= link_to "Update", edit_sign_path(@sign), class:"btn btn--normal text-para--medium" %>
