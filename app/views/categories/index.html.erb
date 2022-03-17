@@ -1,5 +1,6 @@
 <%# app/views/categories/index.html.erb %>
 <section class="container-index">
+<h2 class="font-alpha">Sign Categories</h2>
   <div class="backdrop-index">
     <img src="https://images.unsplash.com/photo-1530569673472-307dc017a82d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" class="backdrop-index-img" alt="BG">
   </div>
@@ -7,7 +8,7 @@
     <div class="categories-grid">
       <% @categories.each do |category| %>
           <div class="category-card--index">
-            <%= link_to category_path(category), class: "category-card-link" do %>
+            <%= link_to category_path(category), class: "category-card-link font-gamma" do %>
             <h1 class="animated">
               <% if category.title.length > 9 %>
                 <span class="animated__text"><%=category.title %></span>
@@ -17,6 +18,19 @@
             </h1>
             <% end %>
             <div class="category-liked">
+            <%= image_tag "heart.png", class: "flag-image" %>
+              <%# # <div class="form-bookmark">
+                # <% if category.bookmarks.empty? %>
+                  <%# <%= simple_form_for(@bookmark) do |f| %>
+                  <%# <%= f.hidden_field :user_id, value: current_user.id %>
+                  <%# <%= f.hidden_field :category_id, value: category.id %>
+                  <%# <%= f.submit '', :src => "assets/empty_heart.png", class: "sign-liked"%>
+                  <%# <%= image_submit_tag("empty_heart.png", class: 'sign-liked', alt: 'submit') %>
+                  <%# <% end %>
+                  <%# <% else %>
+                  <%# <%   src="heart.png", class: "sign-liked" %>
+                <%# <% end %>
+              <%# </div> %>
             </div>
           </div>
       <% end %>

@@ -26,10 +26,17 @@
   margin-top: 1rem !important;
 }
 
+.head-container-show {
+  display: grid;
+  grid-template-columns: 78px 1fr;
+  align-items: center;
+  // width: 100%;
+}
+
 .sign-card--show {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   max-width: 80rem;
   width: 100%;
   height: max-content;
@@ -71,7 +78,16 @@
 }
 
 .heart-like {
-  position: absolute;
+  // position: absolute;
   bottom: 1rem;
   right: 1rem;
+}
+
+.sign-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.sign-name {
+  font-family: "Raleway", "Helvetica", "sans-serif";
 }

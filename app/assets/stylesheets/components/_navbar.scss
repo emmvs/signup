@@ -8,6 +8,7 @@
   justify-content: space-between;
   background: $bg-light;
   transition: 0.5s background-color ease;
+  padding: 0.2rem 0.5rem;
 }
 
 .navbar-lewagon-white {
@@ -22,8 +23,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 200px;
-  margin-left: 4rem;
+  width: 150px;
 }
 
 .navbar-nav {
@@ -54,7 +54,7 @@
 // }
 
 .navbar-nav li {
-  width: 150px;
+  // width: 150px;
   text-align: center;
 }
 
@@ -85,3 +85,17 @@ img:hover #hand-icon {
 			-webkit-animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 			animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
+
+// @media (min-width: 576px) {
+//   .navbar-expand-sm {
+//     flex-flow: none;
+//     justify-content: initial;
+//   }
+// }
+
+// @media (min-width: 790px) {
+//   .navbar-expand-sm {
+//     flex-flow: row nowrap;
+//     justify-content: flex-start;
+//   }
+// }

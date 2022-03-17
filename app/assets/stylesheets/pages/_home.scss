@@ -1,3 +1,12 @@
+// * {
+//   outline: 1px solid tomato;
+// }
+
+// img {
+//   display: block;
+//   max-width: 100%;
+// }
+
 // Specific CSS for your home-page
 body {
   background-color: $bg-light;
@@ -19,17 +28,6 @@ body {
   &:focus {
     box-shadow: inset 4px 4px 12px #D0D3CE;
   }
-}
-
-.banner {
-  width: 100vw;
-  height: 55vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-size: cover;
 }
 
 .flag-container {
@@ -66,15 +64,18 @@ select, option {
   text-align: center;
   display: flex;
   flex-direction: column;
-  max-width: 80rem;
   width: 100%;
-  justify-content: center;
+  max-width: 80rem;
+  // justify-content: center;
   align-items: center;
   margin: 0 auto;
 }
 
 .search-bar-infos {
+  font: $secondary-font;
   align-self: center;
+  color: white;
+  text-shadow: 0 0 10px black;
   margin: 0;
   margin-right: 1rem;
   margin-top: 1rem;
@@ -83,6 +84,7 @@ select, option {
 
 .sign-searchbar {
   text-align: center;
+  width: #{"min(100% - 2rem, 516px)"};
 }
 
 .searchbar {
@@ -99,8 +101,8 @@ select, option {
   }
 }
 
-.sign-searchbar{
-  width:40%;
+.lang-search-wrap {
+  display: flex;
 }
 
 #home_searchbar{
@@ -140,7 +142,7 @@ select, option {
   display: flex;
   justify-content: space-evenly;
   margin-top: 20px;
-  padding-top: 0;
+  padding-bottom: 80px;
   flex-wrap: wrap;
 }
 
@@ -176,14 +178,18 @@ select, option {
 }
 
 .ticker-box {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
+  width: auto;
 }
 
 .ticker {
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  width: auto;
+  z-index: 100;
   overflow: hidden;
   height: 50px;
-  background-color: $sub-color;
+  background-color: #1E849D;
 }
 
 .marquee {
@@ -191,7 +197,6 @@ select, option {
   margin-right: auto;
   white-space: nowrap;
   overflow: hidden;
-  position: absolute;
   font-size: 30px;
   font-weight: 600;
   color: white;
@@ -200,7 +205,7 @@ select, option {
 
 .marquee span {
   display: inline-block;
-  padding-left: 100%;
+  // padding-left: 100%;
   animation: marquee 60s linear infinite;
   animation-direction: reverse;
 }
@@ -211,6 +216,7 @@ select, option {
 }
 
 .home__logo svg {
+  // width: 500px;
   width: 500px;
   height: auto;
 }

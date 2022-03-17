@@ -7,6 +7,7 @@ before_action :policy_scope_categories, only: [ :index, :show, :new, :edit, :upd
     else
       @categories = Category.all
     end
+    @bookmark = Bookmark.new
   end
 
   def show

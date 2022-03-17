@@ -1,0 +1,10 @@
+// app/assets/stylesheets/bookmarks/_index_bookmarks.scss
+
+.sign-card--index {
+  display: grid;
+
+}
+
+.sign-card--index > h1 {
+  grid-column: span 2;
+}

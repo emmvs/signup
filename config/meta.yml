@@ -1,0 +1,6 @@
+# config/meta.yml
+meta_product_name: "SignUp"
+meta_title: "SignUp - Get Up & Sign Up"
+meta_description: "SignUp is a free web app to learn International Sign Languages online."
+meta_image: "signup_logo.png" # should exist in `app/assets/images/`
+twitter_account: "@getupsignup"   # required for Twitter Cards

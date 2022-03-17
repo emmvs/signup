@@ -65,13 +65,13 @@
   cursor: pointer;
   grid-column: 2;
   grid-row: 1;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   position: absolute;
   right: 1.2rem;
   border-radius: .2rem;
-  box-shadow: $button-flat-shade;
   top: 40%;
+  padding: 0.5rem;
   &:before {
     content: "";
     position: absolute;
