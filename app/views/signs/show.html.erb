@@ -25,14 +25,14 @@
           <p class="text-para--medium"><%= @sign.description %></p>
           <h2 class="sign__example font-gamma">Category</h2>
           <%= @sign.category.title %>
-          <div class="sign-buttons">
+          <div class="sign-buttons sign-buttons-2">
             <% if policy(@sign).edit? %>
-              <%= link_to "Update", edit_sign_path(@sign), class:"btn btn--normal text-para--medium" %>
+              <%= link_to "Update", edit_sign_path(@sign), class:"btn create_video_button text-para--medium", id:"save" %>
             <% end %>
             <% if policy(@sign).destroy? %>
-              <%= link_to "Delete", sign_path(@sign), class:"btn link--normal text-para--medium", method: :delete, data: { confirm: "Do you really want to say bye bye?" } %>
+              <%= link_to "Delete", sign_path(@sign), class:"btn text-para--medium", method: :delete, data: { confirm: "Do you really want to say bye bye?" } %>
             <% end %>
-            <div class="form-bookmark">
+            <div class="form-bookmark bookmark-sign">
                 <% if !@sign.bookmarks.empty? %>
                     <%= simple_form_for(@sign.bookmarks[0], url: bookmark_path(@sign.bookmarks[0]), method: :delete) do |f| %>
                       <%= f.hidden_field :user_id, value: current_user.id %>
@@ -56,4 +56,3 @@
       </div> %>
     </div>
 </section>
-
