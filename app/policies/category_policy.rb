@@ -25,6 +25,6 @@ class CategoryPolicy < ApplicationPolicy
   private
 
   def admin?
-    user.role.admin?
+    user.admin
   end
 end
