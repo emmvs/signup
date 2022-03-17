@@ -1,7 +1,45 @@
 <!-- app/views/categories/show.html.erb -->
 <section class="container-show">
     <h1 class="font-alpha show__title "><%= @category.title %></h1>
+  <div class="signs-container">
+    <div class="signs-grid">
+      <% @signs.each do |sign| %>
+        <% if sign.video.attached? %>
+          <div class="sign-card--index">
+            <%= link_to sign_path(sign), class: "sign-card-link" do %>
+              <h1 class="animated font-gamma">
+              <% if sign.title.length > 10 %>
+                <span class="animated__text"><%=sign.title %></span>
+              <% else %>
+                <%=sign.title %>
+            <% end %>
+            </h1>
+            <% end %>
+              <div class="form-bookmark">
+                <% if !sign.bookmarks.empty? %>
+                    <%= simple_form_for(sign.bookmarks[0], url: bookmark_path(sign.bookmarks[0]), method: :delete) do |f| %>
+                      <%= f.hidden_field :user_id, value: current_user.id %>
+                      <%= f.hidden_field :sign_id, value: sign.id %>
+                      <%= image_submit_tag("heart.png", class: 'sign-liked', alt: 'submit') %>
+                    <% end %>
+                <% else %>
+                  <%= simple_form_for(@bookmark) do |f| %>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+                    <%= f.hidden_field :sign_id, value: sign.id %>
+                    <%= image_submit_tag("empty_heart.png", class: 'sign-liked heart-like', alt: 'submit') %>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="sign__infos">
+                <p class="sign-category text-para--light"><%sign.category.title %></p>
+                <p class="sign-description text-para--light"><%=sign.description %></p>
+              </div>
+              <div class="video-sign-container">
+                <%= cl_video_tag(sign.video.key, :controls=>false, :autoplay=>false, :loop=>true, :muted=>true, :width=>220, :height=>150, class:"video")%>
+              </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </section>
-<% @signs.each do |sign|  %>
-<%= sign.title %>
-<% end %>
