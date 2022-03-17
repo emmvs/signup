@@ -9,7 +9,7 @@
       <% @categories.each do |category| %>
           <div class="category-card--index">
             <%= link_to category_path(category), class: "category-card-link font-gamma" do %>
-            <h1 class="animated">
+            <h1>
               <% if category.title.length > 9 %>
                 <span class="animated__text"><%=category.title %></span>
               <% else %>
@@ -23,6 +23,3 @@
     </div>
   </div>
 </section>
-
-        <%# <% if category.nil? %>
-          <%# <%= button_to "New Sign", new_sign_path %>
