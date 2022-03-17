@@ -1,6 +1,18 @@
 <!-- app/views/signs/show.html.erb -->
 <section class="container-show">
-    <h1 class="font-alpha show__title "><%= image_tag "deutschland.png", class: "flag-container flag-image", data: { action:"click->flags#disable", flags_target:"ger" }%><%= @sign.title %></h1>
+<div class="head-container-show">
+    <% if @sign.language == "german"%>
+      <%= image_tag "deutschland.png", class: "flag-container flag-image"%>
+    <% elsif @sign.language == "english" %>
+      <%= image_tag "usa.png", class: "flag-container flag-image" %>
+    <% elsif @sign.language == "french" %>
+      <%= image_tag "france.png", class: "flag-container flag-image" %>
+    <% elsif @sign.language == "swedish" %>
+      <%= image_tag "sweden.png", class: "flag-container flag-image"%>
+    <% end %>
+  <h1 class="font-alpha show__title "><%= @sign.title %></h1>
+</div>
+
     <div class="sign-card--show">
       <div class="tag tag--video">
         <% if @sign.video.attached? %>
@@ -13,8 +25,6 @@
           <p class="text-para--medium"><%= @sign.description %></p>
           <h2 class="sign__example font-gamma">Category</h2>
           <%= @sign.category.title %>
-          <br>
-          <%# <p class="sign-name"><%= @sign.language %></p> 
           <div class="sign-buttons">
             <% if policy(@sign).edit? %>
               <%= link_to "Update", edit_sign_path(@sign), class:"btn btn--normal text-para--medium" %>
@@ -32,3 +42,5 @@
       </div> %>
     </div>
 </section>
+
+   <%# <h1 class="font-alpha show__title "><%= image_tag "deutschland.png", class: "flag-container flag-image", data: { action:"click->flags#disable", flags_target:"ger" }%>

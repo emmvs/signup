@@ -26,6 +26,13 @@
   margin-top: 1rem !important;
 }
 
+.head-container-show {
+  display: grid;
+  grid-template-columns: 78px 1fr;
+  align-items: center;
+  // width: 100%;
+}
+
 .sign-card--show {
   display: flex;
   align-items: center;
