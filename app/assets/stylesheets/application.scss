@@ -341,3 +341,8 @@ button {
 				transform: rotate(8deg);
 			}
 		}
+
+    a:hover {
+      text-decoration: none;
+      color: inherit;
+    }

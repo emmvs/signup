@@ -2,3 +2,6 @@
 <section class="container-show">
     <h1 class="font-alpha show__title "><%= @category.title %></h1>
 </section>
+<% @signs.each do |sign|  %>
+<%= sign.title %>
+<% end %>
