@@ -11,3 +11,20 @@
   box-shadow: inset 2px 2px 10px #a0a0a0;
   background-color: #F9F8F1;
 }
+
+.create_video_button {
+  border-radius: 10px;
+  padding: 6px;
+  margin: 7px;
+  margin-bottom: 12px;
+  box-shadow: 2px 2px 10px #a0a0a0;
+  &#start {
+    background-color: rgb(138, 212, 138);
+  }
+  &#stop {
+    background-color: $primary-color;
+  }
+  &#save {
+    background-color: $sub-color;
+  }
+}
