@@ -42,3 +42,7 @@
   color: $font-color ;
   font-family: $primary-font;
 }
+
+.form-control.string.required, .form-control.select.optional, .form-control.text.optional, .form-control.select.required {
+  width: 300px;
+}

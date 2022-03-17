@@ -2,7 +2,7 @@
 <section class="new-sign">
   <h1 class="font-beta">Upload a new Sign</h1>
   <div class="d-flex">
-    <%= simple_form_for(@sign, html: { class: "video_form text-form"}) do |f| %>
+    <%= simple_form_for(@sign, html: { class: "video_form text-form size-boxes"}) do |f| %>
       <%= f.input :language, collection: ["german", "english", "french", "swedish", "albanian", "bulgarian"]  %>
       <%= f.input :title %>
       <%= f.input :description %>
