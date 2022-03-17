@@ -2,18 +2,19 @@
 <section class="new-sign">
   <h1 class="font-beta">Upload a new Sign</h1>
   <div class="d-flex">
-    <%= simple_form_for(@sign, html: { class: "video_form"}) do |f| %>
+    <%= simple_form_for(@sign, html: { class: "video_form text-form size-boxes"}) do |f| %>
       <%= f.input :language, collection: ["german", "english", "french", "swedish", "albanian", "bulgarian"]  %>
       <%= f.input :title %>
       <%= f.input :description %>
       <%= f.association :category %>
       <%= f.input :video, as: :file %>
-      <%= f.submit "Create Sign" %>
+      <%= f.submit "Create Sign", class: "btn-form" %>
     <% end %>
     <div>
       <h2 class="font-gamma">Record your own Sign</h2>
-      <button id="start">Start</button>
-      <button id="stop">Stop and save</button>
+      <button class="create_video_button" id="start">Start</button>
+      <button class="create_video_button" id="stop">Stop</button>
+      <button class="create_video_button" id="save">Save</button>
       <div>
         <video id="live" height="200" width="300" style="border: 1px solid black" autoplay muted></video>
       </div>
