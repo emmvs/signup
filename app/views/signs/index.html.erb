@@ -24,13 +24,13 @@
             <% end %>
               <div class="form-bookmark">
                 <% if !sign.bookmarks.empty? %>
-                    <%= simple_form_for(sign.bookmarks[0], url: bookmark_path(sign.bookmarks[0]), method: :delete) do |f| %>
+                    <%= simple_form_for(sign.bookmarks[0], url: bookmark_path(sign.bookmarks[0]), method: :delete, remote: true) do |f| %>
                       <%= f.hidden_field :user_id, value: current_user.id %>
                       <%= f.hidden_field :sign_id, value: sign.id %>
                       <%= image_submit_tag("heart.png", class: 'sign-liked', alt: 'submit') %>
                     <% end %>
                 <% else %>
-                  <%= simple_form_for(@bookmark) do |f| %>
+                  <%= simple_form_for((@bookmark), remote: true) do |f| %>
                     <%= f.hidden_field :user_id, value: current_user.id %>
                     <%= f.hidden_field :sign_id, value: sign.id %>
                     <%= image_submit_tag("empty_heart.png", class: 'sign-liked heart-like', alt: 'submit') %>
