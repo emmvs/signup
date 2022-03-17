@@ -92,6 +92,7 @@ select, option {
 
 .sign-searchbar {
   text-align: center;
+  width: #{"min(100% - 2rem, 516px)"};
 }
 
 .searchbar {
