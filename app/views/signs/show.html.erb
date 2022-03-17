@@ -1,7 +1,6 @@
 <!-- app/views/signs/show.html.erb -->
 <section class="container-show">
-    <h1 class="font-alpha show__title "><%= @sign.title %></h1>
-       <%= image_tag "deutschland.png", class: "flag-container flag-image", data: { action:"click->flags#disable", flags_target:"ger" }%>
+    <h1 class="font-alpha show__title "><%= image_tag "deutschland.png", class: "flag-container flag-image", data: { action:"click->flags#disable", flags_target:"ger" }%><%= @sign.title %></h1>
     <div class="sign-card--show">
       <div class="tag tag--video">
         <% if @sign.video.attached? %>
@@ -12,13 +11,10 @@
         <div class="sign__texts">
           <h3 class="sign__example font-gamma">Description</h3>
           <p class="text-para--medium"><%= @sign.description %></p>
-          <%= image_tag "heart.png", class: "flag-container flag-image heart-like", data: { action:"click->flags#disable", flags_target:"usa" }%>
-          <%= @sign.language %>
+          <h2 class="sign__example font-gamma">Category</h2>
           <%= @sign.category.title %>
-        </div>
-      </div>
-      <div class="tag tag--controllers">
-        <div class="sign__extras">
+          <br>
+          <p class="sign-name"><%= @sign.language %></p>
           <div class="sign-buttons">
             <% if policy(@sign).edit? %>
               <%= link_to "Update", edit_sign_path(@sign), class:"btn btn--normal text-para--medium" %>
@@ -26,8 +22,13 @@
             <% if policy(@sign).destroy? %>
               <%= link_to "Delete", sign_path(@sign), class:"btn link--normal text-para--medium", method: :delete, data: { confirm: "Do you really want to say bye bye?" } %>
             <% end %>
+          <%= image_tag "heart.png", class: "flag-container flag-image heart-like", data: { action:"click->flags#disable", flags_target:"usa" }%>
           </div>
         </div>
       </div>
+      <%# <div class="tag tag--controllers">
+        <div class="sign__extras">
+        </div>
+      </div> %>
     </div>
 </section>
