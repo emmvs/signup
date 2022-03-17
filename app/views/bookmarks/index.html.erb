@@ -24,11 +24,8 @@
                   <%= simple_form_for(bookmark, url: bookmark_path(bookmark), method: :delete) do |f| %>
                     <%= f.hidden_field :user_id, value: current_user.id %>
                     <%= f.hidden_field :sign_id, value: bookmark.sign.id %>
-                    <%# <%= f.submit '', :src => "assets/heart.png", class: "sign-liked"%>
                     <%= image_submit_tag("heart.png", class: 'sign-liked', alt: 'submit') %>
                   <% end %>
-                  <% else %>
-                  <%= image_tag "empty_heart.png", class: "sign-liked" %>
                 <% end %>
               </div>
 

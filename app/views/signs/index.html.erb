@@ -20,18 +20,20 @@
             <% end %>
 
               <div class="form-bookmark">
-                <% if sign.bookmarks.empty? %>
+                <% if !sign.bookmarks.empty? %>
+                    <%= simple_form_for(sign.bookmarks[0], url: bookmark_path(sign.bookmarks[0]), method: :delete) do |f| %>
+                      <%= f.hidden_field :user_id, value: current_user.id %>
+                      <%= f.hidden_field :sign_id, value: sign.id %>
+                      <%= image_submit_tag("heart.png", class: 'sign-liked', alt: 'submit') %>
+                    <% end %>
+                <% else %>
                   <%= simple_form_for(@bookmark) do |f| %>
                     <%= f.hidden_field :user_id, value: current_user.id %>
                     <%= f.hidden_field :sign_id, value: sign.id %>
-                    <%# <%= f.submit '', :src => "assets/empty_heart.png", class: "sign-liked"%>
-                    <%= image_submit_tag("empty_heart.png", class: 'sign-liked', alt: 'submit') %>
+                    <%= image_submit_tag("empty_heart.png", class: 'sign-liked heart-like', alt: 'submit') %>
                   <% end %>
-                  <% else %>
-                  <%= image_tag "heart.png", class: "sign-liked" %>
                 <% end %>
               </div>
-
 
               <div class="sign__infos">
                 <p class="sign-category text-para--light"><%sign.category.title %></p>

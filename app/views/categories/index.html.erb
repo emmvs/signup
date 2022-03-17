@@ -8,7 +8,7 @@
     <div class="categories-grid">
       <% @categories.each do |category| %>
           <div class="category-card--index">
-            <%= link_to category_path(category), class: "category-card-link" do %>
+            <%= link_to category_path(category), class: "category-card-link font-gamma" do %>
             <h1 class="animated">
               <% if category.title.length > 9 %>
                 <span class="animated__text"><%=category.title %></span>
@@ -18,7 +18,7 @@
             </h1>
             <% end %>
             <div class="category-liked">
-            <img src="../assets/images/heart.png">
+            <%= image_tag "heart.png", class: "flag-image" %>
               <%# # <div class="form-bookmark">
                 # <% if category.bookmarks.empty? %>
                   <%# <%= simple_form_for(@bookmark) do |f| %>
