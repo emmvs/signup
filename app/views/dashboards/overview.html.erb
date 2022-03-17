@@ -7,7 +7,7 @@
         <p class="sign-name"><%= current_user.signs.last.title %></p>
         <%# <%= link_to sign_path(sign), class: "sign-card-link"%>
         <div class="video-sign-container">
-          <%= cl_video_tag(current_user.signs.last.video.key, :controls=>false, :autoplay=>false, :loop=>true, :muted=>true, :width=>220, :height=>150, class:"video")%>
+          <%= cl_video_tag(current_user.signs.last.video.key, :controls=>false, :autoplay=>true, :loop=>true, :muted=>true, :width=>220, :height=>150, class:"video")%>
         </div>
       <% else %>
        <p class="sign-name">No signs yet</p>

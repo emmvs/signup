@@ -1,84 +1,88 @@
 <!-- app/views/pages/home.html.erb -->
 <%# ****** Banner ****** %>
 <section class="banner" style="background-image: url(<%= image_path "sky.jpg" %>)">
-  <div class="language-bar">
-    <div class="home__logo">
-        <%= render 'pages/components/logohand-white'  %>
-    </div>
-    <%# ****** Sign Search ****** %>
-    <div class="sign-searchbar">
-      <%= form_tag signs_path, class: "searchbar", id:"home_searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
-        <%= hidden_field_tag 'language', '', id: "language_hidden_field" %>
-        <%= text_field_tag :query,
-                params[:query],
-                class: "form-control",
-                placeholder: "Find an amazing sign"
-              %>
-        <button type="submit" class="search-button">
-          <%= image_tag "search.png", class: "flag-image" %>
-        </button>
-      <% end %>
-    </div>
-    <%# ****** Flag Search ****** %>
-    <div class="lang-search-wrap">
-      <p class="search-bar-infos">Choose your language</p>
-      <div data-controller="dropdown">
-        <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns"     >
-          <%# ********** TODO: Change the flags to local files %>
-          <button data-dropmic-btn class="flag-image" ><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="tl-chosen_flag" width="25" height="25"></button>
-          <%# <button data-dropmic-btn class="flag-image" ><img src="/assets/deutschland-6e2d449caedc4bace22a4cce51e2844ce8ffe10c864beaa8b1f12ad955540a2e.png" id="tl-chosen_flag" width="25" height="25"></button> %>
-          <div class="dropmic-menu" aria-hidden="true">
-            <li class="dropmic-menu__listItem" role="menuitem">
-              <button class="dropmic-menu__listContent" value="english" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="english-img" src="assets/usa.png" width="25" height="25"> American English</button>
-              <button class="dropmic-menu__listContent" value="german" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="german-img" src="assets/deutschland.png" width="25" height="25"> German</button>
-              <button class="dropmic-menu__listContent" value="french" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="french-img" src="assets/france.png"width="25" height="25"> French</button>
-              <button class="dropmic-menu__listContent" value="swedish" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="swedish-img" src="assets/sweden.png"width="25" height="25"> Swedish</button>
-            </li>
-          </div>
-        </span>
-      </div>
+<div class="language-bar">
+  <div class="home__logo">
+      <%= render 'pages/components/logohand-white'  %>
+  </div>
+  <%# ****** Sign Search ****** %>
+  <div class="sign-searchbar">
+    <%= form_tag signs_path, class: "searchbar", id:"home_searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
+      <%= hidden_field_tag 'language', '', id: "language_hidden_field" %>
+      <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find an amazing sign"
+            %>
+      <button type="submit" class="search-button">
+        <%= image_tag "search.png", class: "search-image" %>
+      </button>
+    <% end %>
+  </div>
+  <%# ****** Flag Search ****** %>
+  <div class="lang-search-wrap">
+    <p class="search-bar-infos">Choose your language</p>
+    <div data-controller="dropdown">
+      <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns"     >
+        <%# ********** TODO: Change the flags to local files %>
+        <button data-dropmic-btn class="flag-image" ><img src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" id="tl-chosen_flag" width="25" height="25"></button>
+        <%# <button data-dropmic-btn class="flag-image" ><img src="/assets/deutschland-6e2d449caedc4bace22a4cce51e2844ce8ffe10c864beaa8b1f12ad955540a2e.png" id="tl-chosen_flag" width="25" height="25"></button> %>
+        <div class="dropmic-menu" aria-hidden="true">
+          <li class="dropmic-menu__listItem" role="menuitem">
+            <button class="dropmic-menu__listContent" value="english" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="english-img" src="assets/usa.png" width="25" height="25"> American English</button>
+            <button class="dropmic-menu__listContent" value="german" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="german-img" src="assets/deutschland.png" width="25" height="25"> German</button>
+            <button class="dropmic-menu__listContent" value="french" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="french-img" src="assets/france.png"width="25" height="25"> French</button>
+            <button class="dropmic-menu__listContent" value="swedish" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="swedish-img" src="assets/sweden.png"width="25" height="25"> Swedish</button>
+          </li>
+        </div>
+      </span>
     </div>
   </div>
+</div>
 </section>
 <%# ****** Dustin's Ticker ****** %>
 <div class="ticker-box">
-  <div class="ticker">
-    <p class="marquee">
-      <span> AMERICAN SIGN LANGUAGE 🤍 GERMAN SIGN LANGUAGE 🤍 FRENCH SIGN LANGUAGE 🤍 ARABIC SIGN LANGUAGE 🤍 ALBANIAN SIGN LANGUAGE 🤍 BULGARIAN SIGN LANGUAGE 🤍 KOREAN SIGN LANGUAGE 🤍 JAPANESE LANGUAGE 🤍 UKRANIAN SIGN LANGUAGE 🤍 ISRAELI SIGN LANGUAGE 🤍 PALESTINIAN SIGN LANGUAGE 🤍 MOROCCON SIGN LANGUAGE 🤍 SWEDISH SIGN LANGUAGE 🤍 &nbsp;</span>
-    </p>
-    <p class="marquee marquee2">
-      <span> AMERICAN SIGN LANGUAGE 🤍 GERMAN SIGN LANGUAGE 🤍 FRENCH SIGN LANGUAGE 🤍 ARABIC SIGN LANGUAGE 🤍 ALBANIAN SIGN LANGUAGE 🤍 BULGARIAN SIGN LANGUAGE 🤍 KOREAN SIGN LANGUAGE 🤍 JAPANESE LANGUAGE 🤍 UKRANIAN SIGN LANGUAGE 🤍 ISRAELI SIGN LANGUAGE 🤍 PALESTINIAN SIGN LANGUAGE 🤍 MOROCCON SIGN LANGUAGE 🤍 SWEDISH SIGN LANGUAGE 🤍 &nbsp;</span>
-    </p>
-  </div>
+<div class="ticker">
+  <p class="marquee">
+    <span> AMERICAN SIGN LANGUAGE 🤍 GERMAN SIGN LANGUAGE 🤍 FRENCH SIGN LANGUAGE 🤍 ARABIC SIGN LANGUAGE 🤍 ALBANIAN SIGN LANGUAGE 🤍 BULGARIAN SIGN LANGUAGE 🤍 KOREAN SIGN LANGUAGE 🤍 JAPANESE LANGUAGE 🤍 UKRANIAN SIGN LANGUAGE 🤍 ISRAELI SIGN LANGUAGE 🤍 PALESTINIAN SIGN LANGUAGE 🤍 MOROCCON SIGN LANGUAGE 🤍 SWEDISH SIGN LANGUAGE 🤍 &nbsp;</span>
+  </p>
+  <p class="marquee marquee2">
+    <span> AMERICAN SIGN LANGUAGE 🤍 GERMAN SIGN LANGUAGE 🤍 FRENCH SIGN LANGUAGE 🤍 ARABIC SIGN LANGUAGE 🤍 ALBANIAN SIGN LANGUAGE 🤍 BULGARIAN SIGN LANGUAGE 🤍 KOREAN SIGN LANGUAGE 🤍 JAPANESE LANGUAGE 🤍 UKRANIAN SIGN LANGUAGE 🤍 ISRAELI SIGN LANGUAGE 🤍 PALESTINIAN SIGN LANGUAGE 🤍 MOROCCON SIGN LANGUAGE 🤍 SWEDISH SIGN LANGUAGE 🤍 &nbsp;</span>
+  </p>
+</div>
 </div>
 <%# ****** SignUp Home Container ****** %>
 <div class="flex-container">
-  <div class="menu-card white-card">
-    <div class="text-cards">
-      <div class="text-card text-card--white">
-        <div class="card-info">
-          <h2 class="font-gamma">Signs</h2>
-          <p class="box-text text-para--light">Find out how to sign entire sentences instead of only focusing on your words.</p>
+<div class="menu-card white-card">
+  <div class="text-cards">
+        <div class="text-card text-card--white">
+          <div class="card-info">
+            <%= link_to signs_path, class: "card__link" do %>
+              <h2 class="font-gamma">Signs</h2>
+            <% end %>
+            <p class="box-text text-para--light">Find out how to sign entire sentences instead of only focusing on your words.</p>
+          </div>
         </div>
-      </div>
-      <div class="text-card text-card--pink">
-        <div class="card-info">
+    <div class="text-card text-card--pink">
+      <div class="card-info">
+        <%= link_to signs_path, class: "card__link" do %>
           <h2 class="font-gamma">Categories</h2>
-          <p class="box-text text-para--light">Want to learn specifically about Animals or Food? Find them in our Catogory's section!</p>
-        </div>
+        <% end %>
+        <p class="box-text text-para--light">Want to learn specifically about Animals or Food? Find them in our Catogory's section!</p>
       </div>
-      <div class="text-card text-card--blue">
-        <div class="card-info">
-          <h2 class="font-gamma">Spelling</h2>
-          <p class="box-text text-para--light">Just use the search box above and type the Alphabet you would like to search for.</p>
-        </div>
+    </div>
+    <div class="text-card text-card--blue">
+      <div class="card-info">
+        <h2 class="font-gamma">Spelling</h2>
+        <p class="box-text text-para--light">Just use the search box above and type the Alphabet you would like to search for.</p>
       </div>
-      <div class="text-card text-card--orange">
-        <div class="card-info">
-          <h2 class="font-gamma">Forum</h2>
-          <p class="box-text text-para--light">At SignUp, we have gathered suggestions of signs from different sign languages worldwide.</p>
-        </div>
+    </div>
+    <div class="text-card text-card--orange">
+      <div class="card-info">
+        <h2 class="font-gamma">Forum</h2>
+        <p class="box-text text-para--light">At SignUp, we have gathered suggestions of signs from different sign languages worldwide.</p>
       </div>
     </div>
   </div>
+</div>
 </div>

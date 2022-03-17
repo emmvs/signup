@@ -101,6 +101,11 @@ select, option {
   }
 }
 
+.search-image {
+  width: 24px;
+  height: 24px;
+}
+
 .lang-search-wrap {
   display: flex;
 }
@@ -126,15 +131,17 @@ select, option {
 
 
 .search-button {
-  background: transparent;
+  background-color: $secondary-color--dark;
   border: none;
+  border-radius: .3rem;
+  padding: .6rem 2rem;
   outline: none;
   margin-left: -33px;
 }
 
 .search-button img {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   object-fit: cover;
 }
 

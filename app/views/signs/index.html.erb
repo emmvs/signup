@@ -10,15 +10,14 @@
         <% if sign.video.attached? %>
           <div class="sign-card--index">
             <%= link_to sign_path(sign), class: "sign-card-link" do %>
-            <h1 class="animated">
-            <% if sign.title.length > 10 %>
-              <span class="animated__text"><%=sign.title %></span>
-            <% else %>
-              <%=sign.title %>
+              <h1 class="animated">
+              <% if sign.title.length > 10 %>
+                <span class="animated__text"><%=sign.title %></span>
+              <% else %>
+                <%=sign.title %>
             <% end %>
             </h1>
             <% end %>
-
               <div class="form-bookmark">
                 <% if !sign.bookmarks.empty? %>
                     <%= simple_form_for(sign.bookmarks[0], url: bookmark_path(sign.bookmarks[0]), method: :delete) do |f| %>
