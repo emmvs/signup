@@ -21,7 +21,7 @@
     </div>
     <%# ****** Flag Search ****** %>
     <div class="lang-search-wrap">
-      <p class="search-bar-infos text-para--medium">Choose your language</p>
+      <p class="search-bar-infos">Choose your language</p>
       <div data-controller="dropdown">
         <span class="dropmic" data-dropmic="1" role="navigation" data-dropdown-target="dropdowns"     >
           <%# ********** TODO: Change the flags to local files %>
@@ -29,9 +29,10 @@
           <%# <button data-dropmic-btn class="flag-image" ><img src="/assets/deutschland-6e2d449caedc4bace22a4cce51e2844ce8ffe10c864beaa8b1f12ad955540a2e.png" id="tl-chosen_flag" width="25" height="25"></button> %>
           <div class="dropmic-menu" aria-hidden="true">
             <li class="dropmic-menu__listItem" role="menuitem">
-              <button class="dropmic-menu__listContent" value="english" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="english-img" src="https://cdn-icons-png.flaticon.com/512/3013/3013911.png" width="25" height="25"> American English</button>
-              <button class="dropmic-menu__listContent" value="german" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="german-img" src="https://cdn-icons-png.flaticon.com/512/321/321233.png" width="25" height="25"> German</button>
-              <button class="dropmic-menu__listContent" value="french" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="french-img" src="https://cdn-icons-png.flaticon.com/512/330/330490.png" width="25" height="25"> French</button>
+              <button class="dropmic-menu__listContent" value="english" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="english-img" src="assets/usa.png" width="25" height="25"> American English</button>
+              <button class="dropmic-menu__listContent" value="german" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="german-img" src="assets/deutschland.png" width="25" height="25"> German</button>
+              <button class="dropmic-menu__listContent" value="french" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="french-img" src="assets/france.png"width="25" height="25"> French</button>
+              <button class="dropmic-menu__listContent" value="swedish" onclick="updateTargetLangFlag(this.value)" tabindex="-1"><img id="swedish-img" src="assets/sweden.png"width="25" height="25"> Swedish</button>
             </li>
           </div>
         </span>

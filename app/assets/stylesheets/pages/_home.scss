@@ -72,7 +72,10 @@ select, option {
 }
 
 .search-bar-infos {
+  font: $secondary-font;
   align-self: center;
+  color: white;
+  text-shadow: 0 0 10px black;
   margin: 0;
   margin-right: 1rem;
   margin-top: 1rem;
@@ -81,6 +84,7 @@ select, option {
 
 .sign-searchbar {
   text-align: center;
+  width: #{"min(100% - 2rem, 516px)"};
 }
 
 .searchbar {

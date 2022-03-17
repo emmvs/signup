@@ -24,8 +24,8 @@
 }
 
 .tag2 {
-  width: fit-content;
-  height: 300px;
+  width: 400px;
+  height: 350px;
   padding: 1rem;
   margin: 0;
   border-left: none;
@@ -53,4 +53,10 @@
     text-decoration: none;
     color: $font-color;
   }
+}
+
+.bookmark-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
