@@ -8,6 +8,7 @@
     <% else %>
       <p class="results-count"><p class="results-count">There is <span class="sign-count"><%= @signs.count %></span> result for your search</p></p>
     <% end %>
+    <%# ********** Signs Container *************  %>
   <div class="signs-container">
     <div class="signs-grid">
       <% @signs.each do |sign| %>
@@ -22,6 +23,7 @@
             <% end %>
             </h1>
             <% end %>
+
               <div class="form-bookmark">
                 <% if !sign.bookmarks.empty? %>
                     <%= simple_form_for(sign.bookmarks[0], url: bookmark_path(sign.bookmarks[0]), method: :delete) do |f| %>
