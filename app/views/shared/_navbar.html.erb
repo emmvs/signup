@@ -74,7 +74,7 @@
           </div>
         </span>
       </div> %>
-      <%= form_tag signs_path, class: "searchbar", id: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
+      <%= form_tag signs_path, class: "searchbar", id: "searchbar", method: :get, html: { data: {search_signs_target: 'form'}}, autocomplete: "off" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
