@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-before_action :policy_scope_categories, only: [ :index, :show, :new, :edit, :update, :destroy ]
+  before_action :policy_scope_categories, only: [ :index, :show, :new, :edit, :update, :destroy ]
 
   def index
     if params[:query].present?
