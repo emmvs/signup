@@ -8,9 +8,9 @@
           <%= f.input :description, placeholder: 'What is your Sign all about?' %>
           <%= f.input :video, label: "Choose the sassy video for your sign"  %>
           <% if f.object.new_record? %>
-            <%= f.submit "Create Sign", class: "btn btn-secondary" %>
+            <%= f.submit "Create Sign", class: "btn create_video_button", id:"start" %>
           <% else %>
-            <%= f.submit "Edit Sign", class: "btn btn-secondary" %>
+            <%= f.submit "Edit Sign", class: "btn create_video_button", id:"save" %>
           <% end %>
           <%= link_to "Cancel", :back, {:class=>"form--link"} %>
         <% end %>
