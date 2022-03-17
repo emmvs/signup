@@ -7,7 +7,7 @@
   </div>
   <%# ****** Sign Search ****** %>
   <div class="sign-searchbar">
-    <%= form_tag signs_path, class: "searchbar", id:"home_searchbar", method: :get, html: { data: {search_signs_target: 'form'}} do %>
+    <%= form_tag signs_path, class: "searchbar", id:"home_searchbar", method: :get, html: { data: {search_signs_target: 'form'}}, autocomplete: "off" do %>
       <%= hidden_field_tag 'language', '', id: "language_hidden_field" %>
       <%= text_field_tag :query,
               params[:query],
