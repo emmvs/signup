@@ -33,6 +33,6 @@ class SignPolicy < ApplicationPolicy
   private
 
   def user_or_admin?
-    record.user == user || user.role == "admin"
+    record.user == user || user.admin
   end
 end
