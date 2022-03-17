@@ -5,7 +5,7 @@
       <h2 class="dashboard__video font-gamma">Your lastest sign</h2>
       <% if current_user.signs != [] && current_user.signs.last.video.attached? %>
         <p class="sign-name"><%= current_user.signs.last.title %></p>
-        <%# <%= link_to sign_path(sign), class: "sign-card-link"%> 
+        <%# <%= link_to sign_path(sign), class: "sign-card-link"%>
         <div class="video-sign-container">
           <%= cl_video_tag(current_user.signs.last.video.key, :controls=>false, :autoplay=>false, :loop=>true, :muted=>true, :width=>220, :height=>150, class:"video")%>
         </div>
@@ -19,12 +19,13 @@
     <div class="tag2 tag--description">
       <div class="dashboard__texts">
         <h3 class="sign__display font-gamma">Your 5 favorite signs</h3>
+        <div class="bookmark-list">
         <% current_user.bookmarks.last(5).each do |bookmark| %>
-          <ul>
-            <%# <li class="bookmark-name"><%= bookmark.sign.title %></li>
+          <div class="bookmark-item">
             <%= link_to "#{bookmark.sign.title}", sign_path(bookmark.sign), class: "dashboard-button btn--normal" %>
-          </ul>
+          </div>
         <% end %>
+        </div>
       </div>
     </div>
   </div>
