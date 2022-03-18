@@ -24,7 +24,7 @@
           <h3 class="sign__example font-gamma">Description</h3>
           <p class="text-para--medium"><%= @sign.description %></p>
           <h2 class="sign__example font-gamma">Category</h2>
-          <%= @sign.category.title %>
+          <p class="text-para--medium"><%= @sign.category.title %></p>
           <div class="sign-buttons sign-buttons-2">
             <% if policy(@sign).edit? %>
               <%= link_to "Update", edit_sign_path(@sign), class:"btn create_video_button text-para--medium", id:"save" %>
