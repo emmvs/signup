@@ -6,6 +6,7 @@
         <%= simple_form_for(@sign) do |f| %>
           <%= f.input :title, placeholder: 'Your Sign - Camel' %>
           <%= f.input :description, placeholder: 'What is your Sign all about?' %>
+          <%= f.association :category %>
           <%= f.input :video, label: "Choose the sassy video for your sign"  %>
           <% if f.object.new_record? %>
             <%= f.submit "Create Sign", class: "btn create_video_button", id:"start" %>

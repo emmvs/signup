@@ -1,3 +1,5 @@
+# app/controllers/categories_controller.rb
+
 class CategoriesController < ApplicationController
   before_action :policy_scope_categories, only: [ :index, :show, :new, :edit, :update, :destroy ]
 

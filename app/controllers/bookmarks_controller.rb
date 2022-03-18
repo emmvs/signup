@@ -54,5 +54,4 @@ class BookmarksController < ApplicationController
   def bookmark_params
     params.require(:bookmark).permit(:user_id, :sign_id)
   end
-
 end
