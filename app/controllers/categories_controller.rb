@@ -16,6 +16,8 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @signs = Sign.where(category: @category)
     authorize @category
+    @bookmark = Bookmark.new
+    authorize @bookmark
   end
 
   private
