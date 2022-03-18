@@ -4,6 +4,7 @@
       <div class="bg-white rounded p-4 shadow">
         <h3 class="font-delta">What should your new Sign be like?</h3>
         <%= simple_form_for(@sign) do |f| %>
+          <%= f.input :language, collection: ["german", "english", "french", "swedish", "albanian", "bulgarian"]  %>
           <%= f.input :title, placeholder: 'Your Sign - Camel' %>
           <%= f.input :description, placeholder: 'What is your Sign all about?' %>
           <%= f.association :category %>
