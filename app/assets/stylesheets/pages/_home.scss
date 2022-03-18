@@ -37,6 +37,7 @@ body {
   box-shadow: 2px 2px 10px rgb(160, 160, 160);
   border-style: none;
   background-color: $bg-light;
+  z-index: 3;
 }
 
 .dropdown-box {
