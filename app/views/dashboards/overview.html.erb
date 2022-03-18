@@ -5,8 +5,7 @@
     <div class="tag2 tag--video">
       <h2 class="dashboard__video font-gamma">Your lastest sign</h2>
       <% if current_user.signs != [] && current_user.signs.last.video.attached? %>
-        <p class="sign-name"><%= current_user.signs.last.title %></p>
-        <%# <%= link_to sign_path(sign), class: "sign-card-link"%>
+          <p class="sign-name font-zeta"><%= current_user.signs.last.title %></p>
         <div class="video-sign-container">
           <%= cl_video_tag(current_user.signs.last.video.key, :controls=>false, :autoplay=>true, :loop=>true, :muted=>true, :width=>220, :height=>150, class:"video")%>
         </div>

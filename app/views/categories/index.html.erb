@@ -2,19 +2,15 @@
 <section class="container-index">
 <h2 class="font-alpha">Sign Categories</h2>
   <div class="backdrop-index">
-    <img src="https://images.unsplash.com/photo-1530569673472-307dc017a82d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" class="backdrop-index-img" alt="BG">
+    <%# <img src="https://images.unsplash.com/photo-1530569673472-307dc017a82d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80" class="backdrop-index-img" alt="BG"> %>
   </div>
   <div class="categories-container">
     <div class="categories-grid">
       <% @categories.each do |category| %>
           <div class="category-card--index">
             <%= link_to category_path(category), class: "category-card-link font-gamma" do %>
-            <h1>
-              <% if category.title.length > 9 %>
-                <span class="animated__text"><%=category.title %></span>
-              <% else %>
-                <%=category.title %>
-              <% end %>
+            <h1 class="font-gamma">
+              <%=category.title %>
             </h1>
             <% end %>
           </div>
