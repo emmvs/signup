@@ -9,12 +9,8 @@
       <% @categories.each do |category| %>
           <div class="category-card--index">
             <%= link_to category_path(category), class: "category-card-link font-gamma" do %>
-            <h1>
-              <% if category.title.length > 9 %>
-                <span class="animated__text"><%=category.title %></span>
-              <% else %>
-                <%=category.title %>
-              <% end %>
+            <h1 class="font-gamma">
+              <%=category.title %>
             </h1>
             <% end %>
           </div>

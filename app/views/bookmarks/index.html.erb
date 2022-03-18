@@ -10,12 +10,8 @@
         <% if bookmark.sign.video.attached? %>
           <div class="sign-card--index">
             <%= link_to sign_path(bookmark.sign), class: "sign-card-link" do %>
-              <h1 class="animated">
-              <% if bookmark.sign.title.length > 9 %>
-                <span class="animated__text"><%=bookmark.sign.title %></span>
-              <% else %>
+              <h1 class="animated font-gamma">
                 <%=bookmark.sign.title %>
-              <% end %>
               </h1>
             <% end %>
               <div class="form-bookmark">

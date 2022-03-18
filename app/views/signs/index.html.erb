@@ -15,13 +15,9 @@
         <% if sign.video.attached? %>
           <div class="sign-card--index">
             <%= link_to sign_path(sign), class: "sign-card-link" do %>
-              <h1 class="animated">
-              <% if sign.title.length > 10 %>
-                <span class="animated__text"><%=sign.title %></span>
-              <% else %>
+              <h1 class="animated font-gamma">
                 <%=sign.title %>
-            <% end %>
-            </h1>
+              </h1>
             <% end %>
               <div class="form-bookmark">
                 <% if !sign.bookmarks.empty? %>
