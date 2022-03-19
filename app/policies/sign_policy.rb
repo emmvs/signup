@@ -14,6 +14,10 @@ class SignPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    user_or_admin?
+  end
+
   def update?
     user_or_admin?
   end

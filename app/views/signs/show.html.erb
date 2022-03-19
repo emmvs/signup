@@ -26,12 +26,13 @@
           <h2 class="sign__example font-gamma">Category</h2>
           <p class="text-para--medium"><%= @sign.category.title %></p>
           <div class="sign-buttons sign-buttons-2">
-            <% if policy(@sign).edit? %>
+            <% if user_signed_in? && policy(@sign).edit? %>
               <%= link_to "Update", edit_sign_path(@sign), class:"btn create_video_button text-para--medium", id:"save" %>
             <% end %>
-            <% if policy(@sign).destroy? %>
+            <% if user_signed_in? && policy(@sign).destroy? %>
               <%= link_to "Delete", sign_path(@sign), class:"btn text-para--medium", method: :delete, data: { confirm: "Do you really want to say bye bye?" } %>
             <% end %>
+            <% if user_signed_in? %>
             <div class="form-bookmark bookmark-sign">
                 <% if !@sign.bookmarks.empty? %>
                     <%= simple_form_for(@sign.bookmarks[0], url: bookmark_path(@sign.bookmarks[0]), method: :delete, remote: true) do |f| %>
@@ -46,7 +47,8 @@
                     <%= image_submit_tag("empty_heart.png", class: 'sign-liked heart-like', alt: 'submit') %>
                   <% end %>
                 <% end %>
-              </div>
+             </div>
+             <% end %>
           </div>
         </div>
       </div>
